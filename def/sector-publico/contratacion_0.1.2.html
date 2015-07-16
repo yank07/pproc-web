@@ -1,0 +1,4117 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" prefix="dc: http://purl.org/dc/terms/ schema: http://schema.org/ prov: http://www.w3.org/ns/prov# foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl#"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type="text/css">
+/*This template uses the W3C css for working drafts, with small modifications.
+Original copyright:
+Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+The following software licensing rules apply:
+http://www.w3.org/Consortium/Legal/copyright-software */
+body {
+padding: 2em 1em 2em 70px;
+margin: 0;
+font-family: sans-serif;
+color: black;
+background: white;
+background-position: top left;
+background-attachment: fixed;
+background-repeat: no-repeat;
+}
+:link { color: #00C; background: transparent }
+:visited { color: #609; background: transparent }
+a:active { color: #C00; background: transparent }
+a:link img, a:visited img { border-style: none } /* no border on img links */
+a img { color: white; }        /* trick to hide the border in Netscape 4 */
+@media all {                   /* hide the next rule from Netscape 4 */
+a img { color: inherit; }    /* undo the color change above */
+}
+th, td { /* ns 4 */
+font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { text-align: left }
+/* background should be transparent, but WebTV has a bug */
+h1, h2, h3 { color: #005A9C; background: white }
+h1 { font: 170% sans-serif }
+h2 { font: 140% sans-serif }
+h3 { font: 120% sans-serif }
+h3 {
+border-bottom: 1px solid navy;
+margin-top: 3px;
+padding-bottom: 5px;
+}
+h4 { font: bold 100% sans-serif }
+h5 { font: italic 100% sans-serif }
+h6 { font: small-caps 100% sans-serif }
+.hide { display: none }
+div.head { margin-bottom: 1em }
+div.head h1 { margin-top: 2em; clear: both }
+div.head table { margin-left: 2em; margin-top: 2em }
+p.copyright { font-size: small }
+p.copyright small { font-size: small }
+@media screen {  /* hide from IE3 */
+a[href]:hover { background: #ffa }
+}
+pre { margin-left: 2em }
+p {
+margin-top: 0.6em;
+margin-bottom: 0.6em;		  
+text-align: justify;
+}
+dt, dd { margin-top: 0; margin-bottom: 0 } /* opera 3.50 */
+dt { font-weight: bold }
+ul.toc, ol.toc {
+list-style: disc;		/* Mac NS has problem with 'none' */
+list-style: none;
+}
+@media aural {  
+h1, h2, h3 { stress: 20; richness: 90 }
+.hide { speak: none }
+p.copyright { volume: x-soft; speech-rate: x-fast }
+dt { pause-before: 20% }
+pre { speak-punctuation: code } 
+}
+/*Additional css*/
+.hlist {
+background-color: #F4FFFF;
+border: 1px solid navy;
+padding: 5px;
+}
+.hlist li {
+display: inline-table;
+list-style-type: none;
+padding-right: 20px;
+}
+.backlink {
+background-color: #F4FFFF;
+border: 1px dotted navy;
+color: black;
+float: right;
+font-size: 10pt;
+padding: 2px;
+text-align: right;
+}
+.entity {
+border: 1px solid navy;
+margin: 5px 0;
+padding: 5px;
+}
+table {
+background-color: #F4FFFF;
+border: 1px solid navy;
+margin: 20px;
+}
+table {
+text-align: center;
+vertical-align: middle;
+}
+table td {
+padding: 5px 15px;
+text-align: left;
+}
+table th {
+background-color: LightGoldenRodYellow;
+}
+pre {
+background-color: #F9F9F9;
+border: 1px dashed #2F6FAB;
+color: black;
+line-height: 1.1em;
+padding: 1em;
+}
+.type-c {
+cursor:help;
+color:orange;
+}
+.type-op {
+cursor:help;
+color:navy;   
+}
+.type-dp {
+cursor:help;
+color:green;
+}
+</style> 
+</head>
+<span resource="" typeOf="foaf:Document schema:WebPage">
+<title property="dc:title schema:name">CONTSEM ontology</title>
+<span property="dc:created schema:dateCreated" content="02 February 2014"></span>
+<span property="dc:isVersionOf" resource="http://contsem.unizar.es/def/sector-publico/contsem"></span>
+</span>
+<body resource="http://contsem.unizar.es/def/sector-publico/contsem" typeOf="owl:Ontology schema:TechArticle">
+<div class="head">
+<h1 property="dc:title schema:name">CONTSEM ontology</h1>
+<span property="dc:modified schema:dateModified" content="02 February 2014"></span>
+<h2>Release 02 February 2014</h2>
+<dl>
+<dt>This version:</dt>
+<dd><a href="http://contsem.unizar.es/def/sector-publico/contratacion_0.1.2.html">http://contsem.unizar.es/def/sector-publico/contratacion_0.1.2.html</a></dd>
+</dl><dl><dt>Latest version:</dt>
+<dd><a href="http://contsem.unizar.es/def/sector-publico/pproc">http://contsem.unizar.es/def/sector-publico/pproc</a></dd>
+</dl>
+<dl><dt>Previous version:</dt>
+<dd><a href="http://contsem.unizar.es/def/sector-publico/contratacion_0.1.1.html">http://contsem.unizar.es/def/sector-publico/contratacion_0.1.1.html</a></dd>
+</dl><dl>
+<dt>Revision</dt>
+<dd property="schema:version">0.1.2</dd>
+</dl><dl><dt>Authors:</dt>
+<dd><a property="dc:creator schema:author prov:wasAttributedTo" resource="http://www.araid.es/en/users/jfm#profile-investigador" href="http://www.araid.es/en/users/jfm#profile-investigador">J.F. Muñoz</a>, ARAID</dd><dd><a property="dc:creator schema:author prov:wasAttributedTo" resource=" http://es.linkedin.com/pub/guillermo-esteban-p%C3%A9rez/56/210/5a8" href=" http://es.linkedin.com/pub/guillermo-esteban-p%C3%A9rez/56/210/5a8"> G. Esteban</a>, ARAID</dd><dd><a property="dc:creator schema:author prov:wasAttributedTo" resource="https://www.linkedin.com/profile/view?id=218098827" href="https://www.linkedin.com/profile/view?id=218098827"> M.A. Bernal</a>,  Universidad de Zaragoza</dd><dd><a property="dc:creator schema:author prov:wasAttributedTo" resource=" http://webdiis.unizar.es/~seron/" href=" http://webdiis.unizar.es/~seron/"> F.J. Serón</a>,  Universidad de Zaragoza</dd></dl>
+
+</dl><dl><dt>Contributors:</dt>
+<dd><a property="dc:contributor schema:contributor" resource="http://mayor2.dia.fi.upm.es/oeg-upm/index.php/en/teachers/11-ocorcho" href="http://mayor2.dia.fi.upm.es/oeg-upm/index.php/en/teachers/11-ocorcho">O. Corcho</a>, Universidad Politécnica de Madrid</dd><dd><a property="dc:contributor schema:contributor" resource=" http://webdiis.unizar.es/people/cbobed/" href=" http://webdiis.unizar.es/people/cbobed/"> C. Bobed</a>,  Universidad de Zaragoza</dd><dd><a property="dc:contributor schema:contributor" resource="https://www.linkedin.com/in/carlosbecana" href="https://www.linkedin.com/in/carlosbecana"> C. Becana</a>,  iA Soft (OESIA)</dd></dl>
+
+
+<dl><dt>Imported Ontologies:</dt>
+<dd><a property="owl:imports schema:mentions" resource="https://code.google.com/p/public-contracts-ontology/" href="https://code.google.com/p/public-contracts-ontology/">Public Contracts Ontology</a></dd></dl>
+
+
+<dl>This work is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC by-sa</a>.</dl>
+<span property="dc:license" resource="null"></span>
+<hr>
+</div>
+<h2>Abstract</h2>
+<p>La ontología CONTSEM define los conceptos necesarios para describir los contratos públicos y varios elementos del proceso de licitación.</p>
+<p>Ha sido diseñada con el objetivo de etiquetar semánticamente los perfiles del contratante. El punto de partida para ella ha sido la <a href="https://code.google.com/p/public-contracts-ontology/">Public Contracts Ontology</a>, una ontología desarrollada por la iniciativa OpenData checa.</b></p>
+<p><b>La ontología descrita en este documento puede encontrarse en <a href="http://contsem.unizar.es/docs/contsem_0.1.2.owl">http://contsem.unizar.es/docs/contsem_0.1.2.owl</a></b>.</p>
+<div id="toc"><h2>Table of Contents</h2>
+<ul><li>
+<a href="#introduction">1. Introduction</a></li>
+<ul><li><a href="#namespacedeclarations">1.1 Namespace declarations</a></li></ul>
+<a href="#ontOverview">2. CONTSEM Overview</a></li><li>
+<a href="#ontDescription">3. CONTSEM Description</a></li>
+<li><a href="#crossReference">4. Cross reference for CONTSEM classes, properties and dataproperties</a></li>
+<ul>
+        <li><a href="#classes">4.1 Classes</a></li>
+        <li><a href="#objectproperties">4.2 Object Properties</a></li>
+        <li><a href="#dataproperties">4.3 Data Properties</a></li>
+</ul
+><li>
+<a href="#references">5. References</a></li><li>
+<a href="#acknowledgements">6. Acknowledgements</a></li>
+</ul>
+</div>
+<div id="introduction">
+<h2>1. Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>La ontología CONTSEM ha sido elaborada en el marco del proyecto “Optimización de la contratación pública mediante la utilización de técnicas semánticas” (CONTSEM), en el que participan la empresa iASoft (OESIA), la Universidad de Zaragoza y, como Administraciones usuarias, el Gobierno de Aragón, la Diputación Provincial de Huesca y los ayuntamientos de Zaragoza y Huesca. El objetivo general del proyecto es incorporar las técnicas semánticas en las herramientas utilizadas por las Administraciones públicas en los procesos de contratación y, dentro de este, uno de los objetivos específicos es describir semánticamente la información publicada en el perfil del contratante de las Administraciones usuarias. Para ello se ha elaborado la ontología CONTSEM, cuyo ámbito es la contratación pública en el contexto del derecho español y comunitario.</p>
+<p>La ontología CONTSEM reutiliza diversas ontologías y esquemas para describir múltiples entidades, en concreto se hace uso de entidades pertenecientes a las siguientes ontologías y esquemas:</p>
+<ul>
+<li style="margin-bottom: 10px;"><b>Public Contracts Ontology (PCO)</b>. Ontología sobre contratación pública desarrollada por la iniciativa checa de OpenData . Este trabajo previo marca el punto de partida para el desarrollo de la ontología CONTSEM, pues contiene numerosas entidades imprescindibles para la descripción de procesos de contratación pública. Véase <a href="https://code.google.com/p/public-contracts-ontology/">https://code.google.com/p/public-contracts-ontology/</a>.</li>
+<li style="margin-bottom: 10px;"><b>The Organization Ontology</b>. Ontología desarrollada por el W3C para describir organizaciones. Actualmente está en estado de W3C recomendation ; por lo que se supone ya un estándar. Véase <a href="http://www.w3.org/TR/vocab-org/">http://www.w3.org/TR/vocab-org/</a>.</li>
+<li style="margin-bottom: 10px;"><b>Schema.org</b>. Este esquema, que en la actualidad es ampliamente reconocido y utilizado por una amplia variedad de sitios Web (ej. Google, Yahoo) contiene diversas entidades de múltiples ámbitos para etiquetar el contenido de la Web. Para el desarrollo de la ontología CONTSEM se ha utilizado la versión OWL del esquema. Véase <a href="http://schema.org/">http://schema.org/</a>.</li>
+<li style="margin-bottom: 10px;"><b>Simple Knowledge Organization System (SKOS)</b>. Ontología para definir sistemas de organización del conocimiento (ej. vocabularios, tesauros). Véase <a href="http://www.w3.org/2004/02/skos/">http://www.w3.org/2004/02/skos/</a>.</li>
+<li style="margin-bottom: 10px;"><b>Good Relations Ontology</b>. Ontología utilizada para describir las entidades que conforman el comercio electrónico (ej. productos, precios, empresas). Véase <a href="http://www.heppnetz.de/ontologies/goodrelations/v1">http://www.heppnetz.de/ontologies/goodrelations/v1</a>.</li>
+</ul>
+<p>Al igual que CONTSEM, la ontología PCO también utiliza otras ontologías en su definición. De entre ellas, destacamos las siguientes, pues son las únicas de las que este proyecto utiliza entidades:</p>
+<ul>
+<li style="margin-bottom: 10px;"><b>LOTED</b>. Esta ontología, anterior a PCO, se la puede considerar uno de los primeros esfuerzos por llevar la contratación pública al plano de la Web Semántica; tanto PCO como CONTSEM utilizan algunas de sus entidades. Véase <a href="http://loted.eu/loted/">http://loted.eu/loted/</a>.</li>
+<li style="margin-bottom: 10px;"><b>Dublin Core Metadata Terms</b>. Este esquema, desarrollado por la iniciativa DCMI, recoge los elementos más básicos para la descripción de cualquier tipo de recurso. Véase <a href="http://dublincore.org/">http://dublincore.org/</a>.</li>
+</ul>
+<div id="namespacedeclarations">
+<h2>1.1. Namespace declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+</p><div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>contsem</b></td><td>&lt;http://contsem.unizar.es/def/sector-publico/contsem&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+<tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms/#&gt;</td></tr>
+<tr><td><b>pc</b></td><td>&lt;http://purl.org/procurement/public-contracts#&gt;</td></tr>
+<tr><td><b>loted</b></td><td>&lt;http://loted.eu/ontology#&gt;</td></tr>
+<tr><td><b>org</b></td><td>&lt;http://www.w3.org/ns/org#&gt;</td></tr>
+<tr><td><b>s</b></td><td>&lt;http://schema.org/&gt;</td></tr>
+<tr><td><b>skos</b></td><td>&lt;http://www.w3.org/2004/02/skos/core#&gt;</td></tr>
+<tr><td><b>gr</b></td><td>&lt;http://purl.org/goodrelations/v1#&gt;</td></tr>
+<tr><td><b>ej</b></td><td>&lt;http://example.com/&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<div id="ontOverview">
+<h2>2. CONTSEM Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>La clase eje en la ontología CONTSEM es <code>pc:Contract</code>, de la cual fluyen muchas de las propiedades definidas. Cada contrato único se describe utilizando esta clase, así como los posibles lotes en de los que este se pueda componer.</p>
+<h4>Classes</h4><ul class="hlist">
+<li>
+<a href="##AdditionalInformationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#AdditionalInformationNotice">Additional information notice</a>
+</li>
+<li>
+<a href="##Appeal" title="http://contsem.unizar.es/def/sector-publico/contsem#Appeal">Appeal</a>
+</li>
+<li>
+<a href="##TenderCommittee" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderCommittee">Comité de contratación</a>
+</li>
+<li>
+<a href="##ContractAwardNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractAwardNotice">Contract award notice</a>
+</li>
+<li>
+<a href="##ContractModification" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractModification">Contract modification</a>
+</li>
+<li>
+<a href="##ContractNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractNotice">Contract notice</a>
+</li>
+<li>
+<a href="##ContractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractOrProcedureExtinction">Contract or procedure extinction</a>
+</li>
+<li>
+<a href="##ContractingBodyAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractingBodyAgreement">Contracting body agreement</a>
+</li>
+<li>
+<a href="##CorrectionNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#CorrectionNotice">Correction notice</a>
+</li>
+<li>
+<a href="##CriterionScore" title="http://contsem.unizar.es/def/sector-publico/contsem#CriterionScore">Criterion score</a>
+</li>
+<li>
+<a href="##ElectronicAuction" title="http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuction">Electronic auction</a>
+</li>
+<li>
+<a href="##ElectronicAuctionPhase" title="http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuctionPhase">Electronic auction phase</a>
+</li>
+<li>
+<a href="##FormalizationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#FormalizationNotice">Formalization notice</a>
+</li>
+<li>
+<a href="##FrameworkAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#FrameworkAgreement">Framework agreement</a>
+</li>
+<li>
+<a href="##CommitteeMember" title="http://contsem.unizar.es/def/sector-publico/contsem#CommitteeMember">Miembro del comité</a>
+</li>
+<li>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+</li>
+<li>
+<a href="##ObjectiveAwardCriteria" title="http://contsem.unizar.es/def/sector-publico/contsem#ObjectiveAwardCriteria">Objective Award Criteria</a>
+</li>
+<li>
+<a href="##BundlePriceSpecification" title="http://contsem.unizar.es/def/sector-publico/contsem#BundlePriceSpecification">Precio de paquete</a>
+</li>
+<li>
+<a href="##PriorInformationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#PriorInformationNotice">Prior information notice</a>
+</li>
+<li>
+<a href="##InformationProvider" title="http://contsem.unizar.es/def/sector-publico/contsem#InformationProvider">Proveedor de información</a>
+</li>
+<li>
+<a href="##TenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderMeeting">Reunión de la mesa de contratación</a>
+</li>
+<li>
+<a href="##appealType1" title="http://contsem.unizar.es/def/sector-publico/contsem#Briefing">Reunión informativa</a>
+</li>
+<li>
+<a href="##SubjectiveAwardCriteria" title="http://contsem.unizar.es/def/sector-publico/contsem#SubjectiveAwardCriteria">Subjective Award Criteria</a>
+</li>
+</ul>
+<h4>Properties</h4><ul class="hlist">
+<li>
+<a href="##acceptedTender" title="http://contsem.unizar.es/def/sector-publico/contsem#acceptedTender">Accepted tender</a>
+</li>
+<li>
+<a href="##additionalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#additionalDocumentReference">Additional document reference</a>
+</li>
+<li>
+<a href="##alternateMember" title="http://contsem.unizar.es/def/sector-publico/contsem#alternateMember">Alternate member</a>
+</li>
+<li>
+<a href="##awardAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#awardAgreement">Award agreement</a>
+</li>
+<li>
+<a href="##briefing" title="http://contsem.unizar.es/def/sector-publico/contsem#briefing">Briefing</a>
+</li>
+<li>
+<a href="##feePrice" title="http://contsem.unizar.es/def/sector-publico/contsem#feePrice">Canon</a>
+</li>
+<li>
+<a href="##complementaryContract" title="http://contsem.unizar.es/def/sector-publico/contsem#complementaryContract">Complementary contract</a>
+</li>
+<li>
+<a href="##contractAbandonment" title="http://contsem.unizar.es/def/sector-publico/contsem#contractAbandonment">Contract abandonment</a>
+</li>
+<li>
+<a href="##budgetPrice" title="http://contsem.unizar.es/def/sector-publico/contsem#budgetPrice">Contract budget price</a>
+</li>
+<li>
+<a href="##contractKind" title="http://contsem.unizar.es/def/sector-publico/contsem#contractKind">Contract kind</a>
+</li>
+<li>
+<a href="##contractModification" title="http://contsem.unizar.es/def/sector-publico/contsem#contractModification">Contract modification</a>
+</li>
+<li>
+<a href="##contractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#contractOrProcedureExtinction">Contract or procedure extinction</a>
+</li>
+<li>
+<a href="##contractResolution" title="http://contsem.unizar.es/def/sector-publico/contsem#contractResolution">Contract resolution</a>
+</li>
+<li>
+<a href="##contractWaive" title="http://contsem.unizar.es/def/sector-publico/contsem#contractWaive">Contract waive</a>
+</li>
+<li>
+<a href="##contractingBody" title="http://contsem.unizar.es/def/sector-publico/contsem#contractingBody">Contracting body</a>
+</li>
+<li>
+<a href="##contractingBodyAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#contractingBodyAgreement">Contracting body agreement</a>
+</li>
+<li>
+<a href="##criterion" title="http://contsem.unizar.es/def/sector-publico/contsem#criterion">Criterion</a>
+</li>
+<li>
+<a href="##criterionScore" title="http://contsem.unizar.es/def/sector-publico/contsem#criterionScore">Criterion score</a>
+</li>
+<li>
+<a href="##delegatingAuthority" title="http://contsem.unizar.es/def/sector-publico/contsem#delegatingAuthority">Delegating authority</a>
+</li>
+<li>
+<a href="##documentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#documentReference">Document reference</a>
+</li>
+<li>
+<a href="##electronicAuction" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuction">Electronic auction</a>
+</li>
+<li>
+<a href="##electronicAuctionPhase" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionPhase">Electronic auction phase</a>
+</li>
+<li>
+<a href="##electronicAuctionWeb" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionWeb">Electronic auction web</a>
+</li>
+<li>
+<a href="##excludedTender" title="http://contsem.unizar.es/def/sector-publico/contsem#excludedTender">Excluded tender</a>
+</li>
+<li>
+<a href="##formalizedTender" title="http://contsem.unizar.es/def/sector-publico/contsem#formalizedTender">Formalized tender</a>
+</li>
+<li>
+<a href="##frameworkAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreement">Framework agreement</a>
+</li>
+<li>
+<a href="##frameworkAgreementDerivativeContract" title="http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreementDerivativeContract">Framework agreement derivative contract</a>
+</li>
+<li>
+<a href="##frameworkAgreementType" title="http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreementType">Framework agreement type</a>
+</li>
+<li>
+<a href="##fullMember" title="http://contsem.unizar.es/def/sector-publico/contsem#fullMember">Full member</a>
+</li>
+<li>
+<a href="##informationKind" title="http://contsem.unizar.es/def/sector-publico/contsem#informationKind">Information kind</a>
+</li>
+<li>
+<a href="##legalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#legalDocumentReference">Legal document reference</a>
+</li>
+<li>
+<a href="##lotContractKind" title="http://contsem.unizar.es/def/sector-publico/contsem#lotContractKind">Lot contract kind</a>
+</li>
+<li>
+<a href="##managingDepartment" title="http://contsem.unizar.es/def/sector-publico/contsem#managingDepartment">Managing department</a>
+</li>
+<li>
+<a href="##minutesDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#minutesDocumentReference">Minutes document reference</a>
+</li>
+<li>
+<a href="##notice" title="http://contsem.unizar.es/def/sector-publico/contsem#notice">Notice</a>
+</li>
+<li>
+<a href="##noticeWeb" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeWeb">Notice web</a>
+</li>
+<li>
+<a href="##object" title="http://contsem.unizar.es/def/sector-publico/contsem#object">Object</a>
+</li>
+<li>
+<a href="##procedureType" title="http://contsem.unizar.es/def/sector-publico/contsem#procedureType">Procedure type</a>
+</li>
+<li>
+<a href="##publicServicesContractKind" title="http://contsem.unizar.es/def/sector-publico/contsem#publicServicesContractKind">Public services contract kind</a>
+</li>
+<li>
+<a href="##resolutionDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#resolutionDocumentReference">Resolution document reference</a>
+</li>
+<li>
+<a href="##supplyContractKind" title="http://contsem.unizar.es/def/sector-publico/contsem#supplyContractKind">Supply contract kind</a>
+</li>
+<li>
+<a href="##technicalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#technicalDocumentReference">Technical document reference</a>
+</li>
+<li>
+<a href="##tenderAdmissionMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderAdmissionMeeting">Tender admission meeting</a>
+</li>
+<li>
+<a href="##tenderBriefing" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderBriefing">Tender briefing</a>
+</li>
+<li>
+<a href="##tenderInformationProvider" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderInformationProvider">Tender information provider</a>
+</li>
+<li>
+<a href="##tenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderMeeting">Tender meeting</a>
+</li>
+<li>
+<a href="##tenderSubmissionLocation" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionLocation">Tender submission location</a>
+</li>
+<li>
+<a href="##appealType" title="http://contsem.unizar.es/def/sector-publico/contsem#appealType">Tipo de recurso</a>
+</li>
+<li>
+<a href="##urgencyType" title="http://contsem.unizar.es/def/sector-publico/contsem#urgencyType">Urgency type</a>
+</li>
+<li>
+<a href="##voidProcedure" title="http://contsem.unizar.es/def/sector-publico/contsem#voidProcedure">Void procedure</a>
+</li>
+<li>
+<a href="##websiteWithInformation" title="http://contsem.unizar.es/def/sector-publico/contsem#websiteWithInformation">Web con información</a>
+</li>
+</ul>
+<h4>Data Properties</h4><ul class="hlist">
+<li>
+<a href="##extinctionCause" title="http://contsem.unizar.es/def/sector-publico/contsem#extinctionCause">
+<span>extinctionCause</span>
+</a>
+</li>
+<li>
+<a href="##actualDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#actualDuration">Actual duration</a>
+</li>
+<li>
+<a href="##admitVariants" title="http://contsem.unizar.es/def/sector-publico/contsem#admitVariants">Admit variants</a>
+</li>
+<li>
+<a href="##advertisementAmount" title="http://contsem.unizar.es/def/sector-publico/contsem#advertisementAmount">Advertisement amount</a>
+</li>
+<li>
+<a href="##appealResult" title="http://contsem.unizar.es/def/sector-publico/contsem#appealResult">Appeal result</a>
+</li>
+<li>
+<a href="##assumptionProtectingProcedureType" title="http://contsem.unizar.es/def/sector-publico/contsem#assumptionProtectingProcedureType">Assumption protecting the chosen procedure type</a>
+</li>
+<li>
+<a href="##constructionSubsidies" title="http://contsem.unizar.es/def/sector-publico/contsem#constructionSubsidies">Construction subsidies</a>
+</li>
+<li>
+<a href="##awardDate" title="http://contsem.unizar.es/def/sector-publico/contsem#awardDate">Date of award</a>
+</li>
+<li>
+<a href="##disposableMeansAppointment" title="http://contsem.unizar.es/def/sector-publico/contsem#disposableMeansAppointment">Disposable means appointment</a>
+</li>
+<li>
+<a href="##duration" title="http://contsem.unizar.es/def/sector-publico/contsem#duration">Duration</a>
+</li>
+<li>
+<a href="##earlyTramitation" title="http://contsem.unizar.es/def/sector-publico/contsem#earlyTramitation">Early tramitation</a>
+</li>
+<li>
+<a href="##estimatedDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#estimatedDuration">Estimated duration</a>
+</li>
+<li>
+<a href="##estimatedEndDate" title="http://contsem.unizar.es/def/sector-publico/contsem#estimatedEndDate">Estimated end date</a>
+</li>
+<li>
+<a href="##executionRequeriments" title="http://contsem.unizar.es/def/sector-publico/contsem#executionRequeriments">Execution requeriments</a>
+</li>
+<li>
+<a href="##expectedCauseModification" title="http://contsem.unizar.es/def/sector-publico/contsem#expectedCauseModification">Expected cause modification</a>
+</li>
+<li>
+<a href="##offeredEndDate" title="http://contsem.unizar.es/def/sector-publico/contsem#offeredEndDate">Fecha de finalización ofertada</a>
+</li>
+<li>
+<a href="##acceptedTender9" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeDate">Fecha de publicación del anuncio</a>
+</li>
+<li>
+<a href="##finalFinancialGuarantee" title="http://contsem.unizar.es/def/sector-publico/contsem#finalFinancialGuarantee">Final financial guarantee</a>
+</li>
+<li>
+<a href="##finalFinancialGuaranteeDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#finalFinancialGuaranteeDuration">Final financial guarantee duration</a>
+</li>
+<li>
+<a href="##harmonized" title="http://contsem.unizar.es/def/sector-publico/contsem#harmonized">Harmonized</a>
+</li>
+<li>
+<a href="##maxBudgetChange" title="http://contsem.unizar.es/def/sector-publico/contsem#maxBudgetChange">Maximum budget change</a>
+</li>
+<li>
+<a href="##maxFinalPriceChange" title="http://contsem.unizar.es/def/sector-publico/contsem#maxFinalPriceChange">Maximum final price change</a>
+</li>
+<li>
+<a href="##maxInvitations" title="http://contsem.unizar.es/def/sector-publico/contsem#maxInvitations">Maximum number of invitations</a>
+</li>
+<li>
+<a href="##maxNumberOfOperators" title="http://contsem.unizar.es/def/sector-publico/contsem#maxNumberOfOperators">Maximum number of operators</a>
+</li>
+<li>
+<a href="##maxSubcontracting" title="http://contsem.unizar.es/def/sector-publico/contsem#maxSubcontracting">Maximum subcontracting</a>
+</li>
+<li>
+<a href="##minInvitations" title="http://contsem.unizar.es/def/sector-publico/contsem#minInvitations">Minimum number of invitations</a>
+</li>
+<li>
+<a href="##minNumberOfOperators" title="http://contsem.unizar.es/def/sector-publico/contsem#minNumberOfOperators">Minimum number of operators</a>
+</li>
+<li>
+<a href="##multiannual" title="http://contsem.unizar.es/def/sector-publico/contsem#multiannual">Multiannual</a>
+</li>
+<li>
+<a href="##noticeSentDate" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeSentDate">Notice sent date</a>
+</li>
+<li>
+<a href="##noticeSite" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeSite">Notice site</a>
+</li>
+<li>
+<a href="##lotCount" title="http://contsem.unizar.es/def/sector-publico/contsem#lotCount">Número de lotes</a>
+</li>
+<li>
+<a href="##offeredDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#offeredDuration">Offered duration</a>
+</li>
+<li>
+<a href="##otherAwardTerms" title="http://contsem.unizar.es/def/sector-publico/contsem#otherAwardTerms">Other award terms</a>
+</li>
+<li>
+<a href="##otherGuarantee" title="http://contsem.unizar.es/def/sector-publico/contsem#otherGuarantee">Other guarantee</a>
+</li>
+<li>
+<a href="##isPriceReviewed" title="http://contsem.unizar.es/def/sector-publico/contsem#isPriceReviewed">Price reviewed</a>
+</li>
+<li>
+<a href="##priceRevisionFormulaDescription" title="http://contsem.unizar.es/def/sector-publico/contsem#priceRevisionFormulaDescription">Price revision formula description</a>
+</li>
+<li>
+<a href="##prorogationsExpected" title="http://contsem.unizar.es/def/sector-publico/contsem#prorogationsExpected">Prorogation number expected</a>
+</li>
+<li>
+<a href="##prorogationPrevision" title="http://contsem.unizar.es/def/sector-publico/contsem#prorogationPrevision">Prorogation prevision</a>
+</li>
+<li>
+<a href="##provisionalFinancialGuarantee" title="http://contsem.unizar.es/def/sector-publico/contsem#provisionalFinancialGuarantee">Provisional financial guarantee</a>
+</li>
+<li>
+<a href="##requiredCapability" title="http://contsem.unizar.es/def/sector-publico/contsem#requiredCapability">Required capability</a>
+</li>
+<li>
+<a href="##requiredClassification" title="http://contsem.unizar.es/def/sector-publico/contsem#requiredClassification">Required classification</a>
+</li>
+<li>
+<a href="##requiredFinancialCapability" title="http://contsem.unizar.es/def/sector-publico/contsem#requiredFinancialCapability">Required financial capability</a>
+</li>
+<li>
+<a href="##requiredTechnicalCapability" title="http://contsem.unizar.es/def/sector-publico/contsem#requiredTechnicalCapability">Required technical capability</a>
+</li>
+<li>
+<a href="##reservedContractRestrictions" title="http://contsem.unizar.es/def/sector-publico/contsem#reservedContractRestrictions">Reserved contract restrictions</a>
+</li>
+<li>
+<a href="##score" title="http://contsem.unizar.es/def/sector-publico/contsem#score">Score</a>
+</li>
+<li>
+<a href="##tenderDossierStartDate" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderDossierStartDate">Start date of the tender dossier</a>
+</li>
+<li>
+<a href="##minSubcontracting" title="http://contsem.unizar.es/def/sector-publico/contsem#minSubcontracting">Subcontratación obligatoria</a>
+</li>
+<li>
+<a href="##tenderCommitteeAppointmentDate" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderCommitteeAppointmentDate">Tender committee appointment date</a>
+</li>
+<li>
+<a href="##alternateMember8" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderCommitteePosition">Tender committee position</a>
+</li>
+<li>
+<a href="##tenderDocumentNeeds" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderDocumentNeeds">Tender document needs</a>
+</li>
+<li>
+<a href="##tenderManteinanceDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderManteinanceDuration">Tender manteinance duration</a>
+</li>
+<li>
+<a href="##tenderPurpose" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderPurpose">Tender purpose</a>
+</li>
+<li>
+<a href="##tenderSubmissionMode" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionMode">Tender submission mode</a>
+</li>
+<li>
+<a href="##tenderSubmissionSupportedLanguage" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionSupportedLanguage">Tender submission supported language</a>
+</li>
+<li>
+<a href="##variantDescription" title="http://contsem.unizar.es/def/sector-publico/contsem#variantDescription">Variant description</a>
+</li>
+</ul>
+</div>
+<div id="ontDescription">
+<h2>3. CONTSEM Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>El siguiente diagrama da una idea general de las clases de las que se compone la ontología.</p>
+<a href="./images/0.1.2_lvl1_e.png"><img border="0" src="./images/0.1.2_lvl1_e.png" alt="diagrama ontología contsem" width="800"></a>
+</div>
+<div id="crossReference">
+<h2>4. Cross reference for CONTSEM classes and properties</h2>
+This section provides details for each class and property defined by CONTSEM.
+<div id="classes">
+<h2>Classes</h2>
+<ul class="hlist">
+<li>
+<a href="##AdditionalInformationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#AdditionalInformationNotice">Additional information notice</a>
+</li>
+<li>
+<a href="##Appeal" title="http://contsem.unizar.es/def/sector-publico/contsem#Appeal">Appeal</a>
+</li>
+<li>
+<a href="##TenderCommittee" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderCommittee">Comité de contratación</a>
+</li>
+<li>
+<a href="##ContractAwardNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractAwardNotice">Contract award notice</a>
+</li>
+<li>
+<a href="##ContractModification" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractModification">Contract modification</a>
+</li>
+<li>
+<a href="##ContractNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractNotice">Contract notice</a>
+</li>
+<li>
+<a href="##ContractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractOrProcedureExtinction">Contract or procedure extinction</a>
+</li>
+<li>
+<a href="##ContractingBodyAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractingBodyAgreement">Contracting body agreement</a>
+</li>
+<li>
+<a href="##CorrectionNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#CorrectionNotice">Correction notice</a>
+</li>
+<li>
+<a href="##CriterionScore" title="http://contsem.unizar.es/def/sector-publico/contsem#CriterionScore">Criterion score</a>
+</li>
+<li>
+<a href="##ElectronicAuction" title="http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuction">Electronic auction</a>
+</li>
+<li>
+<a href="##ElectronicAuctionPhase" title="http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuctionPhase">Electronic auction phase</a>
+</li>
+<li>
+<a href="##FormalizationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#FormalizationNotice">Formalization notice</a>
+</li>
+<li>
+<a href="##FrameworkAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#FrameworkAgreement">Framework agreement</a>
+</li>
+<li>
+<a href="##CommitteeMember" title="http://contsem.unizar.es/def/sector-publico/contsem#CommitteeMember">Miembro del comité</a>
+</li>
+<li>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+</li>
+<li>
+<a href="##ObjectiveAwardCriteria" title="http://contsem.unizar.es/def/sector-publico/contsem#ObjectiveAwardCriteria">Objective Award Criteria</a>
+</li>
+<li>
+<a href="##BundlePriceSpecification" title="http://contsem.unizar.es/def/sector-publico/contsem#BundlePriceSpecification">Precio de paquete</a>
+</li>
+<li>
+<a href="##PriorInformationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#PriorInformationNotice">Prior information notice</a>
+</li>
+<li>
+<a href="##InformationProvider" title="http://contsem.unizar.es/def/sector-publico/contsem#InformationProvider">Proveedor de información</a>
+</li>
+<li>
+<a href="##TenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderMeeting">Reunión de la mesa de contratación</a>
+</li>
+<li>
+<a href="##appealType1" title="http://contsem.unizar.es/def/sector-publico/contsem#Briefing">Reunión informativa</a>
+</li>
+<li>
+<a href="##SubjectiveAwardCriteria" title="http://contsem.unizar.es/def/sector-publico/contsem#SubjectiveAwardCriteria">Subjective Award Criteria</a>
+</li>
+</ul>
+<div class="entity" id="#AdditionalInformationNotice">
+<h3>Additional information notice<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#AdditionalInformationNotice</p>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#Appeal">
+<h3>Appeal<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#Appeal</p>
+<div class="comment">
+<p>Cuando se interponga un recurso sobre alguna de las resoluciones del proceso de licitación se utilizará la propiedad contsem:appeal con rango en la clase contsem:Appeal.</p>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##appealResult" title="http://contsem.unizar.es/def/sector-publico/contsem#appealResult">Appeal result</a>
+<sup class="type-dp" title="data property">dp</sup>, <a href="##appealType" title="http://contsem.unizar.es/def/sector-publico/contsem#appealType">Tipo de recurso</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#TenderCommittee">
+<h3>Comité de contratación<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#TenderCommittee</p>
+<div class="comment">
+<p>Esta clase puede representar una de las siguientes tres entidades, dependiendo de la propiedad utilizada:</p>
+<p>- Mesa de contratación (contsem:tenderCommittee)</p>
+<p>- Comité de expertos (contsem:expertCommittee)</p>
+<p>- Organismo técnico (contsem:technicalCommittee)</p>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##alternateMember" title="http://contsem.unizar.es/def/sector-publico/contsem#alternateMember">Alternate member</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##fullMember" title="http://contsem.unizar.es/def/sector-publico/contsem#fullMember">Full member</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##tenderCommitteeAppointmentDate" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderCommitteeAppointmentDate">Tender committee appointment date</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#ContractAwardNotice">
+<h3>Contract award notice<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#ContractAwardNotice</p>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#ContractModification">
+<h3>Contract modification<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#ContractModification</p>
+<div class="comment">
+<p>Durante un contrato se puede dar también la necesidad de modificarlo una vez iniciada su ejecución, para plasmar este tipo de casos en la ontología CONTSEM se debe utilizar la clase contsem:ContractModification (rango de la propiedad contsem:contractModification).</p>
+</div>
+<dl class="description">
+<dt>is in range of</dt>
+<dd>
+<a href="##contractModification" title="http://contsem.unizar.es/def/sector-publico/contsem#contractModification">Contract modification</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#ContractNotice">
+<h3>Contract notice<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#ContractNotice</p>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#ContractOrProcedureExtinction">
+<h3>Contract or procedure extinction<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#ContractOrProcedureExtinction</p>
+<div class="comment">
+<p>Existe una serie de circunstancias que derivan en la extinctión del contrato o procedimiento. Para describir estas situaciones se hace uso de la clase contsem:ContractExtinction. El tipo de extinción vendrá determinado por la propiedad que se utilice para enlazar a esta clase desde el contrato. Existen tres propiedades para ello:</p>
+<p>- Resolución (contsem:contractResolution)</p>
+<p>- Renuncia (contsem:contractWaive)</p>
+<p>- Abandono (contsem:contractAbandonment)</p>
+<p>- Procedimiento desierto (contsem:voidProcedure)</p>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##extinctionCause" title="http://contsem.unizar.es/def/sector-publico/contsem#extinctionCause">:extinctionCause</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##contractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#contractOrProcedureExtinction">Contract or procedure extinction</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#ContractingBodyAgreement">
+<h3>Contracting body agreement<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#ContractingBodyAgreement</p>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##resolutionDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#resolutionDocumentReference">Resolution document reference</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##awardAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#awardAgreement">Award agreement</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##contractingBodyAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#contractingBodyAgreement">Contracting body agreement</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#CorrectionNotice">
+<h3>Correction notice<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#CorrectionNotice</p>
+<div class="comment">
+<p>Anuncio corrección de algún anuncio previamente publicado.</p>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#CriterionScore">
+<h3>Criterion score<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#CriterionScore</p>
+<div class="comment">
+<p>Clase para valorar individualmente un criterio de adjudicación. Esta formada por una puntuación (contsem:score) y un criterio (contsem:criterion).</p>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##criterion" title="http://contsem.unizar.es/def/sector-publico/contsem#criterion">Criterion</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##score" title="http://contsem.unizar.es/def/sector-publico/contsem#score">Score</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##criterionScore" title="http://contsem.unizar.es/def/sector-publico/contsem#criterionScore">Criterion score</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#ElectronicAuction">
+<h3>Electronic auction<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuction</p>
+<div class="comment">
+<p>Para especificar la realización de una subasta electrónica de uno o más criterios de adjudicación se hace uso de la clase contsem:ElectronicAuction. Esta clase viene enlazada siempre mediante la propiedad contsem:electronicAuction a partir de un contrato.</p>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##electronicAuctionPhase" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionPhase">Electronic auction phase</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##electronicAuctionWeb" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionWeb">Electronic auction web</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##electronicAuction" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuction">Electronic auction</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#ElectronicAuctionPhase">
+<h3>Electronic auction phase<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuctionPhase</p>
+<div class="comment">
+<p>Fase de la subasta electrónica de uno o más de los criterios de adjudicación del contrato.</p>
+</div>
+<dl class="description">
+<dt>is in range of</dt>
+<dd>
+<a href="##electronicAuctionPhase" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionPhase">Electronic auction phase</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#FormalizationNotice">
+<h3>Formalization notice<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#FormalizationNotice</p>
+<div class="comment">
+<p>Anuncio con la formalización del contrato previamente adjudicado.</p>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#FrameworkAgreement">
+<h3>Framework agreement<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#FrameworkAgreement</p>
+<div class="comment">
+<p>Cuando estemos ante un contrato que consiste en la declaración, tanto de un acuerdo marco como de un sistema dinámico de contratación, se utiliza la clase contsem:FrameworkAgreement, enlazada al contrato mediante la propiedad contsem:frameworkAgreement.</p>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##maxNumberOfOperators" title="http://contsem.unizar.es/def/sector-publico/contsem#maxNumberOfOperators">Maximum number of operators</a>
+<sup class="type-dp" title="data property">dp</sup>, <a href="##minNumberOfOperators" title="http://contsem.unizar.es/def/sector-publico/contsem#minNumberOfOperators">Minimum number of operators</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##frameworkAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreement">Framework agreement</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#CommitteeMember">
+<h3>Miembro del comité<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#CommitteeMember</p>
+<div class="comment">
+<p>Miembro perteneciente a un comité de contratación concreto.</p>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<span class="dotted" title="http://schema.org/Person">schema-org:Person</span>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is in domain of</dt>
+<dd>
+<a href="##alternateMember8" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderCommitteePosition">Tender committee position</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#Notice">
+<h3>Notice<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#Notice</p>
+<dl class="description">
+<dt>has sub-classes</dt>
+<dd>
+<a href="##AdditionalInformationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#AdditionalInformationNotice">Additional information notice</a>
+<sup class="type-c" title="class">c</sup>, <a href="##ContractAwardNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractAwardNotice">Contract award notice</a>
+<sup class="type-c" title="class">c</sup>, <a href="##ContractNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractNotice">Contract notice</a>
+<sup class="type-c" title="class">c</sup>, <a href="##CorrectionNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#CorrectionNotice">Correction notice</a>
+<sup class="type-c" title="class">c</sup>, <a href="##FormalizationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#FormalizationNotice">Formalization notice</a>
+<sup class="type-c" title="class">c</sup>, <a href="##PriorInformationNotice" title="http://contsem.unizar.es/def/sector-publico/contsem#PriorInformationNotice">Prior information notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>is in domain of</dt>
+<dd>
+<a href="##acceptedTender9" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeDate">Fecha de publicación del anuncio</a>
+<sup class="type-dp" title="data property">dp</sup>, <a href="##noticeSentDate" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeSentDate">Notice sent date</a>
+<sup class="type-dp" title="data property">dp</sup>, <a href="##noticeSite" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeSite">Notice site</a>
+<sup class="type-dp" title="data property">dp</sup>, <a href="##noticeWeb" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeWeb">Notice web</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##notice" title="http://contsem.unizar.es/def/sector-publico/contsem#notice">Notice</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#ObjectiveAwardCriteria">
+<h3>Objective Award Criteria<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#ObjectiveAwardCriteria</p>
+<div class="comment">
+<p>Clase para definir criterios que dependen de un juicio de valor.</p>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<span class="dotted" title="http://loted.eu/ontology#AwardCriteria">ontology:AwardCriteria</span>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#BundlePriceSpecification">
+<h3>Precio de paquete<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#BundlePriceSpecification</p>
+<div class="comment">
+<p>Clase que representa el precio de conjuntos de objetos o un paquete determinado.</p>
+<p>Se utiliza para especificar el precio, presupuesto y canon de un contrato.</p>
+<p>Se utiliza para especificar el precio de la clase gr:Offering cuando este precio se refiere al del conjunto de los objetos (y no a su precio unitario).</p>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<span class="dotted" title="http://purl.org/goodrelations/v1#PriceSpecification">v1:PriceSpecification</span>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##feePrice" title="http://contsem.unizar.es/def/sector-publico/contsem#feePrice">Canon</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##budgetPrice" title="http://contsem.unizar.es/def/sector-publico/contsem#budgetPrice">Contract budget price</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#PriorInformationNotice">
+<h3>Prior information notice<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#PriorInformationNotice</p>
+<div class="comment">
+<p>Anuncio previo al anuncio de licitación con la información más básica del contrato.</p>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#InformationProvider">
+<h3>Proveedor de información<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#InformationProvider</p>
+<div class="comment">
+<p>Proveedor de información sobre la licitación del contrato. Puede representar un proveedor de un información técnica o un proveedor de información administrativa, dependiendo de con cual propiedad se enlace a contrato.</p>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##informationKind" title="http://contsem.unizar.es/def/sector-publico/contsem#informationKind">Information kind</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##websiteWithInformation" title="http://contsem.unizar.es/def/sector-publico/contsem#websiteWithInformation">Web con información</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##tenderInformationProvider" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderInformationProvider">Tender information provider</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#TenderMeeting">
+<h3>Reunión de la mesa de contratación<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#TenderMeeting</p>
+<div class="comment">
+<p>Clase para describir las reuniones que la mesa de contratación, comité de expertos u organismos técnicas han realizado.</p>
+<p>Esta clase se enlaza a un contsem:TenderCommittee o un pc:Contract mediante la propiedad contsem:tenderCommittee.</p>
+</div>
+<dl class="description">
+<dt>is in domain of</dt>
+<dd>
+<a href="##minutesDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#minutesDocumentReference">Minutes document reference</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##tenderPurpose" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderPurpose">Tender purpose</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+<dt>is in range of</dt>
+<dd>
+<a href="##tenderAdmissionMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderAdmissionMeeting">Tender admission meeting</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##tenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderMeeting">Tender meeting</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#appealType1">
+<h3>Reunión informativa<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#Briefing</p>
+<div class="comment">
+<p>Reunión informativa sobre la licitación del contrato.</p>
+</div>
+<dl class="description">
+<dt>is in range of</dt>
+<dd>
+<a href="##briefing" title="http://contsem.unizar.es/def/sector-publico/contsem#briefing">Briefing</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##tenderBriefing" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderBriefing">Tender briefing</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="#SubjectiveAwardCriteria">
+<h3>Subjective Award Criteria<sup class="type-c" title="class">c</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#SubjectiveAwardCriteria</p>
+<div class="comment">
+<p>Clase para especificar los criterios que dependen de una opinion subjetiva.</p>
+</div>
+<dl class="description">
+<dt>has super-classes</dt>
+<dd>
+<span class="dotted" title="http://loted.eu/ontology#AwardCriteria">ontology:AwardCriteria</span>
+</dd>
+</dl>
+</div>
+</div>
+<div id="objectproperties">
+<h2>Object Properties</h2>
+<ul class="hlist">
+<li>
+<a href="##acceptedTender" title="http://contsem.unizar.es/def/sector-publico/contsem#acceptedTender">Accepted tender</a>
+</li>
+<li>
+<a href="##additionalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#additionalDocumentReference">Additional document reference</a>
+</li>
+<li>
+<a href="##alternateMember" title="http://contsem.unizar.es/def/sector-publico/contsem#alternateMember">Alternate member</a>
+</li>
+<li>
+<a href="##awardAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#awardAgreement">Award agreement</a>
+</li>
+<li>
+<a href="##briefing" title="http://contsem.unizar.es/def/sector-publico/contsem#briefing">Briefing</a>
+</li>
+<li>
+<a href="##feePrice" title="http://contsem.unizar.es/def/sector-publico/contsem#feePrice">Canon</a>
+</li>
+<li>
+<a href="##complementaryContract" title="http://contsem.unizar.es/def/sector-publico/contsem#complementaryContract">Complementary contract</a>
+</li>
+<li>
+<a href="##contractAbandonment" title="http://contsem.unizar.es/def/sector-publico/contsem#contractAbandonment">Contract abandonment</a>
+</li>
+<li>
+<a href="##budgetPrice" title="http://contsem.unizar.es/def/sector-publico/contsem#budgetPrice">Contract budget price</a>
+</li>
+<li>
+<a href="##contractKind" title="http://contsem.unizar.es/def/sector-publico/contsem#contractKind">Contract kind</a>
+</li>
+<li>
+<a href="##contractModification" title="http://contsem.unizar.es/def/sector-publico/contsem#contractModification">Contract modification</a>
+</li>
+<li>
+<a href="##contractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#contractOrProcedureExtinction">Contract or procedure extinction</a>
+</li>
+<li>
+<a href="##contractResolution" title="http://contsem.unizar.es/def/sector-publico/contsem#contractResolution">Contract resolution</a>
+</li>
+<li>
+<a href="##contractWaive" title="http://contsem.unizar.es/def/sector-publico/contsem#contractWaive">Contract waive</a>
+</li>
+<li>
+<a href="##contractingBody" title="http://contsem.unizar.es/def/sector-publico/contsem#contractingBody">Contracting body</a>
+</li>
+<li>
+<a href="##contractingBodyAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#contractingBodyAgreement">Contracting body agreement</a>
+</li>
+<li>
+<a href="##criterion" title="http://contsem.unizar.es/def/sector-publico/contsem#criterion">Criterion</a>
+</li>
+<li>
+<a href="##criterionScore" title="http://contsem.unizar.es/def/sector-publico/contsem#criterionScore">Criterion score</a>
+</li>
+<li>
+<a href="##delegatingAuthority" title="http://contsem.unizar.es/def/sector-publico/contsem#delegatingAuthority">Delegating authority</a>
+</li>
+<li>
+<a href="##documentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#documentReference">Document reference</a>
+</li>
+<li>
+<a href="##electronicAuction" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuction">Electronic auction</a>
+</li>
+<li>
+<a href="##electronicAuctionPhase" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionPhase">Electronic auction phase</a>
+</li>
+<li>
+<a href="##electronicAuctionWeb" title="http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionWeb">Electronic auction web</a>
+</li>
+<li>
+<a href="##excludedTender" title="http://contsem.unizar.es/def/sector-publico/contsem#excludedTender">Excluded tender</a>
+</li>
+<li>
+<a href="##formalizedTender" title="http://contsem.unizar.es/def/sector-publico/contsem#formalizedTender">Formalized tender</a>
+</li>
+<li>
+<a href="##frameworkAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreement">Framework agreement</a>
+</li>
+<li>
+<a href="##frameworkAgreementDerivativeContract" title="http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreementDerivativeContract">Framework agreement derivative contract</a>
+</li>
+<li>
+<a href="##frameworkAgreementType" title="http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreementType">Framework agreement type</a>
+</li>
+<li>
+<a href="##fullMember" title="http://contsem.unizar.es/def/sector-publico/contsem#fullMember">Full member</a>
+</li>
+<li>
+<a href="##informationKind" title="http://contsem.unizar.es/def/sector-publico/contsem#informationKind">Information kind</a>
+</li>
+<li>
+<a href="##legalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#legalDocumentReference">Legal document reference</a>
+</li>
+<li>
+<a href="##lotContractKind" title="http://contsem.unizar.es/def/sector-publico/contsem#lotContractKind">Lot contract kind</a>
+</li>
+<li>
+<a href="##managingDepartment" title="http://contsem.unizar.es/def/sector-publico/contsem#managingDepartment">Managing department</a>
+</li>
+<li>
+<a href="##minutesDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#minutesDocumentReference">Minutes document reference</a>
+</li>
+<li>
+<a href="##notice" title="http://contsem.unizar.es/def/sector-publico/contsem#notice">Notice</a>
+</li>
+<li>
+<a href="##noticeWeb" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeWeb">Notice web</a>
+</li>
+<li>
+<a href="##object" title="http://contsem.unizar.es/def/sector-publico/contsem#object">Object</a>
+</li>
+<li>
+<a href="##procedureType" title="http://contsem.unizar.es/def/sector-publico/contsem#procedureType">Procedure type</a>
+</li>
+<li>
+<a href="##publicServicesContractKind" title="http://contsem.unizar.es/def/sector-publico/contsem#publicServicesContractKind">Public services contract kind</a>
+</li>
+<li>
+<a href="##resolutionDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#resolutionDocumentReference">Resolution document reference</a>
+</li>
+<li>
+<a href="##supplyContractKind" title="http://contsem.unizar.es/def/sector-publico/contsem#supplyContractKind">Supply contract kind</a>
+</li>
+<li>
+<a href="##technicalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#technicalDocumentReference">Technical document reference</a>
+</li>
+<li>
+<a href="##tenderAdmissionMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderAdmissionMeeting">Tender admission meeting</a>
+</li>
+<li>
+<a href="##tenderBriefing" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderBriefing">Tender briefing</a>
+</li>
+<li>
+<a href="##tenderInformationProvider" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderInformationProvider">Tender information provider</a>
+</li>
+<li>
+<a href="##tenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderMeeting">Tender meeting</a>
+</li>
+<li>
+<a href="##tenderSubmissionLocation" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionLocation">Tender submission location</a>
+</li>
+<li>
+<a href="##appealType" title="http://contsem.unizar.es/def/sector-publico/contsem#appealType">Tipo de recurso</a>
+</li>
+<li>
+<a href="##urgencyType" title="http://contsem.unizar.es/def/sector-publico/contsem#urgencyType">Urgency type</a>
+</li>
+<li>
+<a href="##voidProcedure" title="http://contsem.unizar.es/def/sector-publico/contsem#voidProcedure">Void procedure</a>
+</li>
+<li>
+<a href="##websiteWithInformation" title="http://contsem.unizar.es/def/sector-publico/contsem#websiteWithInformation">Web con información</a>
+</li>
+</ul>
+<div class="entity" id="#acceptedTender">
+<h3>Accepted tender<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#acceptedTender</p>
+<div class="comment">
+<p>Enlaza el contrato con aquellas ofertas que se han admitido a licitación.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#tender">public-contracts:tender</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#additionalDocumentReference">
+<h3>Additional document reference<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#additionalDocumentReference</p>
+<div class="comment">
+<p>Enlace a documentación adicional.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##documentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#documentReference">Document reference</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#alternateMember">
+<h3>Alternate member<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#alternateMember</p>
+<div class="comment">
+<p>Miembro suplente en una mesa de contratación.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#member">skos:member</span>
+</dd>
+<dt>has domain</dt>
+<dd>
+<a href="##TenderCommittee" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderCommittee">Comité de contratación</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#awardAgreement">
+<h3>Award agreement<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#awardAgreement</p>
+<div class="comment">
+<p>Indica el acuerdo del órgano de contratación donde se ha adjudicado el contrato a un licitador.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Tender">public-contracts:Tender</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##ContractingBodyAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractingBodyAgreement">Contracting body agreement</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#briefing">
+<h3>Briefing<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#briefing</p>
+<div class="comment">
+<p>Indica las reuniones informativas sobre la licitación de este contrato realizadas o por realizar.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##appealType1" title="http://contsem.unizar.es/def/sector-publico/contsem#Briefing">Reunión informativa</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#feePrice">
+<h3>Canon<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#feePrice</p>
+<div class="comment">
+<p>Importe del canon del contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#contractPrice">public-contracts:contractPrice</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##BundlePriceSpecification" title="http://contsem.unizar.es/def/sector-publico/contsem#BundlePriceSpecification">Precio de paquete</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#complementaryContract">
+<h3>Complementary contract<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#complementaryContract</p>
+<div class="comment">
+<p>Señala un contrato complementario al actual.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#contractAbandonment">
+<h3>Contract abandonment<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#contractAbandonment</p>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##contractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#contractOrProcedureExtinction">Contract or procedure extinction</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#budgetPrice">
+<h3>Contract budget price<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#budgetPrice</p>
+<div class="comment">
+<p>Indica el presupuesto definido de un contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#contractPrice">public-contracts:contractPrice</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##BundlePriceSpecification" title="http://contsem.unizar.es/def/sector-publico/contsem#BundlePriceSpecification">Precio de paquete</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#contractKind">
+<h3>Contract kind<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#contractKind</p>
+<div class="comment">
+<p>Tipo de contrato desde el punto de vista administrativo (e.g. suministros)</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="#d4e2692" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractKindScheme">:ContractKindScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#contractModification">
+<h3>Contract modification<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#contractModification</p>
+<div class="comment">
+<p>Indica la modificación efectuada en un contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##ContractModification" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractModification">Contract modification</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#contractOrProcedureExtinction">
+<h3>Contract or procedure extinction<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#contractOrProcedureExtinction</p>
+<div class="comment">
+<p>Propiedad abstracta que indica la extinción de un contrato por resolución, renuncia o abandono. O bien la extinción del procedimiento al ser declarado desierto.</p>
+<p>Utilizar una de sus subclases.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has sub-properties</dt>
+<dd>
+<a href="##contractAbandonment" title="http://contsem.unizar.es/def/sector-publico/contsem#contractAbandonment">Contract abandonment</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##contractResolution" title="http://contsem.unizar.es/def/sector-publico/contsem#contractResolution">Contract resolution</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##contractWaive" title="http://contsem.unizar.es/def/sector-publico/contsem#contractWaive">Contract waive</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##voidProcedure" title="http://contsem.unizar.es/def/sector-publico/contsem#voidProcedure">Void procedure</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##ContractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractOrProcedureExtinction">Contract or procedure extinction</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#contractResolution">
+<h3>Contract resolution<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#contractResolution</p>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##contractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#contractOrProcedureExtinction">Contract or procedure extinction</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#contractWaive">
+<h3>Contract waive<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#contractWaive</p>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##contractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#contractOrProcedureExtinction">Contract or procedure extinction</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#contractingBody">
+<h3>Contracting body<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#contractingBody</p>
+<div class="comment">
+<p>Define la organización del órgano de contratación.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/ns/org#Organization">org:Organization</span>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#contractingBodyAgreement">
+<h3>Contracting body agreement<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#contractingBodyAgreement</p>
+<div class="comment">
+<p>Sirve para definir un acuerdo del órgano de contratación. Este puede enlazarse desde una modificación, una extinción o directamente con el contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##ContractModification" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractModification">Contract modification</a>
+<sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="##ContractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractOrProcedureExtinction">Contract or procedure extinction</a>
+<sup class="type-c" title="class">c</sup> <span class="logic">or</span> <span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##ContractingBodyAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractingBodyAgreement">Contracting body agreement</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#criterion">
+<h3>Criterion<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#criterion</p>
+<div class="comment">
+<p>Criterio sujeto a valoración</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##CriterionScore" title="http://contsem.unizar.es/def/sector-publico/contsem#CriterionScore">Criterion score</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://loted.eu/ontology#AwardCriteria">ontology:AwardCriteria</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#criterionScore">
+<h3>Criterion score<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#criterionScore</p>
+<div class="comment">
+<p>Especifica la valoración de un único criterio, por lo que se utilizará una vez por cada criterio de adjudicación presente en el contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://loted.eu/ontology#Tender">ontology:Tender</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##CriterionScore" title="http://contsem.unizar.es/def/sector-publico/contsem#CriterionScore">Criterion score</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#delegatingAuthority">
+<h3>Delegating authority<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#delegatingAuthority</p>
+<div class="comment">
+<p>Indica la entidad que delega la licitación de este contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/ns/org#Organization">org:Organization</span>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#documentReference">
+<h3>Document reference<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#documentReference</p>
+<div class="comment">
+<p>Enlace a documentación.</p>
+<p>Propiedad similar a pc:attachment, pero sin dominio fijo, pues esta misma propiedad puede utilizarse con múltiples clases (e.g. pc:Contract ó contsem:TenderMeeting)</p>
+</div>
+<div class="description">
+<dl>
+<dt>has sub-properties</dt>
+<dd>
+<a href="##additionalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#additionalDocumentReference">Additional document reference</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##legalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#legalDocumentReference">Legal document reference</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##minutesDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#minutesDocumentReference">Minutes document reference</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##resolutionDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#resolutionDocumentReference">Resolution document reference</a>
+<sup class="type-op" title="object property">op</sup>, <a href="##technicalDocumentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#technicalDocumentReference">Technical document reference</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource">rdf:Resource</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#electronicAuction">
+<h3>Electronic auction<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#electronicAuction</p>
+<div class="comment">
+<p>Indica la subasta electrónica de uno o más de los criterios de adjucación del contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##ElectronicAuction" title="http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuction">Electronic auction</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#electronicAuctionPhase">
+<h3>Electronic auction phase<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionPhase</p>
+<div class="comment">
+<p>Indica una fase de la subasta electrónica en la que van a subasta uno o más de los criterios de adjudicación del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##ElectronicAuction" title="http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuction">Electronic auction</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##ElectronicAuctionPhase" title="http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuctionPhase">Electronic auction phase</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#electronicAuctionWeb">
+<h3>Electronic auction web<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#electronicAuctionWeb</p>
+<div class="comment">
+<p>Apunta a la web donde puede se realiza la subasta electrónica, o en su defecto, donde se pueda encontrar más información acerca de la subasta electrónica.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##ElectronicAuction" title="http://contsem.unizar.es/def/sector-publico/contsem#ElectronicAuction">Electronic auction</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource">rdf:Resource</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#excludedTender">
+<h3>Excluded tender<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#excludedTender</p>
+<div class="comment">
+<p>Al contrato que contsem:acceptedTender, relaciona el contrato con las ofertas que han sido excluídas del proceso de licitación.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#tender">public-contracts:tender</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#formalizedTender">
+<h3>Formalized tender<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#formalizedTender</p>
+<div class="comment">
+<p>Enlaza el contrato con aquella oferta que se ha formalizado.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#tender">public-contracts:tender</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#frameworkAgreement">
+<h3>Framework agreement<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreement</p>
+<div class="comment">
+<p>Señala al acuerdo marco o sistema dinámico de contratación en el cual consiste el contrato.</p>
+<p>Esta propiedad se utiliza cuando el actual contrato consista en la declaración de un acuerdo marco o un sistema dinámico de contratación.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##FrameworkAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#FrameworkAgreement">Framework agreement</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#frameworkAgreementDerivativeContract">
+<h3>Framework agreement derivative contract<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreementDerivativeContract</p>
+<div class="comment">
+<p>Esta propiedad señala a un contrato derivado del contrato que declara un acuerdo marco o sistema dinámico.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#frameworkAgreementType">
+<h3>Framework agreement type<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#frameworkAgreementType</p>
+<div class="comment">
+<p>Indica si un contrato es la declaración de un acuerdo marco o un sistema dinámico de contratación, o si por el contrario no se da ninguno de los dos casos.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="##briefing3" title="http://contsem.unizar.es/def/sector-publico/contsem#FrameworkAgreementTypeScheme">:FrameworkAgreementTypeScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#fullMember">
+<h3>Full member<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#fullMember</p>
+<div class="comment">
+<p>Miembro titular en una mesa de contratación.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#member">skos:member</span>
+</dd>
+<dt>has domain</dt>
+<dd>
+<a href="##TenderCommittee" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderCommittee">Comité de contratación</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#informationKind">
+<h3>Information kind<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#informationKind</p>
+<div class="comment">
+<p>Indica el tipo de información que suministra un proveedor de información.</p>
+<p>Es posible utilizar esta propiedad numerosas veces para indicar diversos tipos de información.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##InformationProvider" title="http://contsem.unizar.es/def/sector-publico/contsem#InformationProvider">Proveedor de información</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="#d4e2822" title="http://contsem.unizar.es/def/sector-publico/contsem#InformationKindScheme">:InformationKindScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#legalDocumentReference">
+<h3>Legal document reference<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#legalDocumentReference</p>
+<div class="comment">
+<p>Enlace al pliego de cláusulas administrativas.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##documentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#documentReference">Document reference</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#lotContractKind">
+<h3>Lot contract kind<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#lotContractKind</p>
+<div class="comment">
+<p>Indica si el contrato contiene lotes, no cotniene lotes, o es un lote perteneciente a un contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="#d4e2887" title="http://contsem.unizar.es/def/sector-publico/contsem#LotContractKindScheme">:LotContractKindScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#managingDepartment">
+<h3>Managing department<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#managingDepartment</p>
+<div class="comment">
+<p>Servicio perteneciente a la entidad contratante que se encarga de la publicación y administración de este contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/ns/org#Organization">org:Organization</span>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#minutesDocumentReference">
+<h3>Minutes document reference<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#minutesDocumentReference</p>
+<div class="comment">
+<p>Enlace al acta de la reunión de la mesa de contratación.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##documentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#documentReference">Document reference</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>has domain</dt>
+<dd>
+<a href="##TenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderMeeting">Reunión de la mesa de contratación</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#notice">
+<h3>Notice<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#notice</p>
+<div class="comment">
+<p>Describe un anuncio del contrato licitado. Este puede estar ubicado tanto en boletines oficiales como en otro tipo de medios (e.g. prensa).</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#noticeWeb">
+<h3>Notice web<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#noticeWeb</p>
+<div class="comment">
+<p>Web donde se ubica el anuncio.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource">rdf:Resource</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#object">
+<h3>Object<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#object</p>
+<div class="comment">
+<p>Representación CPV del objeto de un contrato.</p>
+<p>Debe apuntar a un concepto de objeto siguiendo la clasificación CPV de algún esquema de conceptos SKOS.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/goodrelations/v1#Offering">v1:Offering</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#procedureType">
+<h3>Procedure type<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#procedureType</p>
+<div class="comment">
+<p>Tipo de procedimiento administrativo que seguirá la licitación de este contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="#d4e3027" title="http://contsem.unizar.es/def/sector-publico/contsem#ProcedureTypeScheme">:ProcedureTypeScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#publicServicesContractKind">
+<h3>Public services contract kind<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#publicServicesContractKind</p>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="#d4e3051" title="http://contsem.unizar.es/def/sector-publico/contsem#PublicServicesContractKindScheme">:PublicServicesContractKindScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#resolutionDocumentReference">
+<h3>Resolution document reference<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#resolutionDocumentReference</p>
+<div class="comment">
+<p>Enlace al documento de la resolución dictada por el órgano de contratación.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##documentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#documentReference">Document reference</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>has domain</dt>
+<dd>
+<a href="##ContractingBodyAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractingBodyAgreement">Contracting body agreement</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#supplyContractKind">
+<h3>Supply contract kind<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#supplyContractKind</p>
+<div class="comment">
+<p>Tipo de adquisición en contratos de tipo suministro.</p>
+<p>Esta puede ser compra, venta o arrendamiento (renting).</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="#d4e3197" title="http://contsem.unizar.es/def/sector-publico/contsem#SupplyContractKindScheme">:SupplyContractKindScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#technicalDocumentReference">
+<h3>Technical document reference<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#technicalDocumentReference</p>
+<div class="comment">
+<p>Enlace al pliego de prescripciones técnicas.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##documentReference" title="http://contsem.unizar.es/def/sector-publico/contsem#documentReference">Document reference</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderAdmissionMeeting">
+<h3>Tender admission meeting<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderAdmissionMeeting</p>
+<div class="comment">
+<p>Enlaza a la reunión de la mesa de contratación sobre la admisión de licitadores</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##TenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderMeeting">Reunión de la mesa de contratación</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderBriefing">
+<h3>Tender briefing<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderBriefing</p>
+<div class="comment">
+<p>Indica las reuniones informativas relacionadas con el contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##appealType1" title="http://contsem.unizar.es/def/sector-publico/contsem#Briefing">Reunión informativa</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderInformationProvider">
+<h3>Tender information provider<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderInformationProvider</p>
+<div class="comment">
+<p>Enlaza con los proveedores de información sobre la licitación del contrato, pudiendo ser esta información tanto técnica como administrativa.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##InformationProvider" title="http://contsem.unizar.es/def/sector-publico/contsem#InformationProvider">Proveedor de información</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderMeeting">
+<h3>Tender meeting<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderMeeting</p>
+<div class="comment">
+<p>Indica las reuniones de la mesa de contratación.</p>
+<p>Esta propiedad puede partir tanto de la mesa de contratación como del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##TenderCommittee" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderCommittee">Comité de contratación</a>
+<sup class="type-c" title="class">c</sup> <span class="logic">or</span> <span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<a href="##TenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderMeeting">Reunión de la mesa de contratación</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderSubmissionLocation">
+<h3>Tender submission location<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionLocation</p>
+<div class="comment">
+<p>Lugar donde las empresas deben presentar sus ofertas.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://schema.org/Place">schema-org:Place</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#appealType">
+<h3>Tipo de recurso<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#appealType</p>
+<div class="comment">
+<p>Tipo del recurso interpuesto en un contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##Appeal" title="http://contsem.unizar.es/def/sector-publico/contsem#Appeal">Appeal</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="#d4e2667" title="http://contsem.unizar.es/def/sector-publico/contsem#AppealTypeScheme">:AppealTypeScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#urgencyType">
+<h3>Urgency type<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#urgencyType</p>
+<div class="comment">
+<p>Indica como se tramita la licitación (i.e. el carácter de urgencia del contrato)</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</span>
+</dd>
+<dd>
+<span class="dotted" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</span> <span class="logic">value</span> <a href="#d4e3216" title="http://contsem.unizar.es/def/sector-publico/contsem#UrgencyTypeScheme">:UrgencyTypeScheme</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#voidProcedure">
+<h3>Void procedure<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#voidProcedure</p>
+<div class="description">
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##contractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#contractOrProcedureExtinction">Contract or procedure extinction</a>
+<sup class="type-op" title="object property">op</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#websiteWithInformation">
+<h3>Web con información<sup class="type-op" title="object property">op</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#websiteWithInformation</p>
+<div class="comment">
+<p>Lugar de la web que provee información el proveedor de información asociado</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##InformationProvider" title="http://contsem.unizar.es/def/sector-publico/contsem#InformationProvider">Proveedor de información</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource">rdf:Resource</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="dataproperties">
+<h2>Data Properties</h2>
+<ul class="hlist">
+<li>
+<a href="##extinctionCause" title="http://contsem.unizar.es/def/sector-publico/contsem#extinctionCause">
+<span>extinctionCause</span>
+</a>
+</li>
+<li>
+<a href="##actualDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#actualDuration">Actual duration</a>
+</li>
+<li>
+<a href="##admitVariants" title="http://contsem.unizar.es/def/sector-publico/contsem#admitVariants">Admit variants</a>
+</li>
+<li>
+<a href="##advertisementAmount" title="http://contsem.unizar.es/def/sector-publico/contsem#advertisementAmount">Advertisement amount</a>
+</li>
+<li>
+<a href="##appealResult" title="http://contsem.unizar.es/def/sector-publico/contsem#appealResult">Appeal result</a>
+</li>
+<li>
+<a href="##assumptionProtectingProcedureType" title="http://contsem.unizar.es/def/sector-publico/contsem#assumptionProtectingProcedureType">Assumption protecting the chosen procedure type</a>
+</li>
+<li>
+<a href="##constructionSubsidies" title="http://contsem.unizar.es/def/sector-publico/contsem#constructionSubsidies">Construction subsidies</a>
+</li>
+<li>
+<a href="##awardDate" title="http://contsem.unizar.es/def/sector-publico/contsem#awardDate">Date of award</a>
+</li>
+<li>
+<a href="##disposableMeansAppointment" title="http://contsem.unizar.es/def/sector-publico/contsem#disposableMeansAppointment">Disposable means appointment</a>
+</li>
+<li>
+<a href="##duration" title="http://contsem.unizar.es/def/sector-publico/contsem#duration">Duration</a>
+</li>
+<li>
+<a href="##earlyTramitation" title="http://contsem.unizar.es/def/sector-publico/contsem#earlyTramitation">Early tramitation</a>
+</li>
+<li>
+<a href="##estimatedDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#estimatedDuration">Estimated duration</a>
+</li>
+<li>
+<a href="##estimatedEndDate" title="http://contsem.unizar.es/def/sector-publico/contsem#estimatedEndDate">Estimated end date</a>
+</li>
+<li>
+<a href="##executionRequeriments" title="http://contsem.unizar.es/def/sector-publico/contsem#executionRequeriments">Execution requeriments</a>
+</li>
+<li>
+<a href="##expectedCauseModification" title="http://contsem.unizar.es/def/sector-publico/contsem#expectedCauseModification">Expected cause modification</a>
+</li>
+<li>
+<a href="##offeredEndDate" title="http://contsem.unizar.es/def/sector-publico/contsem#offeredEndDate">Fecha de finalización ofertada</a>
+</li>
+<li>
+<a href="##acceptedTender9" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeDate">Fecha de publicación del anuncio</a>
+</li>
+<li>
+<a href="##finalFinancialGuarantee" title="http://contsem.unizar.es/def/sector-publico/contsem#finalFinancialGuarantee">Final financial guarantee</a>
+</li>
+<li>
+<a href="##finalFinancialGuaranteeDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#finalFinancialGuaranteeDuration">Final financial guarantee duration</a>
+</li>
+<li>
+<a href="##harmonized" title="http://contsem.unizar.es/def/sector-publico/contsem#harmonized">Harmonized</a>
+</li>
+<li>
+<a href="##maxBudgetChange" title="http://contsem.unizar.es/def/sector-publico/contsem#maxBudgetChange">Maximum budget change</a>
+</li>
+<li>
+<a href="##maxFinalPriceChange" title="http://contsem.unizar.es/def/sector-publico/contsem#maxFinalPriceChange">Maximum final price change</a>
+</li>
+<li>
+<a href="##maxInvitations" title="http://contsem.unizar.es/def/sector-publico/contsem#maxInvitations">Maximum number of invitations</a>
+</li>
+<li>
+<a href="##maxNumberOfOperators" title="http://contsem.unizar.es/def/sector-publico/contsem#maxNumberOfOperators">Maximum number of operators</a>
+</li>
+<li>
+<a href="##maxSubcontracting" title="http://contsem.unizar.es/def/sector-publico/contsem#maxSubcontracting">Maximum subcontracting</a>
+</li>
+<li>
+<a href="##minInvitations" title="http://contsem.unizar.es/def/sector-publico/contsem#minInvitations">Minimum number of invitations</a>
+</li>
+<li>
+<a href="##minNumberOfOperators" title="http://contsem.unizar.es/def/sector-publico/contsem#minNumberOfOperators">Minimum number of operators</a>
+</li>
+<li>
+<a href="##multiannual" title="http://contsem.unizar.es/def/sector-publico/contsem#multiannual">Multiannual</a>
+</li>
+<li>
+<a href="##noticeSentDate" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeSentDate">Notice sent date</a>
+</li>
+<li>
+<a href="##noticeSite" title="http://contsem.unizar.es/def/sector-publico/contsem#noticeSite">Notice site</a>
+</li>
+<li>
+<a href="##lotCount" title="http://contsem.unizar.es/def/sector-publico/contsem#lotCount">Número de lotes</a>
+</li>
+<li>
+<a href="##offeredDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#offeredDuration">Offered duration</a>
+</li>
+<li>
+<a href="##otherAwardTerms" title="http://contsem.unizar.es/def/sector-publico/contsem#otherAwardTerms">Other award terms</a>
+</li>
+<li>
+<a href="##otherGuarantee" title="http://contsem.unizar.es/def/sector-publico/contsem#otherGuarantee">Other guarantee</a>
+</li>
+<li>
+<a href="##isPriceReviewed" title="http://contsem.unizar.es/def/sector-publico/contsem#isPriceReviewed">Price reviewed</a>
+</li>
+<li>
+<a href="##priceRevisionFormulaDescription" title="http://contsem.unizar.es/def/sector-publico/contsem#priceRevisionFormulaDescription">Price revision formula description</a>
+</li>
+<li>
+<a href="##prorogationsExpected" title="http://contsem.unizar.es/def/sector-publico/contsem#prorogationsExpected">Prorogation number expected</a>
+</li>
+<li>
+<a href="##prorogationPrevision" title="http://contsem.unizar.es/def/sector-publico/contsem#prorogationPrevision">Prorogation prevision</a>
+</li>
+<li>
+<a href="##provisionalFinancialGuarantee" title="http://contsem.unizar.es/def/sector-publico/contsem#provisionalFinancialGuarantee">Provisional financial guarantee</a>
+</li>
+<li>
+<a href="##requiredCapability" title="http://contsem.unizar.es/def/sector-publico/contsem#requiredCapability">Required capability</a>
+</li>
+<li>
+<a href="##requiredClassification" title="http://contsem.unizar.es/def/sector-publico/contsem#requiredClassification">Required classification</a>
+</li>
+<li>
+<a href="##requiredFinancialCapability" title="http://contsem.unizar.es/def/sector-publico/contsem#requiredFinancialCapability">Required financial capability</a>
+</li>
+<li>
+<a href="##requiredTechnicalCapability" title="http://contsem.unizar.es/def/sector-publico/contsem#requiredTechnicalCapability">Required technical capability</a>
+</li>
+<li>
+<a href="##reservedContractRestrictions" title="http://contsem.unizar.es/def/sector-publico/contsem#reservedContractRestrictions">Reserved contract restrictions</a>
+</li>
+<li>
+<a href="##score" title="http://contsem.unizar.es/def/sector-publico/contsem#score">Score</a>
+</li>
+<li>
+<a href="##tenderDossierStartDate" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderDossierStartDate">Start date of the tender dossier</a>
+</li>
+<li>
+<a href="##minSubcontracting" title="http://contsem.unizar.es/def/sector-publico/contsem#minSubcontracting">Subcontratación obligatoria</a>
+</li>
+<li>
+<a href="##tenderCommitteeAppointmentDate" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderCommitteeAppointmentDate">Tender committee appointment date</a>
+</li>
+<li>
+<a href="##alternateMember8" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderCommitteePosition">Tender committee position</a>
+</li>
+<li>
+<a href="##tenderDocumentNeeds" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderDocumentNeeds">Tender document needs</a>
+</li>
+<li>
+<a href="##tenderManteinanceDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderManteinanceDuration">Tender manteinance duration</a>
+</li>
+<li>
+<a href="##tenderPurpose" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderPurpose">Tender purpose</a>
+</li>
+<li>
+<a href="##tenderSubmissionMode" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionMode">Tender submission mode</a>
+</li>
+<li>
+<a href="##tenderSubmissionSupportedLanguage" title="http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionSupportedLanguage">Tender submission supported language</a>
+</li>
+<li>
+<a href="##variantDescription" title="http://contsem.unizar.es/def/sector-publico/contsem#variantDescription">Variant description</a>
+</li>
+</ul>
+<div class="entity" id="#extinctionCause">
+<h3>:extinctionCause<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#extinctionCause</p>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##ContractOrProcedureExtinction" title="http://contsem.unizar.es/def/sector-publico/contsem#ContractOrProcedureExtinction">Contract or procedure extinction</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#actualDuration">
+<h3>Actual duration<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#actualDuration</p>
+<div class="comment">
+<p>Representa el plazo de ejecución final en forma de duración.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##duration" title="http://contsem.unizar.es/def/sector-publico/contsem#duration">Duration</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#admitVariants">
+<h3>Admit variants<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#admitVariants</p>
+<div class="comment">
+<p>Campo para definir si están o no admitidas las variantes en las ofertas presentadas.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#advertisementAmount">
+<h3>Advertisement amount<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#advertisementAmount</p>
+<div class="comment">
+<p>Describe los gastos de publicidad asociados a la licitación.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#appealResult">
+<h3>Appeal result<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#appealResult</p>
+<div class="comment">
+<p>Contiene el resultado del recurso interpuesto en un contrato. Normalmente el valor de esta propiedad incluirá valores como "Estimado", "Estimado parcialmente" o "Desestimado".</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##Appeal" title="http://contsem.unizar.es/def/sector-publico/contsem#Appeal">Appeal</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#assumptionProtectingProcedureType">
+<h3>Assumption protecting the chosen procedure type<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#assumptionProtectingProcedureType</p>
+<div class="comment">
+<p>Descripción del supuesto que ampara el uso de procedimiento elegido en el contrato actual.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#constructionSubsidies">
+<h3>Construction subsidies<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#constructionSubsidies</p>
+<div class="comment">
+<p>Descripción de las aportaciones públicas a la construcción.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#awardDate">
+<h3>Date of award<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#awardDate</p>
+<div class="comment">
+<p>Indica la fecha de adjudicación de una oferta (en el caso de que esta haya sido adjudicada).</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">xsd:date</span>
+</dd>
+<dt>is also defined as</dt>
+<dd>
+<a href="#d4e36">annotation property</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#disposableMeansAppointment">
+<h3>Disposable means appointment<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#disposableMeansAppointment</p>
+<div class="comment">
+<p>Adscripción de medios para la realización del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#duration">
+<h3>Duration<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#duration</p>
+<div class="comment">
+<p>Propiedad genérica para describir la duración de diversas entidades.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has sub-properties</dt>
+<dd>
+<a href="##actualDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#actualDuration">Actual duration</a>
+<sup class="type-dp" title="data property">dp</sup>, <a href="##estimatedDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#estimatedDuration">Estimated duration</a>
+<sup class="type-dp" title="data property">dp</sup>, <a href="##offeredDuration" title="http://contsem.unizar.es/def/sector-publico/contsem#offeredDuration">Offered duration</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#duration">xsd:duration</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#earlyTramitation">
+<h3>Early tramitation<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#earlyTramitation</p>
+<div class="comment">
+<p>Indica si el contrato se tramita anticipadamente al ejercicio de su realización.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#estimatedDuration">
+<h3>Estimated duration<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#estimatedDuration</p>
+<div class="comment">
+<p>Especifica la duración estimada de la entidad asociada.</p>
+<p>A utilizar con las clases pc:Contract y contsem:FrameworkAgreement, pero no limitada a ellas.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##duration" title="http://contsem.unizar.es/def/sector-publico/contsem#duration">Duration</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#estimatedEndDate">
+<h3>Estimated end date<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#estimatedEndDate</p>
+<div class="comment">
+<p>Propiedad para especificar la fecha finalización estimada en las siguientes clases:</p>
+<p>- pc:Contract</p>
+<p>- contsem:FrameworkAgreement</p>
+<p>- contsem:InformationProvider</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">xsd:date</span>
+</dd>
+<dt>is also defined as</dt>
+<dd>
+<a href="#d4e55">annotation property</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#executionRequeriments">
+<h3>Execution requeriments<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#executionRequeriments</p>
+<div class="comment">
+<p>Campo para definir las condiciones de ejecución del contrato si las hubiera (e.g. forma jurídica a adoptar por la agrupación de contratistas)</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#expectedCauseModification">
+<h3>Expected cause modification<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#expectedCauseModification</p>
+<div class="comment">
+<p>Define las posibles causas previstas para la modificación del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#offeredEndDate">
+<h3>Fecha de finalización ofertada<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#offeredEndDate</p>
+<div class="comment">
+<p>Indica la fecha de finalización del contrato ofrecida por un licitador.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">xsd:date</span>
+</dd>
+<dt>is also defined as</dt>
+<dd>
+<a href="#d4e105">annotation property</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#acceptedTender9">
+<h3>Fecha de publicación del anuncio<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#noticeDate</p>
+<div class="comment">
+<p>Indica la fecha en que el anuncio se ha publicado.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">xsd:date</span>
+</dd>
+<dt>is also defined as</dt>
+<dd>
+<a href="#d4e71">annotation property</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#finalFinancialGuarantee">
+<h3>Final financial guarantee<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#finalFinancialGuarantee</p>
+<div class="comment">
+<p>Define la garantía definitiva exigida al contratista.</p>
+<p>El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">xsd:float</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#finalFinancialGuaranteeDuration">
+<h3>Final financial guarantee duration<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#finalFinancialGuaranteeDuration</p>
+<div class="comment">
+<p>Define la duración que la garantía definitiva será retenida por la administración contratante.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#duration">xsd:duration</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#harmonized">
+<h3>Harmonized<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#harmonized</p>
+<div class="comment">
+<p>Indica si el contrato es armonizado (i.e. el contrato alcanza el umbral para actuar conforme a las Directivas del Parlamento Europeo y del Consejo en contratos públicos)</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#maxBudgetChange">
+<h3>Maximum budget change<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#maxBudgetChange</p>
+<div class="comment">
+<p>Indica el porcentaje máximo de modificación sobre el presupuesto admitido.</p>
+<p>El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">xsd:float</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#maxFinalPriceChange">
+<h3>Maximum final price change<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#maxFinalPriceChange</p>
+<div class="comment">
+<p>Indica el porcentaje máximo de modificación sobre el precio final admitido.</p>
+<p>El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">xsd:float</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#maxInvitations">
+<h3>Maximum number of invitations<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#maxInvitations</p>
+<div class="comment">
+<p>Indica el número máximo de invitaciones a presentar oferta a enviar por la entidad contratante.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#maxNumberOfOperators">
+<h3>Maximum number of operators<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#maxNumberOfOperators</p>
+<div class="comment">
+<p>Define el número máximo de participantes para un acuerdo marco o un sistema dinámico de contratación.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##FrameworkAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#FrameworkAgreement">Framework agreement</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#maxSubcontracting">
+<h3>Maximum subcontracting<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#maxSubcontracting</p>
+<div class="comment">
+<p>Indica el porcentaje de subcontratación máximo.</p>
+<p>El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">xsd:float</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#minInvitations">
+<h3>Minimum number of invitations<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#minInvitations</p>
+<div class="comment">
+<p>Indica el número mínimo de invitaciones a presentar oferta a enviar por la entidad contratante.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#minNumberOfOperators">
+<h3>Minimum number of operators<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#minNumberOfOperators</p>
+<div class="comment">
+<p>Define el número mínimo de participantes para un acuerdo marco o un sistema dinámico de contratación.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##FrameworkAgreement" title="http://contsem.unizar.es/def/sector-publico/contsem#FrameworkAgreement">Framework agreement</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#multiannual">
+<h3>Multiannual<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#multiannual</p>
+<div class="comment">
+<p>Indica la plurianualidad de un contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#noticeSentDate">
+<h3>Notice sent date<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#noticeSentDate</p>
+<div class="comment">
+<p>Define la fecha exacta del envío del anuncio al medio de publicación. </p>
+<p>Esta propiedad puede ser utilizada para etiquetar la fecha de envío del anuncio al Diario Oficial de la Unión Europea, información de importancia legal.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">xsd:date</span>
+</dd>
+<dt>is also defined as</dt>
+<dd>
+<a href="#d4e86">annotation property</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#noticeSite">
+<h3>Notice site<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#noticeSite</p>
+<div class="comment">
+<p>Esta propiedad se refiere al medio donde ha publicado el anuncio. Habitualmente este será un boletín o diario oficial, por ejemplo, el DOUE, BOE o boletín autonómico correspondiente, pero puede ser que sea publicado en prensa u otros medios.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##Notice" title="http://contsem.unizar.es/def/sector-publico/contsem#Notice">Notice</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#lotCount">
+<h3>Número de lotes<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#lotCount</p>
+<div class="comment">
+<p>Número de lotes de los que consta un contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#offeredDuration">
+<h3>Offered duration<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#offeredDuration</p>
+<div class="comment">
+<p>Plazo de ejecución del contrato ofrecido por un licitador.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has super-properties</dt>
+<dd>
+<a href="##duration" title="http://contsem.unizar.es/def/sector-publico/contsem#duration">Duration</a>
+<sup class="type-dp" title="data property">dp</sup>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#otherAwardTerms">
+<h3>Other award terms<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#otherAwardTerms</p>
+<div class="comment">
+<p>Describe otras posibles condiciones que se hayan dado en la adjudicación del contrato, y por lo tanto a cumplir por la oferta adjudicada.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://loted.eu/ontology#Tender">ontology:Tender</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#otherGuarantee">
+<h3>Other guarantee<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#otherGuarantee</p>
+<div class="comment">
+<p>Describe otras posibles garantías exigibles por el contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#isPriceReviewed">
+<h3>Price reviewed<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#isPriceReviewed</p>
+<div class="comment">
+<p>Indica si se ha establecido revisión de precios para el contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#priceRevisionFormulaDescription">
+<h3>Price revision formula description<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#priceRevisionFormulaDescription</p>
+<div class="comment">
+<p>Descripción de la fórmula o índice para la revisión de precios del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#prorogationsExpected">
+<h3>Prorogation number expected<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#prorogationsExpected</p>
+<div class="comment">
+<p>Indica el número de prórrogas previstas para un contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#prorogationPrevision">
+<h3>Prorogation prevision<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#prorogationPrevision</p>
+<div class="comment">
+<p>Indica si está o no previsto la existencia de prórrogas en un contrato.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#provisionalFinancialGuarantee">
+<h3>Provisional financial guarantee<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#provisionalFinancialGuarantee</p>
+<div class="comment">
+<p>Garantía provisional exigida.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">xsd:float</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#requiredCapability">
+<h3>Required capability<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#requiredCapability</p>
+<div class="comment">
+<p>Otros requisitos necesarios para participar en la licitación del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#requiredClassification">
+<h3>Required classification<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#requiredClassification</p>
+<div class="comment">
+<p>Indica la clasificación requerida para participar en la licitación del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#requiredFinancialCapability">
+<h3>Required financial capability<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#requiredFinancialCapability</p>
+<div class="comment">
+<p>Describe la solvencia económica y financiera requerida para participar en la licitación del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#requiredTechnicalCapability">
+<h3>Required technical capability<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#requiredTechnicalCapability</p>
+<div class="comment">
+<p>Solvencia técnica y profesional requerida para participar en la licitación del contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#reservedContractRestrictions">
+<h3>Reserved contract restrictions<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#reservedContractRestrictions</p>
+<div class="comment">
+<p>Describe las restricciones para participar asociadas a contratos reservados.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#score">
+<h3>Score<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#score</p>
+<div class="comment">
+<p>Indica la puntuación que ha recibido un criterio.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##CriterionScore" title="http://contsem.unizar.es/def/sector-publico/contsem#CriterionScore">Criterion score</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">xsd:float</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderDossierStartDate">
+<h3>Start date of the tender dossier<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderDossierStartDate</p>
+<div class="comment">
+<p>Indica la fecha de la resolución del inicio del expediente de contratación.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">xsd:date</span>
+</dd>
+<dt>is also defined as</dt>
+<dd>
+<a href="#d4e138">annotation property</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#minSubcontracting">
+<h3>Subcontratación obligatoria<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#minSubcontracting</p>
+<div class="comment">
+<p>Porcentaje de subcontratación obligatorio.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#float">xsd:float</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderCommitteeAppointmentDate">
+<h3>Tender committee appointment date<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderCommitteeAppointmentDate</p>
+<div class="comment">
+<p>Fecha en que el comité de contratación ha sido nombrado por el órgano de contratación.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">xsd:date</span>
+</dd>
+<dt>is also defined as</dt>
+<dd>
+<a href="#d4e120">annotation property</a>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#alternateMember8">
+<h3>Tender committee position<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderCommitteePosition</p>
+<div class="comment">
+<p>Indica el cargo que una persona ostenta dentro del comité del contratación.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##CommitteeMember" title="http://contsem.unizar.es/def/sector-publico/contsem#CommitteeMember">Miembro del comité</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderDocumentNeeds">
+<h3>Tender document needs<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderDocumentNeeds</p>
+<div class="comment">
+<p>Define la documentación necesaria a presentar en las ofertas.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderManteinanceDuration">
+<h3>Tender manteinance duration<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderManteinanceDuration</p>
+<div class="comment">
+<p>Define el plazo necesario que una oferta presentada debe permanecer vigente.</p>
+</div>
+<div class="description">
+<p>
+<strong>has characteristics:</strong> functional</p>
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#duration">xsd:duration</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderPurpose">
+<h3>Tender purpose<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderPurpose</p>
+<div class="comment">
+<p>Indica, de manera textual, el propósito de la reunión de contratación (e.g. apertura de sobre A)</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<a href="##TenderMeeting" title="http://contsem.unizar.es/def/sector-publico/contsem#TenderMeeting">Reunión de la mesa de contratación</a>
+<sup class="type-c" title="class">c</sup>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderSubmissionMode">
+<h3>Tender submission mode<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionMode</p>
+<div class="comment">
+<p>Modalidad de presentación de las ofertas.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#tenderSubmissionSupportedLanguage">
+<h3>Tender submission supported language<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#tenderSubmissionSupportedLanguage</p>
+<div class="comment">
+<p>Indica el idioma en que es posible presentar una oferta de licitación.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="entity" id="#variantDescription">
+<h3>Variant description<sup class="type-dp" title="data property">dp</sup>
+<span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+</span>
+</h3>
+<p>
+<strong>IRI:</strong> http://contsem.unizar.es/def/sector-publico/contsem#variantDescription</p>
+<div class="comment">
+<p>Campo para incluir la descripción, alcance, plazo u otros aspectos que están permitidos al presentar variantes en un contrato.</p>
+</div>
+<div class="description">
+<dl>
+<dt>has domain</dt>
+<dd>
+<span class="dotted" title="http://purl.org/procurement/public-contracts#Contract">public-contracts:Contract</span>
+</dd>
+<dt>has range</dt>
+<dd>
+<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</span>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div id="references">
+<h2>5. References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<!--p>Add your references here in a list. It is recommended to have them as a list.</p--></div>
+<div id="acknowledgements">
+<h2>6. Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>La elaboración de esta ontología ha sido financiada por el Ministerio de Industria, Comercio y Turismo, a través del proyecto “Optimización de la contratación pública mediante la utilización de técnicas semánticas (CONTSEM)”, de la Acción Estratégica de Telecomunicaciones y Sociedad de la Información. TSI-020606-2012-4.</p>
+<img border="0" src="./images/logo_ministerio.png" alt="logo ministerio" width="300">
+<hr>
+<p>Queremos agradecer su colaboración en el desarrollo de la presente ontologia a los expertos en contratación de las Administraciones participantes en el proyecto CONTSEM: Ana Budría Escudero, Azucena Ayala Andrés (Ayuntamiento de Zaragoza), Eva Sanz Ayala, Juan Ramón Cardiel Ibarzo (DGA) y Montserrat Diez Sánchez (DPH); asi como a los responsables técnicos de las mismas: María Jesús Fernández Ruiz (Ayuntamiento de Zaragoza), José Maria Subero Munilla, Ricardo Cantabrana González (DGA) y Cristina de la Hera Pascual (DPH).</p>
+<p>Tambien agradecemos enormemente el esfuerzo de Oscar Corcho, del Ontology Engineer Group de la Universidad Politécnica de Madrid; sus acertados comentarios y aportaciones han ayudado a mejorar la ontología final.</p>
+<hr>
+<p>The authors would like to thanks <a href="http://palindrom.es/phd/whoami/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment used for representing the Corss Referencing Section of this document and <a href="http://delicias.dia.fi.upm.es/members/dgarijo/">Daniel Garijo</a> for developing the script used to create the template of this document.</p>
+</div>
+</body></html>

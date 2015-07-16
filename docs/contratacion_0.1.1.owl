@@ -1,0 +1,2237 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY s "http://schema.org/" >
+    <!ENTITY cpv "http://purl.org/cpv/2008/" >
+    <!ENTITY org "http://www.w3.org/ns/org#" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY contsem "http://labje.unizar.es/contsem#" >
+    <!ENTITY gr "http://purl.org/goodrelations/v1#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY pc "http://purl.org/procurement/public-contracts#" >
+    <!ENTITY pcd "http://purl.org/procurement/public-contracts-datatypes#" >
+]>
+
+
+<rdf:RDF xmlns="http://labje.unizar.es/contsem#"
+     xml:base="http://labje.unizar.es/contsem"
+     xmlns:pcd="http://purl.org/procurement/public-contracts-datatypes#"
+     xmlns:cpv="http://purl.org/cpv/2008/"
+     xmlns:org="http://www.w3.org/ns/org#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:s="http://schema.org/"
+     xmlns:pc="http://purl.org/procurement/public-contracts#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:contsem="http://labje.unizar.es/contsem#"
+     xmlns:gr="http://purl.org/goodrelations/v1#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://labje.unizar.es/contsem">
+        <rdfs:label xml:lang="en">CONTSEM ontology</rdfs:label>
+        <rdfs:label xml:lang="es">ontología CONTSEM</rdfs:label>
+        <dcterms:title xml:lang="en">CONTSEM ontology</dcterms:title>
+        <owl:versionInfo xml:lang="es">0.1.1. Primera versión publicada en los grupos de contratación relativos al proyecto.</owl:versionInfo>
+        <dcterms:creator>J.F. Muñoz; F.J. Serón; G. Esteban; M.A. Bernal</dcterms:creator>
+        <rdfs:comment xml:lang="es">Ontología creada con objeto de publicar datos sobre contratación publica española en RDF. Se ha desarrollado durante el transcurso del proyecto &quot;Optimización de la contratación pública mediante la utilización de técnicas semánticas&quot; (CONTSEM), en el que participan la empresa iASoft (OESIA), la Universidad de Zaragoza y, como administraciones usuarias, el Gobierno de Aragón, la Diputación Provincial de Huesca y los ayuntamientos de Zaragoza y Huesca.
+
+Financiado por la Acción Estratégica de Telecomunicaciones y Sociedad de la Información. Año 2012. Ministerio de Industria, Comercio y Turismo (TSI-020606-2012-4), y desarrollado entre noviembre de 2012 y diciembre de 2014.</rdfs:comment>
+        <dcterms:title xml:lang="es">ontologia CONTSEM</dcterms:title>
+        <owl:versionIRI rdf:resource="http://labje.unizar.es/contsem/0.1.1"/>
+        <owl:imports rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <owl:imports rdf:resource="http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="&dcterms;modified"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="&xsd;duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://labje.unizar.es/contsem#acceptedTender -->
+
+    <owl:ObjectProperty rdf:about="&contsem;acceptedTender">
+        <rdfs:label xml:lang="es">Oferta admitida</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlaza el contrato con aquellas ofertas que se han admitido a licitación.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&pc;tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#additionalDocumentReference -->
+
+    <owl:ObjectProperty rdf:about="&contsem;additionalDocumentReference">
+        <rdfs:label xml:lang="es">Documentación adicional</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlace a documentación adicional.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&contsem;documentReference"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#alternateMember -->
+
+    <owl:ObjectProperty rdf:about="&contsem;alternateMember">
+        <rdfs:label xml:lang="es">Miembro suplente</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&skos;member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#appealType -->
+
+    <owl:ObjectProperty rdf:about="&contsem;appealType">
+        <rdfs:label xml:lang="es">Tipo de recurso</rdfs:label>
+        <rdfs:comment xml:lang="es">Tipo del recurso interpuesto en un contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;Appeal"/>
+        <rdfs:seeAlso rdf:resource="&contsem;AppealTypeScheme"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;AppealTypeScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#awardAgreement -->
+
+    <owl:ObjectProperty rdf:about="&contsem;awardAgreement">
+        <rdfs:label xml:lang="en">Award agreement</rdfs:label>
+        <rdfs:label xml:lang="es">Acuerdo de adjudicación</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el acuerdo del órgano de contratación donde se ha adjudicado el contrato a un licitador.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;ContractingBodyAgreement"/>
+        <rdfs:domain rdf:resource="&pc;Tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#budgetPrice -->
+
+    <owl:ObjectProperty rdf:about="&contsem;budgetPrice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Contract budget price</rdfs:label>
+        <rdfs:label xml:lang="es">Presupuesto del contrato</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el presupuesto definido de un contrato.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;BundlePriceSpecification"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;contractPrice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#complementaryContract -->
+
+    <owl:ObjectProperty rdf:about="&contsem;complementaryContract">
+        <rdfs:label xml:lang="en">Complementary contract</rdfs:label>
+        <rdfs:label xml:lang="es">Contrato complementario</rdfs:label>
+        <rdfs:comment xml:lang="es">Señala un contrato complementario al actual.</rdfs:comment>
+        <rdfs:range rdf:resource="&pc;Contract"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#contractAbandonment -->
+
+    <owl:ObjectProperty rdf:about="&contsem;contractAbandonment">
+        <rdfs:label xml:lang="en">Contract abandonment</rdfs:label>
+        <rdfs:label xml:lang="es">Abandono de contrato</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&contsem;contractOrProcedureExtinction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#contractKind -->
+
+    <owl:ObjectProperty rdf:about="&contsem;contractKind">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Contract kind</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de contrato</rdfs:label>
+        <rdfs:comment xml:lang="es">Tipo de contrato desde el punto de vista administrativo (e.g. suministros)</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="&contsem;ContractKindScheme"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;ContractKindScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#contractModification -->
+
+    <owl:ObjectProperty rdf:about="&contsem;contractModification">
+        <rdfs:label xml:lang="en">Contract modification</rdfs:label>
+        <rdfs:label xml:lang="es">Modificación de contrato</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la modificación efectuada en un contrato.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;ContractModification"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#contractOrProcedureExtinction -->
+
+    <owl:ObjectProperty rdf:about="&contsem;contractOrProcedureExtinction">
+        <rdfs:label xml:lang="en">Contract or procedure extinction</rdfs:label>
+        <rdfs:label xml:lang="es">Extinción de contrato o de procedimiento</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad abstracta que indica la extinción de un contrato por resolución, renuncia o abandono. O bien la extinción del procedimiento al ser declarado desierto.
+
+Utilizar una de sus subclases.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;ContractOrProcedureExtinction"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#contractResolution -->
+
+    <owl:ObjectProperty rdf:about="&contsem;contractResolution">
+        <rdfs:label xml:lang="en">Contract resolution</rdfs:label>
+        <rdfs:label xml:lang="es">Resolución de contrato</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&contsem;contractOrProcedureExtinction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#contractWaive -->
+
+    <owl:ObjectProperty rdf:about="&contsem;contractWaive">
+        <rdfs:label xml:lang="en">Contract waive</rdfs:label>
+        <rdfs:label xml:lang="es">Renuncia de contrato</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&contsem;contractOrProcedureExtinction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#contractingBody -->
+
+    <owl:ObjectProperty rdf:about="&contsem;contractingBody">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Contracting body</rdfs:label>
+        <rdfs:label xml:lang="es">Órgano de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Define la organización del órgano de contratación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&org;Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#contractingBodyAgreement -->
+
+    <owl:ObjectProperty rdf:about="&contsem;contractingBodyAgreement">
+        <rdfs:label xml:lang="en">Contracting body agreement</rdfs:label>
+        <rdfs:label xml:lang="es">Acuerdo del órgano de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Sirve para definir un acuerdo del órgano de contratación. Este puede enlazarse con una modificación, una extinción o directamente con el contrato.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;ContractingBodyAgreement"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&contsem;ContractModification"/>
+                    <rdf:Description rdf:about="&contsem;ContractOrProcedureExtinction"/>
+                    <rdf:Description rdf:about="&pc;Contract"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#criterion -->
+
+    <owl:ObjectProperty rdf:about="&contsem;criterion">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Criterion</rdfs:label>
+        <rdfs:label xml:lang="es">Criterio</rdfs:label>
+        <rdfs:comment xml:lang="es">Criterio sujeto a valoración</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;CriterionScore"/>
+        <rdfs:range rdf:resource="http://loted.eu/ontology#AwardCriteria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#criterionScore -->
+
+    <owl:ObjectProperty rdf:about="&contsem;criterionScore">
+        <rdfs:label xml:lang="en">Criterion score</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración de criterio</rdfs:label>
+        <rdfs:comment xml:lang="es">La propiedad Valoración de criterio (contsem:criterionScore) especifica la valoración de un único criterio, por lo que esta propiedad se utilizará una vez por cada criterio de adjudicación presente en el contrato. Esta propiedad tiene como rango a la clase contsem:CriterionScore.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;CriterionScore"/>
+        <rdfs:domain rdf:resource="http://loted.eu/ontology#Tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#delegatingAuthority -->
+
+    <owl:ObjectProperty rdf:about="&contsem;delegatingAuthority">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Delegating authority</rdfs:label>
+        <rdfs:label xml:lang="es">Entidad delegante</rdfs:label>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&org;Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#documentReference -->
+
+    <owl:ObjectProperty rdf:about="&contsem;documentReference">
+        <rdfs:label xml:lang="es">Documentación</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlace a documentación.
+
+Propiedad similar a pc:attachment, pero sin dominio fijo, pues esta misma propiedad puede utilizarse con múltiples clases:
+- pc:Contract
+- contsem:TenderMeeting
+- contsem:ContractingBodyAgreement</rdfs:comment>
+        <rdfs:range rdf:resource="&rdf;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#electronicAuction -->
+
+    <owl:ObjectProperty rdf:about="&contsem;electronicAuction">
+        <rdfs:label xml:lang="es">Subasta electrónica</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la subasta electrónica de uno o más de los criterios de adjucación del contrato.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;ElectronicAuction"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#electronicAuctionPhase -->
+
+    <owl:ObjectProperty rdf:about="&contsem;electronicAuctionPhase">
+        <rdfs:label xml:lang="es">Fase de subasta electrónica</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica una fase de la subasta electrónica en la que van a subasta uno o más de los criterios de adjudicación del contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;ElectronicAuction"/>
+        <rdfs:range rdf:resource="&contsem;ElectronicAuctionPhase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#electronicAuctionWeb -->
+
+    <owl:ObjectProperty rdf:about="&contsem;electronicAuctionWeb">
+        <rdfs:label xml:lang="es">Web de la subasta electrónica</rdfs:label>
+        <rdfs:comment xml:lang="es">Apunta a la web donde puede se realiza la subasta electrónica, o en su defecto, donde se pueda encontrar más información acerca de la subasta electrónica.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;ElectronicAuction"/>
+        <rdfs:range rdf:resource="&rdf;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#excludedTender -->
+
+    <owl:ObjectProperty rdf:about="&contsem;excludedTender">
+        <rdfs:label xml:lang="es">Oferta excluída</rdfs:label>
+        <rdfs:comment xml:lang="es">Al contrato que contsem:acceptedTender, relaciona el contrato con las ofertas que han sido excluídas del proceso de licitación.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&pc;tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#feePrice -->
+
+    <owl:ObjectProperty rdf:about="&contsem;feePrice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Canon</rdfs:label>
+        <rdfs:comment xml:lang="es">Importe del canon del contrato.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;BundlePriceSpecification"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;contractPrice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#formalizedTender -->
+
+    <owl:ObjectProperty rdf:about="&contsem;formalizedTender">
+        <rdfs:label xml:lang="es">Oferta formalizada</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlaza el contrato con aquella oferta que se ha formalizado.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&pc;tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#frameworkAgreement -->
+
+    <owl:ObjectProperty rdf:about="&contsem;frameworkAgreement">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Acuerdo Marco o Sistema Dinámico de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Señala al Acuerdo Marco o Sistema Dinámico de contratación en el cual consiste el contrato.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;FrameworkAgreement"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#frameworkAgreementDerivativeContract -->
+
+    <owl:ObjectProperty rdf:about="&contsem;frameworkAgreementDerivativeContract">
+        <rdfs:label xml:lang="es">contrato derivado de un acuerdo marco</rdfs:label>
+        <rdfs:comment xml:lang="es">Esta propiedad señala el/los contrato/s derivado/s de un contrato declarativo de acuerdo marco o sistema dinámico.</rdfs:comment>
+        <rdfs:range rdf:resource="&pc;Contract"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#frameworkAgreementType -->
+
+    <owl:ObjectProperty rdf:about="&contsem;frameworkAgreementType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Declaración de acuerdo marco</rdfs:label>
+        <rdfs:comment xml:lang="es">Declara un contrato como consistente en la declaración de un acuerdo marco o un sistema dinámico de contratación</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="&contsem;FrameworkAgreementTypeScheme"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;FrameworkAgreementTypeScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#fullMember -->
+
+    <owl:ObjectProperty rdf:about="&contsem;fullMember">
+        <rdfs:label xml:lang="es">Miembro titular</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&skos;member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#informationKind -->
+
+    <owl:ObjectProperty rdf:about="&contsem;informationKind">
+        <rdfs:label xml:lang="en">Information kind</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de información</rdfs:label>
+        <rdfs:comment xml:lang="es">Tipo de información que suministra un proveedor de información.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;InformationProvider"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;InformationKindScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#legalDocumentReference -->
+
+    <owl:ObjectProperty rdf:about="&contsem;legalDocumentReference">
+        <rdfs:label xml:lang="es">Pliego de cláusulas administrativas</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlace al pliego de cláusulas administrativas.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&contsem;documentReference"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#lotContractKind -->
+
+    <owl:ObjectProperty rdf:about="&contsem;lotContractKind">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Lot contract kind</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de contrato de lotes</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica si el pc:Contract se trata de un contrato con lotes, un contrato sin lotes, o un lote perteneciente a un contrato.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="&contsem;LotContractKindScheme"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;LotContractKindScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#managingDepartment -->
+
+    <owl:ObjectProperty rdf:about="&contsem;managingDepartment">
+        <rdfs:label xml:lang="en">Managing department</rdfs:label>
+        <rdfs:label xml:lang="es">Servicio gestor</rdfs:label>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&org;Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#minutesDocumentReference -->
+
+    <owl:ObjectProperty rdf:about="&contsem;minutesDocumentReference">
+        <rdfs:label xml:lang="es">Acta</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlace al acta de la reunión de la mesa de contratación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;TenderMeeting"/>
+        <rdfs:subPropertyOf rdf:resource="&contsem;documentReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#notice -->
+
+    <owl:ObjectProperty rdf:about="&contsem;notice">
+        <rdfs:label xml:lang="es">Anuncio</rdfs:label>
+        <rdfs:range rdf:resource="&contsem;Notice"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#noticeWeb -->
+
+    <owl:ObjectProperty rdf:about="&contsem;noticeWeb">
+        <rdfs:label xml:lang="es">Web del anuncio</rdfs:label>
+        <rdfs:domain rdf:resource="&contsem;Notice"/>
+        <rdfs:range rdf:resource="&rdf;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#object -->
+
+    <owl:ObjectProperty rdf:about="&contsem;object">
+        <rdfs:label xml:lang="es">Objeto</rdfs:label>
+        <rdfs:comment xml:lang="es">Objeto de un gr:Offering.
+
+Debe apuntar a un concepto de objeto siguiendo la clasificación CPV de algún esquema de conceptos SKOS.</rdfs:comment>
+        <rdfs:domain rdf:resource="&gr;Offering"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#procedureType -->
+
+    <owl:ObjectProperty rdf:about="&contsem;procedureType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Procedure type</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de procedimiento</rdfs:label>
+        <rdfs:seeAlso rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;ProcedureTypeScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#publicServicesContractKind -->
+
+    <owl:ObjectProperty rdf:about="&contsem;publicServicesContractKind">
+        <rdfs:label xml:lang="es">Tipo de contrato de servicios públicos</rdfs:label>
+        <rdfs:seeAlso rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#resolutionDocumentReference -->
+
+    <owl:ObjectProperty rdf:about="&contsem;resolutionDocumentReference">
+        <rdfs:label xml:lang="es">Resolución</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlace al documento de la resolución dictada por el órgano de contratación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;ContractingBodyAgreement"/>
+        <rdfs:subPropertyOf rdf:resource="&contsem;documentReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#supplyContractKind -->
+
+    <owl:ObjectProperty rdf:about="&contsem;supplyContractKind">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Tipo de contrato de suministros</rdfs:label>
+        <rdfs:comment xml:lang="es">Compra o alquiler.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="&contsem;SupplyContractKindScheme"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;SupplyContractKindScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#technicalDocumentReference -->
+
+    <owl:ObjectProperty rdf:about="&contsem;technicalDocumentReference">
+        <rdfs:label xml:lang="es">Pliego de prescripciones técnicas</rdfs:label>
+        <rdfs:comment xml:lang="es">Enlace al pliego de prescripciones técnicas.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&contsem;documentReference"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderAdmissionMeeting -->
+
+    <owl:ObjectProperty rdf:about="&contsem;tenderAdmissionMeeting">
+        <rdfs:label xml:lang="es">Reunión sobre admisión de licitadores</rdfs:label>
+        <rdfs:range rdf:resource="&contsem;TenderMeeting"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderBriefing -->
+
+    <owl:ObjectProperty rdf:about="&contsem;tenderBriefing">
+        <rdfs:label xml:lang="es">Reunión informativa</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica las reuniones informativas relacionadas con el contrato.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;Briefing"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderInformationProvider -->
+
+    <owl:ObjectProperty rdf:about="&contsem;tenderInformationProvider">
+        <rdfs:label xml:lang="es">Proveedor de información</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica los proveedores de información sobre la licitación del contrato.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;InformationProvider"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderMeeting -->
+
+    <owl:ObjectProperty rdf:about="&contsem;tenderMeeting">
+        <rdfs:label xml:lang="es">Reunión de la mesa de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica las reuniones de la mesa de contratación.</rdfs:comment>
+        <rdfs:range rdf:resource="&contsem;TenderMeeting"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&contsem;TenderCommittee"/>
+                    <rdf:Description rdf:about="&pc;Contract"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderSubmissionLocation -->
+
+    <owl:ObjectProperty rdf:about="&contsem;tenderSubmissionLocation">
+        <rdfs:label xml:lang="es">Sede de presentación de las ofertas</rdfs:label>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&s;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#urgencyType -->
+
+    <owl:ObjectProperty rdf:about="&contsem;urgencyType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Tipo de procedimiento</rdfs:label>
+        <rdfs:seeAlso rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&contsem;UrgencyTypeScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#voidProcedure -->
+
+    <owl:ObjectProperty rdf:about="&contsem;voidProcedure">
+        <rdfs:label xml:lang="en">Void procedure</rdfs:label>
+        <rdfs:label xml:lang="es">Procedimiento desierto</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&contsem;contractOrProcedureExtinction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#websiteWithInformation -->
+
+    <owl:ObjectProperty rdf:about="&contsem;websiteWithInformation">
+        <rdfs:label xml:lang="es">Web con información</rdfs:label>
+        <rdfs:label xml:lang="es">Website with information</rdfs:label>
+        <rdfs:comment xml:lang="es">Lugar de la web que provee información el proveedor de información asociado</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;InformationProvider"/>
+        <rdfs:range rdf:resource="&rdf;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://labje.unizar.es/contsem#actualDuration -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;actualDuration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Actual duration</rdfs:label>
+        <rdfs:label xml:lang="es">Duración real</rdfs:label>
+        <rdfs:comment xml:lang="es">Representa el plazo de ejecución final en forma de duración.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&contsem;duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#admitVariants -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;admitVariants">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Admit variants</rdfs:label>
+        <rdfs:label xml:lang="es">Admisión de variantes</rdfs:label>
+        <rdfs:comment xml:lang="es">Campo para definir si están o no admitidas las variantes en las ofertas presentadas.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#advertisementAmount -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;advertisementAmount">
+        <rdfs:label xml:lang="en">Advertisement amount</rdfs:label>
+        <rdfs:label xml:lang="es">Gastos de publicidad</rdfs:label>
+        <rdfs:comment xml:lang="es">Describe los gastos de publicidad asociados a la licitación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#appealResult -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;appealResult">
+        <rdfs:label xml:lang="en">Appeal result</rdfs:label>
+        <rdfs:label xml:lang="es">Resultado del recurso</rdfs:label>
+        <rdfs:comment xml:lang="es">Contiene el resultado del recurso interpuesto en un contrato. Normalmente el valor de esta propiedad incluirá valores como &quot;Estimado&quot;, &quot;Estimado parcialmente&quot; o &quot;Desestimado&quot;.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;Appeal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#assumptionProtectingProcedureType -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;assumptionProtectingProcedureType">
+        <rdfs:label xml:lang="en">Assumption protecting the chosen procedure type</rdfs:label>
+        <rdfs:label xml:lang="es">Supuesto que ampara el uso del procedimiento elegido</rdfs:label>
+        <rdfs:comment xml:lang="es">Descripción del supuesto que ampara el uso de procedimiento elegido en el contrato actual.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#awardDate -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;awardDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Date of award</rdfs:label>
+        <rdfs:label xml:lang="es">Fecha de adjudicación</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la fecha de adjudicación de una oferta (en el caso de que esta haya sido adjudicada).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:domain rdf:resource="&pc;Tender"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#constructionSubsidies -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;constructionSubsidies">
+        <rdfs:label xml:lang="en">Construction subsidies</rdfs:label>
+        <rdfs:label xml:lang="es">Aportaciones públicas</rdfs:label>
+        <rdfs:comment xml:lang="es">Descripción de las aportaciones públicas a la construcción.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#disposableMeansAppointment -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;disposableMeansAppointment">
+        <rdfs:label xml:lang="en">Disposable means appointment</rdfs:label>
+        <rdfs:label xml:lang="es">Adscripción de medios</rdfs:label>
+        <rdfs:comment xml:lang="es">Adscripción de medios para la realización del contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#duration -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;duration">
+        <rdfs:label xml:lang="en">Duration</rdfs:label>
+        <rdfs:label xml:lang="es">Duración</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad genérica para describir la duración de diversas entidades.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#earlyTramitation -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;earlyTramitation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Early tramitation</rdfs:label>
+        <rdfs:label xml:lang="es">Tramitación anticipada</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica si el contrato se tramita anticipadamente al ejercicio de su realización.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#estimatedDuration -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;estimatedDuration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Estimated duration</rdfs:label>
+        <rdfs:label xml:lang="es">Duración estimada</rdfs:label>
+        <rdfs:comment xml:lang="es">Especifica la duración estimada de la entidad asociada.
+
+A utilizar con las clases pc:Contract y contsem:FrameworkAgreement, pero no limitada a ellas.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&contsem;duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#estimatedEndDate -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;estimatedEndDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Estimated end date</rdfs:label>
+        <rdfs:label xml:lang="es">Fecha estimada de finalización</rdfs:label>
+        <rdfs:comment xml:lang="es">Propiedad para especificar la fecha finalización estimada en las siguientes clases:
+
+- pc:Contract
+- contsem:FrameworkAgreement
+- contsem:InformationProvider</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#executionRequeriments -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;executionRequeriments">
+        <rdfs:label xml:lang="en">Execution requeriments</rdfs:label>
+        <rdfs:label xml:lang="es">Condiciones de ejecución</rdfs:label>
+        <rdfs:comment xml:lang="es">Campo para definir las condiciones de ejecución del contrato si las hubiera (e.g. forma jurídica a adoptar por la agrupación de contratistas)</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#expectedCauseModification -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;expectedCauseModification">
+        <rdfs:label xml:lang="en">Expected cause modification</rdfs:label>
+        <rdfs:label xml:lang="es">Causas previstas de modificación</rdfs:label>
+        <rdfs:comment xml:lang="es">Define las posibles causas previstas para la modificación del contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#finalFinancialGuarantee -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;finalFinancialGuarantee">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Final financial guarantee</rdfs:label>
+        <rdfs:label xml:lang="es">Garantía definitiva</rdfs:label>
+        <rdfs:comment xml:lang="es">Define la garantía definitiva exigida al contratista.
+
+El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#finalFinancialGuaranteeDuration -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;finalFinancialGuaranteeDuration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Final financial guarantee duration</rdfs:label>
+        <rdfs:label xml:lang="es">Plazo de la garantía definitiva</rdfs:label>
+        <rdfs:comment xml:lang="es">Define la duración que la garantía definitiva será retenida por la administración contratante.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#harmonized -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;harmonized">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Harmonized</rdfs:label>
+        <rdfs:label xml:lang="es">Armonizado</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica si el contrato es armonizado (i.e. el contrato alcanza el umbral para actuar conforme a las Directivas del Parlamento Europeo y del Consejo en contratos públicos)</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#isPriceReviewed -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;isPriceReviewed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Price reviewed</rdfs:label>
+        <rdfs:label xml:lang="es">Revisión de precios</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica si se ha establecido revisión de precios para el contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#lotCount -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;lotCount">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Número de lotes</rdfs:label>
+        <rdfs:comment xml:lang="es">Número de lotes de los que consta un contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#maxBudgetChange -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;maxBudgetChange">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Maximum budget change</rdfs:label>
+        <rdfs:label xml:lang="es">Modificación máxima de presupuesto</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el porcentaje máximo de modificación sobre el presupuesto admitido.
+
+El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#maxFinalPriceChange -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;maxFinalPriceChange">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Maximum final price change</rdfs:label>
+        <rdfs:label xml:lang="es">Modificación máxima sobre precio final</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el porcentaje máximo de modificación sobre el precio final admitido.
+
+El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#maxInvitations -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;maxInvitations">
+        <rdfs:label xml:lang="en">Maximum number of invitations</rdfs:label>
+        <rdfs:label xml:lang="es">Número máximo de invitaciones</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el número máximo de invitaciones a presentar oferta a enviar por la entidad contratante.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#maxNumberOfOperators -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;maxNumberOfOperators">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Maximum number of operators</rdfs:label>
+        <rdfs:label xml:lang="es">Número máximo de participantes</rdfs:label>
+        <rdfs:comment xml:lang="es">Define el número máximo de participantes para un acuerdo marco o un sistema dinámico de contratación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;FrameworkAgreement"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#maxSubcontracting -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;maxSubcontracting">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Maximum subcontracting</rdfs:label>
+        <rdfs:label xml:lang="es">Subcontratación máxima</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el porcentaje de subcontratación máximo.
+
+El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#minInvitations -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;minInvitations">
+        <rdfs:label xml:lang="en">Minimum number of invitations</rdfs:label>
+        <rdfs:label xml:lang="es">Número mínimo de invitaciones</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el número mínimo de invitaciones a presentar oferta a enviar por la entidad contratante.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#minNumberOfOperators -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;minNumberOfOperators">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Minimum number of operators</rdfs:label>
+        <rdfs:label xml:lang="es">Número mínimo de participantes</rdfs:label>
+        <rdfs:comment xml:lang="es">Define el número mínimo de participantes para un acuerdo marco o un sistema dinámico de contratación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;FrameworkAgreement"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#minSubcontracting -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;minSubcontracting">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Subcontratación obligatoria</rdfs:label>
+        <rdfs:comment xml:lang="es">Porcentaje de subcontratación obligatorio.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#multiannual -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;multiannual">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Multiannual</rdfs:label>
+        <rdfs:label xml:lang="es">Plurianual</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la plurianualidad de un contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#noticeDate -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;noticeDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Fecha de publicación del anuncio</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la fecha en que el anuncio se ha publicado.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;Notice"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#noticeSentDate -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;noticeSentDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Notice sent date</rdfs:label>
+        <rdfs:label xml:lang="es">Fecha de envio del anuncio</rdfs:label>
+        <rdfs:comment xml:lang="es">Define la fecha exacta del envío del anuncio al medio de publicación. 
+
+Esta propiedad puede ser utilizada para etiquetar la fecha de envío del anuncio al Diario Oficial de la Unión Europea, información de importancia legal.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;Notice"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#noticeSite -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;noticeSite">
+        <rdfs:label xml:lang="en">Notice site</rdfs:label>
+        <rdfs:label xml:lang="es">Medio de publicación del anuncio</rdfs:label>
+        <rdfs:comment xml:lang="es">Esta propiedad se refiere al medio donde ha publicado el anuncio. Habitualmente este será un boletín o diario oficial, por ejemplo, el DOUE, BOE o boletín autonómico correspondiente, pero puede ser que sea publicado en prensa u otros medios.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;Notice"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#offeredDuration -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;offeredDuration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Offered duration</rdfs:label>
+        <rdfs:label xml:lang="es">Plazo de ejecución ofertado</rdfs:label>
+        <rdfs:comment xml:lang="es">Plazo de ejecución del contrato ofrecido por un licitador.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&contsem;duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#offeredEndDate -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;offeredEndDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="es">Fecha de finalización ofertada</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la fecha de finalización del contrato ofrecida por un licitador.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#otherAwardTerms -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;otherAwardTerms">
+        <rdfs:label xml:lang="en">Other award terms</rdfs:label>
+        <rdfs:label xml:lang="es">Otras condiciones de la adjudicación</rdfs:label>
+        <rdfs:comment xml:lang="es">Describe otras posibles condiciones que se hayan dado en la adjudicación del contrato, y por lo tanto a cumplir por la oferta adjudicada.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://loted.eu/ontology#Tender"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#otherGuarantee -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;otherGuarantee">
+        <rdfs:label xml:lang="en">Other guarantee</rdfs:label>
+        <rdfs:label xml:lang="es">Otras garantías</rdfs:label>
+        <rdfs:comment xml:lang="es">Describe otras posibles garantías exigibles por el contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#priceRevisionFormulaDescription -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;priceRevisionFormulaDescription">
+        <rdfs:label xml:lang="en">Price revision formula description</rdfs:label>
+        <rdfs:label xml:lang="es">Fórmula de revisión de precios</rdfs:label>
+        <rdfs:comment xml:lang="es">Descripción de la fórmula o índice para la revisión de precios del contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#prorogationPrevision -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;prorogationPrevision">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Prorogation prevision</rdfs:label>
+        <rdfs:label xml:lang="es">Previsión de prórroga</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica si está o no previsto la existencia de prórrogas en un contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#prorogationsExpected -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;prorogationsExpected">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Prorogation number expected</rdfs:label>
+        <rdfs:label xml:lang="es">Prórrogas previstas</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el número de prórrogas previstas para un contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#provisionalFinancialGuarantee -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;provisionalFinancialGuarantee">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Provisional financial guarantee</rdfs:label>
+        <rdfs:label xml:lang="es">Garantía provisional</rdfs:label>
+        <rdfs:comment xml:lang="es">Garantía provisional exigida.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#requiredCapability -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;requiredCapability">
+        <rdfs:label xml:lang="en">Required capability</rdfs:label>
+        <rdfs:label xml:lang="es">Otros requisitos</rdfs:label>
+        <rdfs:comment xml:lang="es">Otros requisitos necesarios para participar en la licitación del contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#requiredClassification -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;requiredClassification">
+        <rdfs:label xml:lang="en">Required classification</rdfs:label>
+        <rdfs:label xml:lang="es">Clasificación requerida</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la clasificación requerida para participar en la licitación del contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#requiredFinancialCapability -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;requiredFinancialCapability">
+        <rdfs:label xml:lang="en">Required financial capability</rdfs:label>
+        <rdfs:label xml:lang="es">Solvencia económica y financiera requerida</rdfs:label>
+        <rdfs:comment xml:lang="es">Describe la solvencia económica y financiera requerida para participar en la licitación del contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#requiredTechnicalCapability -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;requiredTechnicalCapability">
+        <rdfs:label xml:lang="en">Required technical capability</rdfs:label>
+        <rdfs:label xml:lang="es">Solvencia técnica y profesional requerida</rdfs:label>
+        <rdfs:comment xml:lang="es">Solvencia técnica y profesional requerida para participar en la licitación del contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#reservedContractRestrictions -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;reservedContractRestrictions">
+        <rdfs:label xml:lang="en">Reserved contract restrictions</rdfs:label>
+        <rdfs:label xml:lang="es">Contratos reservados</rdfs:label>
+        <rdfs:comment xml:lang="es">Describe las restricciones para participar asociadas a contratos reservados.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#score -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;score">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Score</rdfs:label>
+        <rdfs:label xml:lang="es">Puntuación</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la puntuación que ha recibido un criterio.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;CriterionScore"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderCommitteeAppointmentDate -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;tenderCommitteeAppointmentDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Tender committee appointment date</rdfs:label>
+        <rdfs:label xml:lang="es">Fecha de nombramiento</rdfs:label>
+        <rdfs:comment xml:lang="es">Fecha en que el comité de contratación ha sido nombrado por el órgano de contratación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;TenderCommittee"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderCommitteePosition -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;tenderCommitteePosition">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Tender committee position</rdfs:label>
+        <rdfs:label xml:lang="es">Cargo en el comité de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el cargo que una persona ostenta dentro del comité del contratación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;CommitteeMember"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderDocumentNeeds -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;tenderDocumentNeeds">
+        <rdfs:label xml:lang="en">Tender document needs</rdfs:label>
+        <rdfs:label xml:lang="es">Documentación a presentar</rdfs:label>
+        <rdfs:comment xml:lang="es">Define la documentación necesaria a presentar en las ofertas.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderDossierStartDate -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;tenderDossierStartDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Start date of the tender dossier</rdfs:label>
+        <rdfs:label xml:lang="es">Fecha de la resolución del inicio del expediente de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica la fecha de la resolución del inicio del expediente de contratación.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderManteinanceDuration -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;tenderManteinanceDuration">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="en">Tender manteinance duration</rdfs:label>
+        <rdfs:label xml:lang="es">Plazo de vigencia de las ofertas</rdfs:label>
+        <rdfs:comment xml:lang="es">Define el plazo necesario que una oferta presentada debe permanecer vigente.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderPurpose -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;tenderPurpose">
+        <rdfs:label xml:lang="en">Tender purpose</rdfs:label>
+        <rdfs:label xml:lang="es">Propósito de la reunión</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica, de manera textual, el propósito de la reunión de contratación (e.g. apertura de sobre A)</rdfs:comment>
+        <rdfs:domain rdf:resource="&contsem;TenderMeeting"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderSubmissionMode -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;tenderSubmissionMode">
+        <rdfs:label xml:lang="en">Tender submission mode</rdfs:label>
+        <rdfs:label xml:lang="es">Modalidad de presentación</rdfs:label>
+        <rdfs:comment xml:lang="es">Modalidad de presentación de las ofertas.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#tenderSubmissionSupportedLanguage -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;tenderSubmissionSupportedLanguage">
+        <rdfs:label xml:lang="en">Tender submission supported language</rdfs:label>
+        <rdfs:label xml:lang="es">Idioma admitido en la presentación de oferta</rdfs:label>
+        <rdfs:comment xml:lang="es">Indica el idioma en que es posible presentar una oferta de licitación.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#variantDescription -->
+
+    <owl:DatatypeProperty rdf:about="&contsem;variantDescription">
+        <rdfs:label xml:lang="en">Variant description</rdfs:label>
+        <rdfs:label xml:lang="es">Descripción de las variantes</rdfs:label>
+        <rdfs:comment xml:lang="es">Campo para incluir la descripción, alcance, plazo u otros aspectos que están permitidos al presentar variantes en un contrato.</rdfs:comment>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <rdf:Description rdf:about="&dcterms;date">
+        <rdfs:label xml:lang="en">Date</rdfs:label>
+        <rdfs:label xml:lang="es">Fecha</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://labje.unizar.es/contsem#AdditionalInformationNotice -->
+
+    <owl:Class rdf:about="&contsem;AdditionalInformationNotice">
+        <rdfs:label xml:lang="es">Anuncio de información adicional</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&contsem;Notice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Appeal -->
+
+    <owl:Class rdf:about="&contsem;Appeal">
+        <rdfs:label xml:lang="en">Appeal</rdfs:label>
+        <rdfs:label xml:lang="es">Recurso</rdfs:label>
+        <rdfs:comment xml:lang="es">Cuando se interponga un recurso sobre alguna de las resoluciones del proceso de licitación se utilizará la propiedad contsem:appeal con rango en la clase contsem:Appeal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Briefing -->
+
+    <owl:Class rdf:about="&contsem;Briefing">
+        <rdfs:label xml:lang="es">Reunión informativa</rdfs:label>
+        <rdfs:comment xml:lang="es">Reunión informativa sobre la licitación del contrato.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#BundlePriceSpecification -->
+
+    <owl:Class rdf:about="&contsem;BundlePriceSpecification">
+        <rdfs:label xml:lang="es">Precio de paquete</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gr;PriceSpecification"/>
+        <rdfs:comment xml:lang="es">Clase que representa el precio de conjuntos de objetos o un paquete determinado.
+
+Se utiliza para especificar el precio, presupuesto y canon de un contrato.
+
+Se utiliza para especificar el precio de la clase gr:Offering cuando este precio se refiere al del conjunto de los objetos (y no a su precio unitario).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#CommitteeMember -->
+
+    <owl:Class rdf:about="&contsem;CommitteeMember">
+        <rdfs:label xml:lang="es">Miembro del comité</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&s;Person"/>
+        <rdfs:comment xml:lang="es">Miembro perteneciente a un comité de contratación concreto.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ContractAwardNotice -->
+
+    <owl:Class rdf:about="&contsem;ContractAwardNotice">
+        <rdfs:label xml:lang="es">Anuncio de adjudicación</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&contsem;Notice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ContractModification -->
+
+    <owl:Class rdf:about="&contsem;ContractModification">
+        <rdfs:label xml:lang="en">Contract modification</rdfs:label>
+        <rdfs:label xml:lang="es">Modificación del contrato</rdfs:label>
+        <rdfs:comment xml:lang="es">Durante un contrato se puede dar también la necesidad de modificarlo una vez iniciada su ejecución, para plasmar este tipo de casos en la ontología CONTSEM se debe utilizar la clase contsem:ContractModification (rango de la propiedad contsem:contractModification).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ContractNotice -->
+
+    <owl:Class rdf:about="&contsem;ContractNotice">
+        <rdfs:label xml:lang="es">Anuncio de licitación</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&contsem;Notice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ContractOrProcedureExtinction -->
+
+    <owl:Class rdf:about="&contsem;ContractOrProcedureExtinction">
+        <rdfs:label xml:lang="en">Contract or procedure extinction</rdfs:label>
+        <rdfs:label xml:lang="es">Extinción del contrato o del procedimiento</rdfs:label>
+        <rdfs:comment xml:lang="es">Existe una serie de circunstancias que derivan en la extinctión del contrato o procedimiento. Para describir estas situaciones se hace uso de la clase contsem:ContractExtinction. El tipo de extinción vendrá determinado por la propiedad que se utilice para enlazar a esta clase desde el contrato. Existen tres propiedades para ello:
+- Resolución (contsem:contractResolution)
+- Renuncia (contsem:contractWaive)
+- Abandono (contsem:contractAbandonment)
+- Procedimiento desierto (contsem:voidProcedure)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ContractingBodyAgreement -->
+
+    <owl:Class rdf:about="&contsem;ContractingBodyAgreement">
+        <rdfs:label xml:lang="en">Contracting body agreement</rdfs:label>
+        <rdfs:label xml:lang="es">Acuerdo del órgano de contratación</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#CorrectionNotice -->
+
+    <owl:Class rdf:about="&contsem;CorrectionNotice">
+        <rdfs:label xml:lang="es">Anuncio de corrección</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&contsem;Notice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#CriterionScore -->
+
+    <owl:Class rdf:about="&contsem;CriterionScore">
+        <rdfs:label xml:lang="en">Criterion score</rdfs:label>
+        <rdfs:label xml:lang="es">Valoración de criterio</rdfs:label>
+        <rdfs:comment xml:lang="es">Clase para valorar individualmente un criterio de adjudicación. Esta formada por una puntuación (contsem:score) y un criterio (contsem:criterion).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ElectronicAuction -->
+
+    <owl:Class rdf:about="&contsem;ElectronicAuction">
+        <rdfs:label xml:lang="en">Electronic auction</rdfs:label>
+        <rdfs:label xml:lang="es">Subasta electrónica</rdfs:label>
+        <rdfs:comment xml:lang="es">Para especificar la realización de una subasta electrónica de uno o más criterios de adjudicación se hace uso de la clase contsem:ElectronicAuction. Esta clase viene enlazada siempre mediante la propiedad contsem:electronicAuction a partir de un contrato.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ElectronicAuctionPhase -->
+
+    <owl:Class rdf:about="&contsem;ElectronicAuctionPhase">
+        <rdfs:label xml:lang="en">Electronic auction phase</rdfs:label>
+        <rdfs:label xml:lang="es">Fase de subasta electrónica</rdfs:label>
+        <rdfs:comment xml:lang="es">Fase de la subasta electrónica de uno o más de los criterios de adjudicación del contrato.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#FormalizationNotice -->
+
+    <owl:Class rdf:about="&contsem;FormalizationNotice">
+        <rdfs:label xml:lang="es">Anuncio de formalización</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&contsem;Notice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#FrameworkAgreement -->
+
+    <owl:Class rdf:about="&contsem;FrameworkAgreement">
+        <rdfs:label xml:lang="en">Framework agreement</rdfs:label>
+        <rdfs:label xml:lang="es">Acuerdo marco o Sistema Dinámico de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Cuando estemos ante un contrato que consiste en la declaración, tanto de un acuerdo marco como de un sistema dinámico de contratación, se utiliza la clase contsem:FrameworkAgreement, enlazada al contrato mediante la propiedad contsem:frameworkAgreement.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#InformationProvider -->
+
+    <owl:Class rdf:about="&contsem;InformationProvider">
+        <rdfs:label xml:lang="es">Proveedor de información</rdfs:label>
+        <rdfs:comment xml:lang="es">Proveedor de información sobre la licitación del contrato. Puede representar un proveedor de un información técnica o un proveedor de información administrativa, dependiendo de con cual propiedad se enlace a contrato.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Notice -->
+
+    <owl:Class rdf:about="&contsem;Notice">
+        <rdfs:label xml:lang="es">Anuncio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ObjectiveAwardCriteria -->
+
+    <owl:Class rdf:about="&contsem;ObjectiveAwardCriteria">
+        <rdfs:label xml:lang="en">Objective Award Criteria</rdfs:label>
+        <rdfs:label xml:lang="es">Criterio de adjudicación objetivo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://loted.eu/ontology#AwardCriteria"/>
+        <rdfs:comment xml:lang="es">Clase para definir criterios que dependen de un juicio de valor.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#PriorInformationNotice -->
+
+    <owl:Class rdf:about="&contsem;PriorInformationNotice">
+        <rdfs:label xml:lang="es">Anuncio de información previa</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&contsem;Notice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#SubjectiveAwardCriteria -->
+
+    <owl:Class rdf:about="&contsem;SubjectiveAwardCriteria">
+        <rdfs:label xml:lang="en">Subjective Award Criteria</rdfs:label>
+        <rdfs:label xml:lang="es">Criterio de adjudicación subjetivo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://loted.eu/ontology#AwardCriteria"/>
+        <rdfs:comment xml:lang="es">Clase para especificar los criterios que dependen de una opinion subjetiva.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#TenderCommittee -->
+
+    <owl:Class rdf:about="&contsem;TenderCommittee">
+        <rdfs:label xml:lang="es">Comité de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Esta clase puede representar una de las siguientes tres entidades, dependiendo de la propiedad utilizada:
+- Mesa de contratación (contsem:tenderCommittee)
+- Comité de expertos (contsem:expertCommittee)
+- Organismo técnico (contsem:technicalCommittee)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#TenderMeeting -->
+
+    <owl:Class rdf:about="&contsem;TenderMeeting">
+        <rdfs:label xml:lang="es">Reunión de la mesa de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Clase para describir las reuniones que la mesa de contratación, comité de expertos u organismos técnicas han realizado.
+
+Esta clase se enlaza a un contsem:TenderCommittee o un pc:Contract mediante la propiedad contsem:tenderCommittee.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="&s;Person"/>
+    
+
+
+    <!-- http://schema.org/PostalAddress -->
+
+    <owl:Class rdf:about="&s;PostalAddress"/>
+    
+
+
+    <!-- http://www.w3.org/ns/org#Organization -->
+
+    <owl:Class rdf:about="&org;Organization"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://labje.unizar.es/contsem#AdministrativeInformation -->
+
+    <owl:NamedIndividual rdf:about="&contsem;AdministrativeInformation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:inScheme rdf:resource="&contsem;InformationKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;InformationKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Agreement -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Agreement">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:topConceptOf rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#AppealTypeScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;AppealTypeScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Buy -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Buy">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Compra</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que los bienes de un contrato de suministros se compran.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;SupplyContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;SupplyContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ContractKindScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;ContractKindScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ContractWithLots -->
+
+    <owl:NamedIndividual rdf:about="&contsem;ContractWithLots">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Contrato con lotes</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el contrato está dividido el lotes.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;LotContractKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;LotContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ContractWithoutLots -->
+
+    <owl:NamedIndividual rdf:about="&contsem;ContractWithoutLots">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Contrato sin lotes</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el contrato no está dividido en lotes.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;LotContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;LotContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#DynamicSystemDeclaration -->
+
+    <owl:NamedIndividual rdf:about="&contsem;DynamicSystemDeclaration">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">sistema dinámico de contratación</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el contrato consiste en la declaración de un sistema dinámico de contratación.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;FrameworkAgreementTypeScheme"/>
+        <skos:inScheme rdf:resource="&contsem;FrameworkAgreementTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Emergency -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Emergency">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Emergencia</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica la tramitación de emergencia del contrato.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;UrgencyTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;UrgencyTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Express -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Express">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Urgente</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica la tramitación urgente del contrato.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;UrgencyTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;UrgencyTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#FrameworkAgreementDeclaration -->
+
+    <owl:NamedIndividual rdf:about="&contsem;FrameworkAgreementDeclaration">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">declaración de acuerdo marco</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el contrato consiste en la declaración de un Acuerdo Marco.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;FrameworkAgreementTypeScheme"/>
+        <skos:inScheme rdf:resource="&contsem;FrameworkAgreementTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#FrameworkAgreementTypeScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;FrameworkAgreementTypeScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Grant -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Grant">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:inScheme rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#InformationKindScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;InformationKindScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#InterestedManagement -->
+
+    <owl:NamedIndividual rdf:about="&contsem;InterestedManagement">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:inScheme rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Lease -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Lease">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Arrendamiento financiero (renting)</rdfs:label>
+        <skos:topConceptOf rdf:resource="&contsem;SupplyContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;SupplyContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#LegalAppeal -->
+
+    <owl:NamedIndividual rdf:about="&contsem;LegalAppeal">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Recurso judicial</rdfs:label>
+        <skos:inScheme rdf:resource="&contsem;AppealTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;AppealTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Lot -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Lot">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Lote</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el contrato es un lote perteneciente a un contrato mayor.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;LotContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;LotContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#LotContractKindScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;LotContractKindScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Minor -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Minor">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Menor</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el procedimiento de contratación es menor.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;ProcedureTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Mixed -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Mixed">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Mixto</rdfs:label>
+        <rdfs:comment xml:lang="es">Mixto como tipo de contrato público.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#MixedCapitalCompany -->
+
+    <owl:NamedIndividual rdf:about="&contsem;MixedCapitalCompany">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:inScheme rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;PublicServicesContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#NegotiatedWithPublicity -->
+
+    <owl:NamedIndividual rdf:about="&contsem;NegotiatedWithPublicity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Negociado con publicidad</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el procedimiento de contratación es negociado con publicidad.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <owl:sameAs rdf:resource="&pc;Negotiated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#NegotiatedWithoutPublicity -->
+
+    <owl:NamedIndividual rdf:about="&contsem;NegotiatedWithoutPublicity">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Negociado sin publicidad</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el procedimiento de contratación es negociado sin publicidad.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;ProcedureTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#NoFrameworkAgreement -->
+
+    <owl:NamedIndividual rdf:about="&contsem;NoFrameworkAgreement">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">no existe acuerdo marco relacionado</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el contrato ni consiste en la declaración ni pertenece a ningún acuerdo marco o sistema dinámico de contratación.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;FrameworkAgreementTypeScheme"/>
+        <skos:inScheme rdf:resource="&contsem;FrameworkAgreementTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#OrdinaryAdministrativeAppeal -->
+
+    <owl:NamedIndividual rdf:about="&contsem;OrdinaryAdministrativeAppeal">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Recurso administrativo ordinario</rdfs:label>
+        <skos:inScheme rdf:resource="&contsem;AppealTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;AppealTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Private -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Private">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Privado</rdfs:label>
+        <rdfs:comment xml:lang="es">Privado como tipo de contrato público.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#ProcedureTypeScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;ProcedureTypeScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#PublicPrivateCooperation -->
+
+    <owl:NamedIndividual rdf:about="&contsem;PublicPrivateCooperation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Colaboración público-privada</rdfs:label>
+        <rdfs:comment xml:lang="es">Colaboración público-privada como tipo de contrato público.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#PublicServicesContractKindScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;PublicServicesContractKindScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#PublicServicesManagement -->
+
+    <owl:NamedIndividual rdf:about="&contsem;PublicServicesManagement">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Gestión de servicio públicos</rdfs:label>
+        <rdfs:comment xml:lang="es">Gestión de servicios como tipo de contrato público.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#PublicWorksConcession -->
+
+    <owl:NamedIndividual rdf:about="&contsem;PublicWorksConcession">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Concesión de obras públicas</rdfs:label>
+        <rdfs:comment xml:lang="es">Concesión de obras públicas como tipo de contrato público.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Regular -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Regular">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Ordinaria</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica la tramitación ordinaria del contrato.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;UrgencyTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;UrgencyTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#RegularOpen -->
+
+    <owl:NamedIndividual rdf:about="&contsem;RegularOpen">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Abierto ordinario</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el procedimiento de contratación es abierto ordinario.</rdfs:comment>
+        <skos:inScheme rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <owl:sameAs rdf:resource="&pc;Open"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#Rent -->
+
+    <owl:NamedIndividual rdf:about="&contsem;Rent">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Alquiler</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que los bienes de un contrato de suministros se alquilan.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;SupplyContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;SupplyContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#SimpleOpen -->
+
+    <owl:NamedIndividual rdf:about="&contsem;SimpleOpen">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Abierto simple</rdfs:label>
+        <rdfs:comment xml:lang="es">Este concepto indica que el procedimiento de contratación es abierto simple.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ProcedureTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#SpecialAdministrative -->
+
+    <owl:NamedIndividual rdf:about="&contsem;SpecialAdministrative">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Administrativos especiales</rdfs:label>
+        <rdfs:comment xml:lang="es">Administrativos especiales como tipo de contrato público.</rdfs:comment>
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#SpecialAdministrativeAppeal -->
+
+    <owl:NamedIndividual rdf:about="&contsem;SpecialAdministrativeAppeal">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="es">Recurso administrativo especial</rdfs:label>
+        <skos:topConceptOf rdf:resource="&contsem;AppealTypeScheme"/>
+        <skos:inScheme rdf:resource="&contsem;AppealTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#SupplyContractKindScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;SupplyContractKindScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#TechnicalInformation -->
+
+    <owl:NamedIndividual rdf:about="&contsem;TechnicalInformation">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <skos:topConceptOf rdf:resource="&contsem;InformationKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;InformationKindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://labje.unizar.es/contsem#UrgencyTypeScheme -->
+
+    <owl:NamedIndividual rdf:about="&contsem;UrgencyTypeScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#CompetitiveDialogue -->
+
+    <rdf:Description rdf:about="&pc;CompetitiveDialogue">
+        <skos:topConceptOf rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ProcedureTypeScheme"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Negotiated -->
+
+    <rdf:Description rdf:about="&pc;Negotiated"/>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Open -->
+
+    <rdf:Description rdf:about="&pc;Open"/>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Restricted -->
+
+    <rdf:Description rdf:about="&pc;Restricted">
+        <skos:topConceptOf rdf:resource="&contsem;ProcedureTypeScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ProcedureTypeScheme"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Services -->
+
+    <rdf:Description rdf:about="&pc;Services">
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Supplies -->
+
+    <rdf:Description rdf:about="&pc;Supplies">
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Works -->
+
+    <rdf:Description rdf:about="&pc;Works">
+        <skos:topConceptOf rdf:resource="&contsem;ContractKindScheme"/>
+        <skos:inScheme rdf:resource="&contsem;ContractKindScheme"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&pc;awardCriteriaCombination">
+        <rdfs:label xml:lang="es">Combinación de criterios para la evaluar la oferta</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

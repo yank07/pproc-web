@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Búsqueda facetada PPROC</title>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dynatable.js"></script>
+    <script type="text/javascript" src="js/jsonld.js"></script>
+    <script type="text/javascript" src="js/pproc-client-guille.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.dynatable.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pproc-client-guille.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+    <link rel="stylesheet" type="text/css" href="css/themes/tooltipster-light.css" />
+    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.tooltip').tooltipster({
+                theme: 'tooltipster-light'
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <header>
+			<div class="logo">
+				<a href="https://github.com/pproc"><img src="img/logo_pproc_white.png" alt="logo-pproc"></a>
+			</div>
+			<div class="title">
+				<h1>Búsqueda facetada PPROC</h1>
+        Buscador facetado sobre contratos públicos etiquetados con la <b>P</b>ublic <b>Proc</b>urement Ontology
+			</div>
+		</header>
+    <div id="content">
+      <div id="searcher">
+        <ul>
+          <li>
+            <label class="facet_label">
+              <input type="checkbox" name="facets" value="object_text">
+              <span for="object_text" class="tooltip" title="Busca en dcterms:title del pproc:Contract">Descripción</span>
+            </label>
+            <span class="facet_value text">
+              <input type="text" name="object_text" id="object_text">
+            </span>
+            
+          </li>
+          <li>
+            <label class="facet_label">
+              <input type="checkbox" name="facets" value="object_cpv">
+              <span for="object_cpv" class="tooltip" title="Busca en pproc:mainObject del pproc:ContractObject">Código CPV</span>
+            </label>
+            <span class="facet_value text">
+              <input type="text" name="object_cpv" id="object_cpv">
+            </span>
+          </li>
+          <li>
+            <label class="facet_label">
+              <input type="checkbox" name="facets" value="procedureType">
+              <span for="procedureType">Tipo de procedimiento</span>
+            </label>
+            <span class="facet_value">
+              <select name="procedureType" id="procedureType" class="select_list">
+                <option value="Minor">Menor</option>
+                <option value="RegularOpen">Abierto ordinario</option>
+                <option value="SimpleOpen">Abierto simplificado (Aragón)</option>
+                <option value="Negotiated">Negociado</option>
+                <option value="Restricted">Restringido</option>
+                <option value="CompetitiveDialogue">Diálogo competitivo</option>
+                
+              </select>
+            </span>
+          </li>
+          <li>
+            <label class="facet_label">
+              <input type="checkbox" name="facets" value="budget">
+              <span for="budget">Presupuesto</span>
+            </label>
+            <span class="facet_value double">
+              <label for="budget_min">min</label><input type="text" name="budget_min" id="budget_min">
+              <label for="budget_max">max</label><input type="text" name="budget_max" id="budget_max">
+            </span>
+          </li>
+          <li>
+            <label class="facet_label">
+              <input type="checkbox" name="facets" value="contractingAuthority">
+              <span for="contractingAuthority">Poder adjudicador</span>
+            </label>
+            <span class="facet_value text">
+              <input type="text" name="contractingAuthority" id="contractingAuthority">
+            </span>
+          </li>
+          <li>
+            <label class="facet_label">Proveedor</label>
+            <label class="facet_label_2">
+              <input type="checkbox" name="facets" value="supplier_text">
+              <span for="supplier_text">Nombre</span>
+            </label>
+            <span class="facet_value text">
+              <input type="text" name="supplier_text" id="supplier_text">
+            </span>
+            <label class="facet_label_2">
+              <input type="checkbox" name="facets" value="supplier_cif">
+              <span for="supplier_cif">CIF</span>
+            </label>
+            <span class="facet_value text">
+              <input type="text" name="supplier_cif" id="supplier_cif">
+            </span>
+          </li>
+          <li>
+            <label class="facet_label">Fecha</label>
+            <label class="facet_label_2">
+              <input type="checkbox" name="facets" value="tendeStartDate">
+              <span for="tendeStartDate">de inicio</span>
+            </label>
+            <span class="facet_value double">
+              <label for="tendeStartDate_min">de</label><input class="data_ticker" type="text" name="tendeStartDate_min" id="tendeStartDate_min">
+              <label for="tendeStartDate_max">a</label><input class="data_ticker" type="text" name="tendeStartDate_max" id="tendeStartDate_max">
+            </span>
+            <label class="facet_label_2">
+              <input type="checkbox" name="facets" value="tenderNoticeDate">
+              <span for="tenderNoticeDate">de publicación</span>
+            </label>
+            <span class="facet_value double">
+              <label for="tenderNoticeDate_min">de</label><input class="data_ticker" type="text" name="tenderNoticeDate_min" id="tenderNoticeDate_min">
+              <label for="tenderNoticeDate_max">a</label><input class="data_ticker" type="text" name="tenderNoticeDate_max" id="tenderNoticeDate_max">
+            </span>
+            <label class="facet_label_2">
+              <input type="checkbox" name="facets" value="tenderDeadline">
+              <span for="tenderDeadline">límite para envío de ofertas</span>
+            </label>
+            <span class="facet_value double">
+              <label for="tenderDeadline_min">de</label><input class="data_ticker" type="text" name="tenderDeadline_min" id="tenderDeadline_min">
+              <label for="tenderDeadline_max">a</label><input class="data_ticker" type="text" name="tenderDeadline_max" id="tenderDeadline_max">
+            </span>
+            <label class="facet_label_2">
+              <input type="checkbox" name="facets" value="awardDate">
+              <span for="awardDate">de adjudicación</span>
+            </label>
+            <span class="facet_value double">
+              <label for="awardDate_min">de</label><input class="data_ticker" type="text" name="awardDate_min" id="awardDate_min">
+              <label for="awardDate_max">a</label><input class="data_ticker" type="text" name="awardDate_max" id="awardDate_max">
+            </span>
+            <label class="facet_label_2">
+              <input type="checkbox" name="facets" value="formalizedDate">
+              <span for="formalizedDate">de formalización</span>
+            </label>
+            <span class="facet_value double">
+              <label for="formalizedDate_min">de</label><input class="data_ticker" type="text" name="formalizedDate_min" id="formalizedDate_min">
+              <label for="formalizedDate_max">a</label><input class="data_ticker" type="text" name="formalizedDate_max" id="formalizedDate_max">
+            </span>
+          </li>
+          <li>
+            <label class="facet_label">
+              <input type="checkbox" name="facets" value="tenderState">
+              <span for="tenderState">Estado de licitación</span>
+            </label>
+            <span class="facet_value">
+              <select name="tenderState" id="tenderState" class="select_list">
+                <option value="start_phase">Fase inicial</option>
+                <option value="tenderSubmission_phase">Fase de envío de ofertas</option>
+                <option value="execution_phase">Fase de ejecución</option>
+                <option value="end_phase">Contratos finalizados</option>
+              </select>
+            </span>
+          </li>
+        </ul>
+        <button id="fQuery">Consultar</button>
+        <!--button id="fQuery2" onclick="get_facetQuery()">Test facetQuery</button-->
+      </div> 
+      <div id="results">
+        <table id="my-final-table" class="table table-bordered hoverTable" afterProcess="test()">
+          <thead>
+            <th data-dynatable-column="contractUri">URI</th>
+            <th data-dynatable-column="sparqlEndpoint">SPARQL endpoint</th>
+            <th data-dynatable-column="contractName">Nombre</th>
+            <th data-dynatable-column="budget">Presupuesto</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div id="detail" style="padding: 15px"></div>
+        <img id="loadimg" src="img/loading.gif" alt="loading..."/>
+      </div>
+    </div>
+    <footer><h3>PPROC 2014</h3></footer>
+  </body>
+</html>

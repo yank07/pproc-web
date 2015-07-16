@@ -1,0 +1,4375 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://contsem.unizar.es/def/sector-publico/contsem"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://contsem.unizar.es/def/sector-publico/contsem">
+    <Prefix name="" IRI="http://contsem.unizar.es/def/sector-publico/contsem#"/>
+    <Prefix name="s" IRI="http://schema.org/"/>
+    <Prefix name="gr" IRI="http://purl.org/goodrelations/v1#"/>
+    <Prefix name="pc" IRI="http://purl.org/procurement/public-contracts#"/>
+    <Prefix name="cpv" IRI="http://purl.org/cpv/2008/"/>
+    <Prefix name="org" IRI="http://www.w3.org/ns/org#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="pcd" IRI="http://purl.org/procurement/public-contracts-datatypes#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Prefix name="contsem" IRI="http://contsem.unizar.es/def/sector-publico/contsem#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Import>http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf</Import>
+    <Import>http://purl.org/procurement/public-contracts#</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">CONTSEM ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Ontología creada con objeto de publicar datos sobre contratación publica española en RDF. Se ha desarrollado durante el transcurso del proyecto &quot;Optimización de la contratación pública mediante la utilización de técnicas semánticas&quot; (CONTSEM), en el que participan la empresa iASoft (OESIA), la Universidad de Zaragoza y, como administraciones usuarias, el Gobierno de Aragón, la Diputación Provincial de Huesca y los ayuntamientos de Zaragoza y Huesca.
+
+Financiado por la Acción Estratégica de Telecomunicaciones y Sociedad de la Información. Año 2012. Ministerio de Industria, Comercio y Turismo (TSI-020606-2012-4), y desarrollado entre noviembre de 2012 y diciembre de 2014.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">ontología CONTSEM</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">ontologia CONTSEM</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">CONTSEM ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">J.F. Muñoz; F.J. Serón; G. Esteban; M.A. Bernal</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">0.1.2. Segunda versión publicada en los grupos de contratación relativos al proyecto.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#AdditionalInformationNotice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Appeal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Briefing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BundlePriceSpecification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CommitteeMember"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContractAwardNotice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContractModification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContractNotice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContractOrProcedureExtinction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContractingBodyAgreement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CorrectionNotice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CriterionScore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectronicAuction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectronicAuctionPhase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FormalizationNotice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FrameworkAgreement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InformationProvider"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Notice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObjectiveAwardCriteria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PriorInformationNotice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SubjectiveAwardCriteria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TenderCommittee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TenderMeeting"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="s:Person"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="s:PostalAddress"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="org:Organization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#acceptedTender"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#additionalDocumentReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#alternateMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#appealType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#awardAgreement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#briefing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#budgetPrice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#complementaryContract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contractAbandonment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contractKind"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contractModification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contractOrProcedureExtinction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contractResolution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contractWaive"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contractingBody"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contractingBodyAgreement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#criterion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#criterionScore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#delegatingAuthority"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#documentReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#electronicAuction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#electronicAuctionPhase"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#electronicAuctionWeb"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#excludedTender"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#feePrice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#formalizedTender"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#frameworkAgreement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#frameworkAgreementDerivativeContract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#frameworkAgreementType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#fullMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#informationKind"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#legalDocumentReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#lotContractKind"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#managingDepartment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#minutesDocumentReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#notice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#noticeWeb"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#procedureType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#publicServicesContractKind"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#resolutionDocumentReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supplyContractKind"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#technicalDocumentReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tenderAdmissionMeeting"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tenderBriefing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tenderInformationProvider"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tenderMeeting"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tenderSubmissionLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#urgencyType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#voidProcedure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#websiteWithInformation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#actualDuration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#admitVariants"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#advertisementAmount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#appealResult"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#assumptionProtectingProcedureType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#awardDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#constructionSubsidies"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#disposableMeansAppointment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#duration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#earlyTramitation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#estimatedDuration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#estimatedEndDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#executionRequeriments"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#expectedCauseModification"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#extinctionCause"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#finalFinancialGuarantee"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#finalFinancialGuaranteeDuration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#harmonized"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isPriceReviewed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#lotCount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maxBudgetChange"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maxFinalPriceChange"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maxInvitations"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maxNumberOfOperators"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maxSubcontracting"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#minInvitations"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#minNumberOfOperators"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#minSubcontracting"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#multiannual"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#noticeDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#noticeSentDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#noticeSite"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#offeredDuration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#offeredEndDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#otherAwardTerms"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#otherGuarantee"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#priceRevisionFormulaDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#prorogationPrevision"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#prorogationsExpected"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#provisionalFinancialGuarantee"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requiredCapability"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requiredClassification"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requiredFinancialCapability"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#requiredTechnicalCapability"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#reservedContractRestrictions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#score"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tenderCommitteeAppointmentDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tenderCommitteePosition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tenderDocumentNeeds"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tenderDossierStartDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tenderManteinanceDuration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tenderPurpose"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tenderSubmissionMode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tenderSubmissionSupportedLanguage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#variantDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AdministrativeInformation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Agreement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AppealTypeScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Buy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ContractKindScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ContractWithLots"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ContractWithoutLots"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DynamicSystemDeclaration"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Emergency"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Express"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FrameworkAgreementDeclaration"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FrameworkAgreementTypeScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Grant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InformationKindScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InterestedManagement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lease"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LegalAppeal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LotContractKindScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Minor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mixed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MixedCapitalCompany"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NegotiatedWithPublicity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NegotiatedWithoutPublicity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NoFrameworkAgreement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OrdinaryAdministrativeAppeal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Private"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ProcedureTypeScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PublicPrivateCooperation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PublicServicesContractKindScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PublicServicesManagement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PublicWorksConcession"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Regular"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RegularOpen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SimpleOpen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SpecialAdministrative"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SpecialAdministrativeAppeal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SupplyContractKindScheme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TechnicalInformation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UrgencyTypeScheme"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AdditionalInformationNotice"/>
+        <Class IRI="#Notice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BundlePriceSpecification"/>
+        <Class abbreviatedIRI="gr:PriceSpecification"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommitteeMember"/>
+        <Class abbreviatedIRI="s:Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContractAwardNotice"/>
+        <Class IRI="#Notice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContractNotice"/>
+        <Class IRI="#Notice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CorrectionNotice"/>
+        <Class IRI="#Notice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FormalizationNotice"/>
+        <Class IRI="#Notice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObjectiveAwardCriteria"/>
+        <Class IRI="http://loted.eu/ontology#AwardCriteria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PriorInformationNotice"/>
+        <Class IRI="#Notice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SubjectiveAwardCriteria"/>
+        <Class IRI="http://loted.eu/ontology#AwardCriteria"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#AdministrativeInformation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Agreement"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#AppealTypeScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Buy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#ContractKindScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#ContractWithLots"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#ContractWithoutLots"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#DynamicSystemDeclaration"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Emergency"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Express"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#FrameworkAgreementDeclaration"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#FrameworkAgreementTypeScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Grant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#InformationKindScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#InterestedManagement"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Lease"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#LegalAppeal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Lot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#LotContractKindScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Minor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Mixed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#MixedCapitalCompany"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#NegotiatedWithPublicity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#NegotiatedWithoutPublicity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#NoFrameworkAgreement"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#OrdinaryAdministrativeAppeal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Private"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#ProcedureTypeScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#PublicPrivateCooperation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#PublicServicesContractKindScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#PublicServicesManagement"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#PublicWorksConcession"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Regular"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#RegularOpen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#Rent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#SimpleOpen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#SpecialAdministrative"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#SpecialAdministrativeAppeal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#SupplyContractKindScheme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:Concept"/>
+        <NamedIndividual IRI="#TechnicalInformation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="skos:ConceptScheme"/>
+        <NamedIndividual IRI="#UrgencyTypeScheme"/>
+    </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#NegotiatedWithPublicity"/>
+        <NamedIndividual abbreviatedIRI="pc:Negotiated"/>
+    </SameIndividual>
+    <SameIndividual>
+        <NamedIndividual IRI="#RegularOpen"/>
+        <NamedIndividual abbreviatedIRI="pc:Open"/>
+    </SameIndividual>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#acceptedTender"/>
+        <ObjectProperty abbreviatedIRI="pc:tender"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#additionalDocumentReference"/>
+        <ObjectProperty IRI="#documentReference"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#alternateMember"/>
+        <ObjectProperty abbreviatedIRI="skos:member"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#budgetPrice"/>
+        <ObjectProperty abbreviatedIRI="pc:contractPrice"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#contractAbandonment"/>
+        <ObjectProperty IRI="#contractOrProcedureExtinction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#contractResolution"/>
+        <ObjectProperty IRI="#contractOrProcedureExtinction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#contractWaive"/>
+        <ObjectProperty IRI="#contractOrProcedureExtinction"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#excludedTender"/>
+        <ObjectProperty abbreviatedIRI="pc:tender"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#feePrice"/>
+        <ObjectProperty abbreviatedIRI="pc:contractPrice"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#formalizedTender"/>
+        <ObjectProperty abbreviatedIRI="pc:tender"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#fullMember"/>
+        <ObjectProperty abbreviatedIRI="skos:member"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#legalDocumentReference"/>
+        <ObjectProperty IRI="#documentReference"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#minutesDocumentReference"/>
+        <ObjectProperty IRI="#documentReference"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#resolutionDocumentReference"/>
+        <ObjectProperty IRI="#documentReference"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#technicalDocumentReference"/>
+        <ObjectProperty IRI="#documentReference"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#voidProcedure"/>
+        <ObjectProperty IRI="#contractOrProcedureExtinction"/>
+    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#budgetPrice"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#contractKind"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#contractingBody"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#criterion"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#delegatingAuthority"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#electronicAuction"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#feePrice"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#frameworkAgreement"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#frameworkAgreementType"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#lotContractKind"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#managingDepartment"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#noticeWeb"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#procedureType"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#supplyContractKind"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#urgencyType"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#additionalDocumentReference"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#alternateMember"/>
+        <Class IRI="#TenderCommittee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#appealType"/>
+        <Class IRI="#Appeal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#awardAgreement"/>
+        <Class abbreviatedIRI="pc:Tender"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#briefing"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#complementaryContract"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contractKind"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contractModification"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contractOrProcedureExtinction"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contractingBody"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contractingBodyAgreement"/>
+        <ObjectUnionOf>
+            <Class IRI="#ContractModification"/>
+            <Class IRI="#ContractOrProcedureExtinction"/>
+            <Class abbreviatedIRI="pc:Contract"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#criterion"/>
+        <Class IRI="#CriterionScore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#criterionScore"/>
+        <Class IRI="http://loted.eu/ontology#Tender"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#delegatingAuthority"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#electronicAuction"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#electronicAuctionPhase"/>
+        <Class IRI="#ElectronicAuction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#electronicAuctionWeb"/>
+        <Class IRI="#ElectronicAuction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#frameworkAgreement"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#frameworkAgreementDerivativeContract"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#frameworkAgreementType"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#fullMember"/>
+        <Class IRI="#TenderCommittee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#informationKind"/>
+        <Class IRI="#InformationProvider"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#legalDocumentReference"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#lotContractKind"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#managingDepartment"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#minutesDocumentReference"/>
+        <Class IRI="#TenderMeeting"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#notice"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#noticeWeb"/>
+        <Class IRI="#Notice"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#object"/>
+        <Class abbreviatedIRI="gr:Offering"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#procedureType"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#publicServicesContractKind"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#resolutionDocumentReference"/>
+        <Class IRI="#ContractingBodyAgreement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#supplyContractKind"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#technicalDocumentReference"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tenderAdmissionMeeting"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tenderBriefing"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tenderInformationProvider"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tenderMeeting"/>
+        <ObjectUnionOf>
+            <Class IRI="#TenderCommittee"/>
+            <Class abbreviatedIRI="pc:Contract"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tenderSubmissionLocation"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#urgencyType"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#websiteWithInformation"/>
+        <Class IRI="#InformationProvider"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#appealType"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#appealType"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#AppealTypeScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#awardAgreement"/>
+        <Class IRI="#ContractingBodyAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#briefing"/>
+        <Class IRI="#Briefing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#budgetPrice"/>
+        <Class IRI="#BundlePriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#complementaryContract"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contractKind"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contractKind"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#ContractKindScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contractModification"/>
+        <Class IRI="#ContractModification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contractOrProcedureExtinction"/>
+        <Class IRI="#ContractOrProcedureExtinction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contractingBody"/>
+        <Class abbreviatedIRI="org:Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contractingBodyAgreement"/>
+        <Class IRI="#ContractingBodyAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#criterion"/>
+        <Class IRI="http://loted.eu/ontology#AwardCriteria"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#criterionScore"/>
+        <Class IRI="#CriterionScore"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#delegatingAuthority"/>
+        <Class abbreviatedIRI="org:Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#documentReference"/>
+        <Class abbreviatedIRI="rdf:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#electronicAuction"/>
+        <Class IRI="#ElectronicAuction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#electronicAuctionPhase"/>
+        <Class IRI="#ElectronicAuctionPhase"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#electronicAuctionWeb"/>
+        <Class abbreviatedIRI="rdf:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#feePrice"/>
+        <Class IRI="#BundlePriceSpecification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#frameworkAgreement"/>
+        <Class IRI="#FrameworkAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#frameworkAgreementDerivativeContract"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#frameworkAgreementType"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#frameworkAgreementType"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#FrameworkAgreementTypeScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#informationKind"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#informationKind"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#InformationKindScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#lotContractKind"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#lotContractKind"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#LotContractKindScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#managingDepartment"/>
+        <Class abbreviatedIRI="org:Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#notice"/>
+        <Class IRI="#Notice"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#noticeWeb"/>
+        <Class abbreviatedIRI="rdf:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#object"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#procedureType"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#procedureType"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#ProcedureTypeScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#publicServicesContractKind"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#publicServicesContractKind"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#PublicServicesContractKindScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#supplyContractKind"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#supplyContractKind"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#SupplyContractKindScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tenderAdmissionMeeting"/>
+        <Class IRI="#TenderMeeting"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tenderBriefing"/>
+        <Class IRI="#Briefing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tenderInformationProvider"/>
+        <Class IRI="#InformationProvider"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tenderMeeting"/>
+        <Class IRI="#TenderMeeting"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tenderSubmissionLocation"/>
+        <Class abbreviatedIRI="s:Place"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#urgencyType"/>
+        <Class abbreviatedIRI="skos:Concept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#urgencyType"/>
+        <ObjectHasValue>
+            <ObjectProperty abbreviatedIRI="skos:inScheme"/>
+            <NamedIndividual IRI="#UrgencyTypeScheme"/>
+        </ObjectHasValue>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#websiteWithInformation"/>
+        <Class abbreviatedIRI="rdf:Resource"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#actualDuration"/>
+        <DataProperty IRI="#duration"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#estimatedDuration"/>
+        <DataProperty IRI="#duration"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#offeredDuration"/>
+        <DataProperty IRI="#duration"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#actualDuration"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#admitVariants"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#awardDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#earlyTramitation"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#estimatedDuration"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#estimatedEndDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#finalFinancialGuarantee"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#finalFinancialGuaranteeDuration"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#harmonized"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isPriceReviewed"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#lotCount"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#maxBudgetChange"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#maxFinalPriceChange"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#maxNumberOfOperators"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#maxSubcontracting"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#minNumberOfOperators"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#minSubcontracting"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#multiannual"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#noticeDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#noticeSentDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#offeredDuration"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#offeredEndDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#prorogationPrevision"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#prorogationsExpected"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#provisionalFinancialGuarantee"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#score"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#tenderCommitteeAppointmentDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#tenderCommitteePosition"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#tenderDossierStartDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#tenderManteinanceDuration"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#admitVariants"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#advertisementAmount"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#appealResult"/>
+        <Class IRI="#Appeal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#assumptionProtectingProcedureType"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#constructionSubsidies"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#disposableMeansAppointment"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#earlyTramitation"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#executionRequeriments"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#expectedCauseModification"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#extinctionCause"/>
+        <Class IRI="#ContractOrProcedureExtinction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#finalFinancialGuarantee"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#finalFinancialGuaranteeDuration"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#harmonized"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isPriceReviewed"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#lotCount"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#maxBudgetChange"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#maxFinalPriceChange"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#maxInvitations"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#maxNumberOfOperators"/>
+        <Class IRI="#FrameworkAgreement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#maxSubcontracting"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#minInvitations"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#minNumberOfOperators"/>
+        <Class IRI="#FrameworkAgreement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#minSubcontracting"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#multiannual"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#noticeSite"/>
+        <Class IRI="#Notice"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#otherAwardTerms"/>
+        <Class IRI="http://loted.eu/ontology#Tender"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#otherGuarantee"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#priceRevisionFormulaDescription"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#prorogationPrevision"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#prorogationsExpected"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#provisionalFinancialGuarantee"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#requiredCapability"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#requiredClassification"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#requiredFinancialCapability"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#requiredTechnicalCapability"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#reservedContractRestrictions"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#score"/>
+        <Class IRI="#CriterionScore"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tenderCommitteePosition"/>
+        <Class IRI="#CommitteeMember"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tenderDocumentNeeds"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tenderManteinanceDuration"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tenderPurpose"/>
+        <Class IRI="#TenderMeeting"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tenderSubmissionMode"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tenderSubmissionSupportedLanguage"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#variantDescription"/>
+        <Class abbreviatedIRI="pc:Contract"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#admitVariants"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#advertisementAmount"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#appealResult"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#assumptionProtectingProcedureType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#awardDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#constructionSubsidies"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#disposableMeansAppointment"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#duration"/>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#earlyTramitation"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#estimatedEndDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#executionRequeriments"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#expectedCauseModification"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#extinctionCause"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#finalFinancialGuarantee"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#finalFinancialGuaranteeDuration"/>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#harmonized"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isPriceReviewed"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#lotCount"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#maxBudgetChange"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#maxFinalPriceChange"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#maxInvitations"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#maxNumberOfOperators"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#maxSubcontracting"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#minInvitations"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#minNumberOfOperators"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#minSubcontracting"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#multiannual"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#noticeDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#noticeSentDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#noticeSite"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#offeredEndDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#otherAwardTerms"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#otherGuarantee"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#priceRevisionFormulaDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#prorogationPrevision"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#prorogationsExpected"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#provisionalFinancialGuarantee"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#requiredCapability"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#requiredClassification"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#requiredFinancialCapability"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#requiredTechnicalCapability"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#reservedContractRestrictions"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#score"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tenderCommitteeAppointmentDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tenderCommitteePosition"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tenderDocumentNeeds"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tenderDossierStartDate"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tenderManteinanceDuration"/>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tenderPurpose"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tenderSubmissionMode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tenderSubmissionSupportedLanguage"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#variantDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AdditionalInformationNotice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Additional information notice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AdditionalInformationNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio de información adicional</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#AdministrativeInformation</IRI>
+        <IRI>#InformationKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#AdministrativeInformation</IRI>
+        <IRI>#InformationKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Agreement</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Agreement</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Appeal</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Cuando se interponga un recurso sobre alguna de las resoluciones del proceso de licitación se utilizará la propiedad contsem:appeal con rango en la clase contsem:Appeal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Appeal</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Appeal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Appeal</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Recurso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Briefing</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Reunión informativa sobre la licitación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Briefing</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Reunión informativa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BundlePriceSpecification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Clase que representa el precio de conjuntos de objetos o un paquete determinado.
+
+Se utiliza para especificar el precio, presupuesto y canon de un contrato.
+
+Se utiliza para especificar el precio de la clase gr:Offering cuando este precio se refiere al del conjunto de los objetos (y no a su precio unitario).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BundlePriceSpecification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Precio de paquete</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Buy</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que los bienes de un contrato de suministros se compran.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Buy</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Compra</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Buy</IRI>
+        <IRI>#SupplyContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Buy</IRI>
+        <IRI>#SupplyContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CommitteeMember</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Miembro perteneciente a un comité de contratación concreto.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CommitteeMember</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Miembro del comité</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractAwardNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio de adjudicación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractAwardNotice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract award notice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ContractModification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Durante un contrato se puede dar también la necesidad de modificarlo una vez iniciada su ejecución, para plasmar este tipo de casos en la ontología CONTSEM se debe utilizar la clase contsem:ContractModification (rango de la propiedad contsem:contractModification).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractModification</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract modification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractModification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Modificación del contrato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio de licitación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractNotice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract notice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ContractOrProcedureExtinction</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Existe una serie de circunstancias que derivan en la extinctión del contrato o procedimiento. Para describir estas situaciones se hace uso de la clase contsem:ContractExtinction. El tipo de extinción vendrá determinado por la propiedad que se utilice para enlazar a esta clase desde el contrato. Existen tres propiedades para ello:
+- Resolución (contsem:contractResolution)
+- Renuncia (contsem:contractWaive)
+- Abandono (contsem:contractAbandonment)
+- Procedimiento desierto (contsem:voidProcedure)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractOrProcedureExtinction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract or procedure extinction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractOrProcedureExtinction</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Extinción del contrato o del procedimiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ContractWithLots</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el contrato está dividido el lotes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractWithLots</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Contrato con lotes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#ContractWithLots</IRI>
+        <IRI>#LotContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#ContractWithLots</IRI>
+        <IRI>#LotContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ContractWithoutLots</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el contrato no está dividido en lotes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractWithoutLots</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Contrato sin lotes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#ContractWithoutLots</IRI>
+        <IRI>#LotContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#ContractWithoutLots</IRI>
+        <IRI>#LotContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractingBodyAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Acuerdo del órgano de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContractingBodyAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contracting body agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CorrectionNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio corrección de algún anuncio previamente publicado.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CorrectionNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio de corrección</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CorrectionNotice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Correction notice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CriterionScore</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Clase para valorar individualmente un criterio de adjudicación. Esta formada por una puntuación (contsem:score) y un criterio (contsem:criterion).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CriterionScore</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Criterion score</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CriterionScore</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Valoración de criterio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DynamicSystemDeclaration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el contrato consiste en la declaración de un sistema dinámico de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DynamicSystemDeclaration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">sistema dinámico de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#DynamicSystemDeclaration</IRI>
+        <IRI>#FrameworkAgreementTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#DynamicSystemDeclaration</IRI>
+        <IRI>#FrameworkAgreementTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ElectronicAuction</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Para especificar la realización de una subasta electrónica de uno o más criterios de adjudicación se hace uso de la clase contsem:ElectronicAuction. Esta clase viene enlazada siempre mediante la propiedad contsem:electronicAuction a partir de un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ElectronicAuction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Electronic auction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ElectronicAuction</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Subasta electrónica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ElectronicAuctionPhase</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fase de la subasta electrónica de uno o más de los criterios de adjudicación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ElectronicAuctionPhase</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Electronic auction phase</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ElectronicAuctionPhase</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fase de subasta electrónica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Emergency</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica la tramitación de emergencia del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Emergency</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Emergencia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Emergency</IRI>
+        <IRI>#UrgencyTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Emergency</IRI>
+        <IRI>#UrgencyTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Express</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica la tramitación urgente del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Express</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Urgente</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Express</IRI>
+        <IRI>#UrgencyTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Express</IRI>
+        <IRI>#UrgencyTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FormalizationNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio con la formalización del contrato previamente adjudicado.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FormalizationNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio de formalización</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FormalizationNotice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Formalization notice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FrameworkAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Cuando estemos ante un contrato que consiste en la declaración, tanto de un acuerdo marco como de un sistema dinámico de contratación, se utiliza la clase contsem:FrameworkAgreement, enlazada al contrato mediante la propiedad contsem:frameworkAgreement.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FrameworkAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Acuerdo marco o Sistema Dinámico de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FrameworkAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Framework agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FrameworkAgreementDeclaration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el contrato consiste en la declaración de un Acuerdo Marco.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FrameworkAgreementDeclaration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">declaración de acuerdo marco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#FrameworkAgreementDeclaration</IRI>
+        <IRI>#FrameworkAgreementTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#FrameworkAgreementDeclaration</IRI>
+        <IRI>#FrameworkAgreementTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Grant</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Grant</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InformationProvider</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Proveedor de información sobre la licitación del contrato. Puede representar un proveedor de un información técnica o un proveedor de información administrativa, dependiendo de con cual propiedad se enlace a contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#InformationProvider</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Proveedor de información</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#InterestedManagement</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#InterestedManagement</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Lease</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Arrendamiento financiero (renting)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Lease</IRI>
+        <IRI>#SupplyContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Lease</IRI>
+        <IRI>#SupplyContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LegalAppeal</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Recurso judicial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#LegalAppeal</IRI>
+        <IRI>#AppealTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#LegalAppeal</IRI>
+        <IRI>#AppealTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lot</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el contrato es un lote perteneciente a un contrato mayor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Lot</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Lote</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Lot</IRI>
+        <IRI>#LotContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Lot</IRI>
+        <IRI>#LotContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Minor</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el procedimiento de contratación es menor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Minor</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Menor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Minor</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Minor</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mixed</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Mixto como tipo de contrato público.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mixed</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Mixto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Mixed</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Mixed</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#MixedCapitalCompany</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#MixedCapitalCompany</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NegotiatedWithPublicity</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el procedimiento de contratación es negociado con publicidad.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NegotiatedWithPublicity</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Negociado con publicidad</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#NegotiatedWithPublicity</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#NegotiatedWithPublicity</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NegotiatedWithoutPublicity</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el procedimiento de contratación es negociado sin publicidad.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NegotiatedWithoutPublicity</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Negociado sin publicidad</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#NegotiatedWithoutPublicity</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#NegotiatedWithoutPublicity</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NoFrameworkAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el contrato ni consiste en la declaración ni pertenece a ningún acuerdo marco o sistema dinámico de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NoFrameworkAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">no existe acuerdo marco relacionado</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#NoFrameworkAgreement</IRI>
+        <IRI>#FrameworkAgreementTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#NoFrameworkAgreement</IRI>
+        <IRI>#FrameworkAgreementTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Notice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Notice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Notice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ObjectiveAwardCriteria</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Clase para definir criterios que dependen de un juicio de valor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ObjectiveAwardCriteria</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Criterio de adjudicación objetivo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ObjectiveAwardCriteria</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Objective Award Criteria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OrdinaryAdministrativeAppeal</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Recurso administrativo ordinario</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#OrdinaryAdministrativeAppeal</IRI>
+        <IRI>#AppealTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#OrdinaryAdministrativeAppeal</IRI>
+        <IRI>#AppealTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PriorInformationNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio previo al anuncio de licitación con la información más básica del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PriorInformationNotice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio de información previa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PriorInformationNotice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Prior information notice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Private</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Privado como tipo de contrato público.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Private</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Privado</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Private</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Private</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PublicPrivateCooperation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Colaboración público-privada como tipo de contrato público.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PublicPrivateCooperation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Colaboración público-privada</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#PublicPrivateCooperation</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#PublicPrivateCooperation</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PublicServicesManagement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Gestión de servicios como tipo de contrato público.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PublicServicesManagement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Gestión de servicio públicos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#PublicServicesManagement</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#PublicServicesManagement</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PublicWorksConcession</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Concesión de obras públicas como tipo de contrato público.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PublicWorksConcession</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Concesión de obras públicas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#PublicWorksConcession</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#PublicWorksConcession</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Regular</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica la tramitación ordinaria del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Regular</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Ordinaria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Regular</IRI>
+        <IRI>#UrgencyTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Regular</IRI>
+        <IRI>#UrgencyTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RegularOpen</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el procedimiento de contratación es abierto ordinario.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RegularOpen</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Abierto ordinario</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#RegularOpen</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#RegularOpen</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rent</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que los bienes de un contrato de suministros se alquilan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rent</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Alquiler</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#Rent</IRI>
+        <IRI>#SupplyContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#Rent</IRI>
+        <IRI>#SupplyContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SimpleOpen</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Este concepto indica que el procedimiento de contratación es abierto simple.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SimpleOpen</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Abierto simple</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#SimpleOpen</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#SimpleOpen</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpecialAdministrative</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Administrativos especiales como tipo de contrato público.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SpecialAdministrative</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Administrativos especiales</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#SpecialAdministrative</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#SpecialAdministrative</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SpecialAdministrativeAppeal</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Recurso administrativo especial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#SpecialAdministrativeAppeal</IRI>
+        <IRI>#AppealTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#SpecialAdministrativeAppeal</IRI>
+        <IRI>#AppealTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SubjectiveAwardCriteria</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Clase para especificar los criterios que dependen de una opinion subjetiva.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SubjectiveAwardCriteria</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Criterio de adjudicación subjetivo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SubjectiveAwardCriteria</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Subjective Award Criteria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <IRI>#TechnicalInformation</IRI>
+        <IRI>#InformationKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <IRI>#TechnicalInformation</IRI>
+        <IRI>#InformationKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TenderCommittee</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Esta clase puede representar una de las siguientes tres entidades, dependiendo de la propiedad utilizada:
+- Mesa de contratación (contsem:tenderCommittee)
+- Comité de expertos (contsem:expertCommittee)
+- Organismo técnico (contsem:technicalCommittee)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TenderCommittee</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Comité de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TenderMeeting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Clase para describir las reuniones que la mesa de contratación, comité de expertos u organismos técnicas han realizado.
+
+Esta clase se enlaza a un contsem:TenderCommittee o un pc:Contract mediante la propiedad contsem:tenderCommittee.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TenderMeeting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Reunión de la mesa de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#acceptedTender</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlaza el contrato con aquellas ofertas que se han admitido a licitación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#acceptedTender</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Accepted tender</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#acceptedTender</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Oferta admitida</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#actualDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Representa el plazo de ejecución final en forma de duración.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#actualDuration</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Actual duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#actualDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Duración real</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#additionalDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlace a documentación adicional.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#additionalDocumentReference</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Additional document reference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#additionalDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Documentación adicional</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#admitVariants</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Campo para definir si están o no admitidas las variantes en las ofertas presentadas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#admitVariants</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Admisión de variantes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#admitVariants</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Admit variants</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#advertisementAmount</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Describe los gastos de publicidad asociados a la licitación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#advertisementAmount</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Advertisement amount</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#advertisementAmount</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Gastos de publicidad</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#alternateMember</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Miembro suplente en una mesa de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#alternateMember</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Alternate member</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#alternateMember</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Miembro suplente</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#appealResult</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Contiene el resultado del recurso interpuesto en un contrato. Normalmente el valor de esta propiedad incluirá valores como &quot;Estimado&quot;, &quot;Estimado parcialmente&quot; o &quot;Desestimado&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#appealResult</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Appeal result</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#appealResult</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Resultado del recurso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#appealType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo del recurso interpuesto en un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#appealType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de recurso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#appealType</IRI>
+        <IRI>#AppealTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#assumptionProtectingProcedureType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Descripción del supuesto que ampara el uso de procedimiento elegido en el contrato actual.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#assumptionProtectingProcedureType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Assumption protecting the chosen procedure type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#assumptionProtectingProcedureType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Supuesto que ampara el uso del procedimiento elegido</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#awardAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el acuerdo del órgano de contratación donde se ha adjudicado el contrato a un licitador.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#awardAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Acuerdo de adjudicación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#awardAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Award agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#awardDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la fecha de adjudicación de una oferta (en el caso de que esta haya sido adjudicada).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#awardDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Date of award</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#awardDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha de adjudicación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#briefing</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica las reuniones informativas sobre la licitación de este contrato realizadas o por realizar.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#briefing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Briefing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#briefing</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Reunión informativa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#budgetPrice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el presupuesto definido de un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#budgetPrice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract budget price</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#budgetPrice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Presupuesto del contrato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#complementaryContract</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Señala un contrato complementario al actual.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#complementaryContract</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Complementary contract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#complementaryContract</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Contrato complementario</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#constructionSubsidies</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Descripción de las aportaciones públicas a la construcción.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#constructionSubsidies</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Aportaciones públicas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#constructionSubsidies</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Construction subsidies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractAbandonment</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Abandono de contrato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractAbandonment</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract abandonment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contractKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de contrato desde el punto de vista administrativo (e.g. suministros)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractKind</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract kind</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de contrato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#contractKind</IRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contractModification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la modificación efectuada en un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractModification</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract modification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractModification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Modificación de contrato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contractOrProcedureExtinction</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Propiedad abstracta que indica la extinción de un contrato por resolución, renuncia o abandono. O bien la extinción del procedimiento al ser declarado desierto.
+
+Utilizar una de sus subclases.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractOrProcedureExtinction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract or procedure extinction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractOrProcedureExtinction</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Extinción de contrato o de procedimiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractResolution</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract resolution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractResolution</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Resolución de contrato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractWaive</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contract waive</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractWaive</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Renuncia de contrato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contractingBody</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define la organización del órgano de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractingBody</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contracting body</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractingBody</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Órgano de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contractingBodyAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Sirve para definir un acuerdo del órgano de contratación. Este puede enlazarse desde una modificación, una extinción o directamente con el contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractingBodyAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Acuerdo del órgano de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contractingBodyAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Contracting body agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#criterion</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Criterio sujeto a valoración</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#criterion</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Criterio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#criterion</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Criterion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#criterionScore</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Especifica la valoración de un único criterio, por lo que se utilizará una vez por cada criterio de adjudicación presente en el contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#criterionScore</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Criterion score</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#criterionScore</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Valoración de criterio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#delegatingAuthority</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la entidad que delega la licitación de este contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#delegatingAuthority</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Delegating authority</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#delegatingAuthority</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Entidad delegante</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#disposableMeansAppointment</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Adscripción de medios para la realización del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#disposableMeansAppointment</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Adscripción de medios</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#disposableMeansAppointment</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Disposable means appointment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#documentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlace a documentación.
+
+Propiedad similar a pc:attachment, pero sin dominio fijo, pues esta misma propiedad puede utilizarse con múltiples clases (e.g. pc:Contract ó contsem:TenderMeeting)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#documentReference</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Document reference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#documentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Documentación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#documentReference</IRI>
+        <AbbreviatedIRI>pc:attachment</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#duration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Propiedad genérica para describir la duración de diversas entidades.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#duration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Duración</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#duration</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#earlyTramitation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica si el contrato se tramita anticipadamente al ejercicio de su realización.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#earlyTramitation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Early tramitation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#earlyTramitation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tramitación anticipada</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#electronicAuction</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la subasta electrónica de uno o más de los criterios de adjucación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#electronicAuction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Electronic auction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#electronicAuction</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Subasta electrónica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#electronicAuctionPhase</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica una fase de la subasta electrónica en la que van a subasta uno o más de los criterios de adjudicación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#electronicAuctionPhase</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Electronic auction phase</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#electronicAuctionPhase</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fase de subasta electrónica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#electronicAuctionWeb</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Apunta a la web donde puede se realiza la subasta electrónica, o en su defecto, donde se pueda encontrar más información acerca de la subasta electrónica.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#electronicAuctionWeb</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Electronic auction web</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#electronicAuctionWeb</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Web de la subasta electrónica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#estimatedDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Especifica la duración estimada de la entidad asociada.
+
+A utilizar con las clases pc:Contract y contsem:FrameworkAgreement, pero no limitada a ellas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#estimatedDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Duración estimada</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#estimatedDuration</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Estimated duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#estimatedEndDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Propiedad para especificar la fecha finalización estimada en las siguientes clases:
+
+- pc:Contract
+- contsem:FrameworkAgreement
+- contsem:InformationProvider</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#estimatedEndDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Estimated end date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#estimatedEndDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha estimada de finalización</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#excludedTender</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Al contrato que contsem:acceptedTender, relaciona el contrato con las ofertas que han sido excluídas del proceso de licitación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#excludedTender</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Excluded tender</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#excludedTender</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Oferta excluída</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#executionRequeriments</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Campo para definir las condiciones de ejecución del contrato si las hubiera (e.g. forma jurídica a adoptar por la agrupación de contratistas)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#executionRequeriments</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Condiciones de ejecución</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#executionRequeriments</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Execution requeriments</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#expectedCauseModification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define las posibles causas previstas para la modificación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#expectedCauseModification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Causas previstas de modificación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#expectedCauseModification</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Expected cause modification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#feePrice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Importe del canon del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#feePrice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Canon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#finalFinancialGuarantee</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define la garantía definitiva exigida al contratista.
+
+El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#finalFinancialGuarantee</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Final financial guarantee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#finalFinancialGuarantee</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Garantía definitiva</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#finalFinancialGuaranteeDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define la duración que la garantía definitiva será retenida por la administración contratante.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#finalFinancialGuaranteeDuration</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Final financial guarantee duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#finalFinancialGuaranteeDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Plazo de la garantía definitiva</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#formalizedTender</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlaza el contrato con aquella oferta que se ha formalizado.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#formalizedTender</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Formalized tender</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#formalizedTender</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Oferta formalizada</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#frameworkAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Señala al acuerdo marco o sistema dinámico de contratación en el cual consiste el contrato.
+
+Esta propiedad se utiliza cuando el actual contrato consista en la declaración de un acuerdo marco o un sistema dinámico de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#frameworkAgreement</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Acuerdo marco o sistema dinámico de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#frameworkAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Framework agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#frameworkAgreementDerivativeContract</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Esta propiedad señala a un contrato derivado del contrato que declara un acuerdo marco o sistema dinámico.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#frameworkAgreementDerivativeContract</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Contrato derivado de un acuerdo marco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#frameworkAgreementDerivativeContract</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Framework agreement derivative contract</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#frameworkAgreementType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica si un contrato es la declaración de un acuerdo marco o un sistema dinámico de contratación, o si por el contrario no se da ninguno de los dos casos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#frameworkAgreementType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Declaración de acuerdo marco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#frameworkAgreementType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Framework agreement type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#frameworkAgreementType</IRI>
+        <IRI>#FrameworkAgreementTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fullMember</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Miembro titular en una mesa de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#fullMember</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Full member</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#fullMember</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Miembro titular</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#harmonized</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica si el contrato es armonizado (i.e. el contrato alcanza el umbral para actuar conforme a las Directivas del Parlamento Europeo y del Consejo en contratos públicos)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#harmonized</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Armonizado</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#harmonized</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Harmonized</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#informationKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el tipo de información que suministra un proveedor de información.
+
+Es posible utilizar esta propiedad numerosas veces para indicar diversos tipos de información.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#informationKind</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Information kind</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#informationKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de información</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#informationKind</IRI>
+        <IRI>#InformationKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPriceReviewed</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica si se ha establecido revisión de precios para el contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPriceReviewed</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Price reviewed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPriceReviewed</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Revisión de precios</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#legalDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlace al pliego de cláusulas administrativas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#legalDocumentReference</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Legal document reference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#legalDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Pliego de cláusulas administrativas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#lotContractKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica si el contrato contiene lotes, no cotniene lotes, o es un lote perteneciente a un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lotContractKind</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Lot contract kind</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lotContractKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de contrato de lotes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#lotContractKind</IRI>
+        <IRI>#LotContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#lotCount</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Número de lotes de los que consta un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lotCount</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Número de lotes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#managingDepartment</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Servicio perteneciente a la entidad contratante que se encarga de la publicación y administración de este contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#managingDepartment</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Managing department</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#managingDepartment</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Servicio gestor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maxBudgetChange</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el porcentaje máximo de modificación sobre el presupuesto admitido.
+
+El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxBudgetChange</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Maximum budget change</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxBudgetChange</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Modificación máxima de presupuesto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maxFinalPriceChange</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el porcentaje máximo de modificación sobre el precio final admitido.
+
+El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxFinalPriceChange</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Maximum final price change</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxFinalPriceChange</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Modificación máxima sobre precio final</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maxInvitations</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el número máximo de invitaciones a presentar oferta a enviar por la entidad contratante.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxInvitations</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Maximum number of invitations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxInvitations</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Número máximo de invitaciones</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maxNumberOfOperators</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define el número máximo de participantes para un acuerdo marco o un sistema dinámico de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxNumberOfOperators</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Maximum number of operators</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxNumberOfOperators</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Número máximo de participantes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maxSubcontracting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el porcentaje de subcontratación máximo.
+
+El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxSubcontracting</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Maximum subcontracting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maxSubcontracting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Subcontratación máxima</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#minInvitations</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el número mínimo de invitaciones a presentar oferta a enviar por la entidad contratante.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#minInvitations</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Minimum number of invitations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#minInvitations</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Número mínimo de invitaciones</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#minNumberOfOperators</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define el número mínimo de participantes para un acuerdo marco o un sistema dinámico de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#minNumberOfOperators</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Minimum number of operators</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#minNumberOfOperators</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Número mínimo de participantes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#minSubcontracting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Porcentaje de subcontratación obligatorio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#minSubcontracting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Subcontratación obligatoria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#minutesDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlace al acta de la reunión de la mesa de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#minutesDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Acta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#minutesDocumentReference</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Minutes document reference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#multiannual</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la plurianualidad de un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#multiannual</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Multiannual</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#multiannual</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Plurianual</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#notice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Describe un anuncio del contrato licitado. Este puede estar ubicado tanto en boletines oficiales como en otro tipo de medios (e.g. prensa).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#notice</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Anuncio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#notice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Notice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#noticeDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la fecha en que el anuncio se ha publicado.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#noticeDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha de publicación del anuncio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#noticeSentDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define la fecha exacta del envío del anuncio al medio de publicación. 
+
+Esta propiedad puede ser utilizada para etiquetar la fecha de envío del anuncio al Diario Oficial de la Unión Europea, información de importancia legal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#noticeSentDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha de envio del anuncio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#noticeSentDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Notice sent date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#noticeSite</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Esta propiedad se refiere al medio donde ha publicado el anuncio. Habitualmente este será un boletín o diario oficial, por ejemplo, el DOUE, BOE o boletín autonómico correspondiente, pero puede ser que sea publicado en prensa u otros medios.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#noticeSite</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Medio de publicación del anuncio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#noticeSite</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Notice site</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#noticeWeb</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Web donde se ubica el anuncio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#noticeWeb</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Notice web</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#noticeWeb</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Web del anuncio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#object</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Representación CPV del objeto de un contrato.
+
+Debe apuntar a un concepto de objeto siguiendo la clasificación CPV de algún esquema de conceptos SKOS.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#object</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Objeto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#offeredDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Plazo de ejecución del contrato ofrecido por un licitador.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#offeredDuration</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Offered duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#offeredDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Plazo de ejecución ofertado</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#offeredEndDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la fecha de finalización del contrato ofrecida por un licitador.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#offeredEndDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha de finalización ofertada</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#otherAwardTerms</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Describe otras posibles condiciones que se hayan dado en la adjudicación del contrato, y por lo tanto a cumplir por la oferta adjudicada.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#otherAwardTerms</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Other award terms</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#otherAwardTerms</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Otras condiciones de la adjudicación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#otherGuarantee</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Describe otras posibles garantías exigibles por el contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#otherGuarantee</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Other guarantee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#otherGuarantee</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Otras garantías</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#priceRevisionFormulaDescription</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Descripción de la fórmula o índice para la revisión de precios del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#priceRevisionFormulaDescription</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fórmula de revisión de precios</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#priceRevisionFormulaDescription</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Price revision formula description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#procedureType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de procedimiento administrativo que seguirá la licitación de este contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#procedureType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Procedure type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#procedureType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de procedimiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#procedureType</IRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#prorogationPrevision</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica si está o no previsto la existencia de prórrogas en un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#prorogationPrevision</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Previsión de prórroga</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#prorogationPrevision</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Prorogation prevision</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#prorogationsExpected</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el número de prórrogas previstas para un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#prorogationsExpected</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Prorogation number expected</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#prorogationsExpected</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Prórrogas previstas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#provisionalFinancialGuarantee</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Garantía provisional exigida.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#provisionalFinancialGuarantee</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Garantía provisional</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#provisionalFinancialGuarantee</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Provisional financial guarantee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#publicServicesContractKind</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Public services contract kind</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#publicServicesContractKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de contrato de servicios públicos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#publicServicesContractKind</IRI>
+        <IRI>#PublicServicesContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiredCapability</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Otros requisitos necesarios para participar en la licitación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#requiredCapability</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Otros requisitos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#requiredCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Required capability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiredClassification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la clasificación requerida para participar en la licitación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#requiredClassification</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Clasificación requerida</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#requiredClassification</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Required classification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiredFinancialCapability</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Describe la solvencia económica y financiera requerida para participar en la licitación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#requiredFinancialCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Required financial capability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#requiredFinancialCapability</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Solvencia económica y financiera requerida</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#requiredTechnicalCapability</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Solvencia técnica y profesional requerida para participar en la licitación del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#requiredTechnicalCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Required technical capability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#requiredTechnicalCapability</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Solvencia técnica y profesional requerida</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#reservedContractRestrictions</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Describe las restricciones para participar asociadas a contratos reservados.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#reservedContractRestrictions</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Contratos reservados</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#reservedContractRestrictions</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Reserved contract restrictions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#resolutionDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlace al documento de la resolución dictada por el órgano de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#resolutionDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Resolución</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#resolutionDocumentReference</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Resolution document reference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#resolutionDocumentReference</IRI>
+        <AbbreviatedIRI>pc:agreement</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#score</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la puntuación que ha recibido un criterio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#score</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Puntuación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#score</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Score</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#score</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Valoración</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#supplyContractKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de adquisición en contratos de tipo suministro.
+
+Esta puede ser compra, venta o arrendamiento (renting).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#supplyContractKind</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Supply contract kind</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#supplyContractKind</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de contrato de suministros</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#supplyContractKind</IRI>
+        <IRI>#SupplyContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#technicalDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlace al pliego de prescripciones técnicas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#technicalDocumentReference</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Pliego de prescripciones técnicas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#technicalDocumentReference</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Technical document reference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderAdmissionMeeting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlaza a la reunión de la mesa de contratación sobre la admisión de licitadores</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderAdmissionMeeting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Reunión sobre admisión de licitadores</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderAdmissionMeeting</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender admission meeting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderBriefing</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica las reuniones informativas relacionadas con el contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderBriefing</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Reunión informativa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderBriefing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender briefing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderCommitteeAppointmentDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha en que el comité de contratación ha sido nombrado por el órgano de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderCommitteeAppointmentDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha de nombramiento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderCommitteeAppointmentDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender committee appointment date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderCommitteePosition</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el cargo que una persona ostenta dentro del comité del contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderCommitteePosition</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Cargo en el comité de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderCommitteePosition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender committee position</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderDocumentNeeds</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define la documentación necesaria a presentar en las ofertas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderDocumentNeeds</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Documentación a presentar</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderDocumentNeeds</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender document needs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderDossierStartDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica la fecha de la resolución del inicio del expediente de contratación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderDossierStartDate</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha de la resolución del inicio del expediente de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderDossierStartDate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Start date of the tender dossier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderInformationProvider</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Enlaza con los proveedores de información sobre la licitación del contrato, pudiendo ser esta información tanto técnica como administrativa.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderInformationProvider</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Proveedor de información sobre la licitación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderInformationProvider</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender information provider</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderManteinanceDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Define el plazo necesario que una oferta presentada debe permanecer vigente.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderManteinanceDuration</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Plazo de vigencia de las ofertas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderManteinanceDuration</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender manteinance duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderMeeting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica las reuniones de la mesa de contratación.
+
+Esta propiedad puede partir tanto de la mesa de contratación como del contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderMeeting</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Reunión de la mesa de contratación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderMeeting</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender meeting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderPurpose</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica, de manera textual, el propósito de la reunión de contratación (e.g. apertura de sobre A)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderPurpose</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Propósito de la reunión</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderPurpose</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender purpose</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderSubmissionLocation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Lugar donde las empresas deben presentar sus ofertas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderSubmissionLocation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Sede de presentación de las ofertas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderSubmissionLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender submission location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderSubmissionMode</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Modalidad de presentación de las ofertas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderSubmissionMode</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Modalidad de presentación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderSubmissionMode</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender submission mode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tenderSubmissionSupportedLanguage</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica el idioma en que es posible presentar una oferta de licitación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderSubmissionSupportedLanguage</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Idioma admitido en la presentación de oferta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tenderSubmissionSupportedLanguage</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Tender submission supported language</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#urgencyType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Indica como se tramita la licitación (i.e. el carácter de urgencia del contrato)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#urgencyType</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Tipo de tramitación</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#urgencyType</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Urgency type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#urgencyType</IRI>
+        <IRI>#UrgencyTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#variantDescription</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Campo para incluir la descripción, alcance, plazo u otros aspectos que están permitidos al presentar variantes en un contrato.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#variantDescription</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Descripción de las variantes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#variantDescription</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Variant description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#voidProcedure</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Procedimiento desierto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#voidProcedure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Void procedure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#websiteWithInformation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Lugar de la web que provee información el proveedor de información asociado</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#websiteWithInformation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Web con información</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#websiteWithInformation</IRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Website with information</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:date</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:date</AbbreviatedIRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Fecha</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <AbbreviatedIRI>pc:CompetitiveDialogue</AbbreviatedIRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <AbbreviatedIRI>pc:CompetitiveDialogue</AbbreviatedIRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <AbbreviatedIRI>pc:Restricted</AbbreviatedIRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <AbbreviatedIRI>pc:Restricted</AbbreviatedIRI>
+        <IRI>#ProcedureTypeScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <AbbreviatedIRI>pc:Services</AbbreviatedIRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <AbbreviatedIRI>pc:Services</AbbreviatedIRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <AbbreviatedIRI>pc:Supplies</AbbreviatedIRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <AbbreviatedIRI>pc:Supplies</AbbreviatedIRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:inScheme"/>
+        <AbbreviatedIRI>pc:Works</AbbreviatedIRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="skos:topConceptOf"/>
+        <AbbreviatedIRI>pc:Works</AbbreviatedIRI>
+        <IRI>#ContractKindScheme</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>pc:awardCriteriaCombination</AbbreviatedIRI>
+        <Literal xml:lang="es" datatypeIRI="&rdf;PlainLiteral">Combinación de criterios para la evaluar la oferta</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#awardDate"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:date"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#estimatedEndDate"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:date"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#noticeDate"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:date"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#noticeSentDate"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:date"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#offeredEndDate"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:date"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#tenderCommitteeAppointmentDate"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:date"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#tenderDossierStartDate"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:date"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#awardDate"/>
+        <AbbreviatedIRI>pc:Tender</AbbreviatedIRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#noticeDate"/>
+        <IRI>#Notice</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#noticeSentDate"/>
+        <IRI>#Notice</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#offeredEndDate"/>
+        <AbbreviatedIRI>pc:Tender</AbbreviatedIRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#tenderCommitteeAppointmentDate"/>
+        <IRI>#TenderCommittee</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#tenderDossierStartDate"/>
+        <AbbreviatedIRI>pc:Contract</AbbreviatedIRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

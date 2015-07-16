@@ -1,0 +1,1295 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY schema "http://schema.org/" >
+    <!ENTITY c4n "http://vocab.deri.ie/c4n#" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY loted "http://loted.eu/ontology#" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY vann "http://purl.org/vocab/vann/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY vcard "http://www.w3.org/2006/vcard/ns#" >
+    <!ENTITY gr "http://purl.org/goodrelations/v1#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY qb "http://purl.org/linked-data/cube#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY payment "http://reference.data.gov.uk/def/payment#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY pc "http://purl.org/procurement/public-contracts#" >
+    <!ENTITY pcdt "http://purl.org/procurement/public-contracts-datatypes#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.unizar.es/ontologies/public-contracts#"
+     xml:base="http://www.unizar.es/ontologies/public-contracts"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:payment="http://reference.data.gov.uk/def/payment#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:qb="http://purl.org/linked-data/cube#"
+     xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:loted="http://loted.eu/ontology#"
+     xmlns:pc="http://purl.org/procurement/public-contracts#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:c4n="http://vocab.deri.ie/c4n#"
+     xmlns:pcdt="http://purl.org/procurement/public-contracts-datatypes#"
+     xmlns:gr="http://purl.org/goodrelations/v1#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://purl.org/procurement/public-contracts#">
+        <dcterms:modified rdf:datatype="&xsd;date">2011-11-18</dcterms:modified>
+        <vann:preferredNamespaceUri>http://purl.org/procurement/public-contracts#</vann:preferredNamespaceUri>
+        <vann:preferredNamespacePrefix>pc</vann:preferredNamespacePrefix>
+        <dcterms:title xml:lang="cs">Ontologie pro veřejné zakázky</dcterms:title>
+        <dcterms:description xml:lang="cs">Ontologie pro veřejné zakázky poskytuje vyjadřovací prostředky pro popis zakázek zadávaných institucemi veřejné správy.</dcterms:description>
+        <dcterms:title xml:lang="en">Public Contracts Ontology</dcterms:title>
+        <dcterms:description xml:lang="en">Public Contracts Ontology offers a means of expression for describing public contracts in the public sector.</dcterms:description>
+        <rdfs:seeAlso rdf:resource="http://code.google.com/p/public-contracts-ontology/"/>
+        <dcterms:rights rdf:resource="http://creativecommons.org/licenses/by/3.0/cz/"/>
+        <dcterms:creator rdf:resource="http://keg.vse.cz/resource/person/jindrich-mynarz"/>
+        <dcterms:creator rdf:resource="http://keg.vse.cz/resource/person/josef-petrak"/>
+        <dcterms:creator rdf:resource="http://keg.vse.cz/resource/person/vojtech-svatek"/>
+        <rdfs:seeAlso rdf:resource="http://prefix.cc/pc"/>
+        <dcterms:creator rdf:resource="http://purl.org/klimek#me"/>
+        <dcterms:creator rdf:resource="http://www.facebook.com/nohis"/>
+        <dcterms:creator rdf:resource="http://www.ksi.mff.cuni.cz/~necasky"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts-datatypes#percentage -->
+
+    <rdfs:Datatype rdf:about="&pcdt;percentage">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="&xsd;integer">100</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:ObjectProperty rdf:about="&dcterms;subject"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#hasPriceSpecification -->
+
+    <owl:ObjectProperty rdf:about="&gr;hasPriceSpecification"/>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#actualPrice -->
+
+    <owl:ObjectProperty rdf:about="&pc;actualPrice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Skutečná cena po realizaci zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Actual price after contract realization</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro skutečnou cenu zaplacenou za zakázku. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for actual price of the public contract. Cardinality 0..1</rdfs:comment>
+        <rdfs:range rdf:resource="&gr;PriceSpecification"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;contractPrice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#additionalObject -->
+
+    <owl:ObjectProperty rdf:about="&pc;additionalObject">
+        <rdfs:label xml:lang="cs">Další předmět zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Additional object of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro další předmět veřejné zakázky. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for additional object of public contract. Cardinality 0..*</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;subject"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#agreedPrice -->
+
+    <owl:ObjectProperty rdf:about="&pc;agreedPrice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Smluvní cena</rdfs:label>
+        <rdfs:label xml:lang="en">Agreed price</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro cenu napsanou na smlouvě s dodavatelem. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for a price stated on the contract with the supplier. Cardinality 0..1</rdfs:comment>
+        <rdfs:range rdf:resource="&gr;PriceSpecification"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;contractPrice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#agreement -->
+
+    <owl:ObjectProperty rdf:about="&pc;agreement">
+        <rdfs:label xml:lang="cs">Smlouva na veřejnou zakázku</rdfs:label>
+        <rdfs:label xml:lang="en">Contract agreement</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro připojení dokumentů obsahujících smlouvy na veřejnou zakázku uzavřené mezi zadavatelem a dodavatelem. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for attachment of documents containing the agreement between supplier and contractor. Cardinality 0..*</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;attachment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#attachment -->
+
+    <owl:ObjectProperty rdf:about="&pc;attachment">
+        <rdfs:label xml:lang="cs">Příloha k zakázce</rdfs:label>
+        <rdfs:label xml:lang="en">Contract attachment</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro připojení ostatních příhloh. Specifikaci připojte pomocí pc:specification, smlouvu pomocí pc:agreement. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for attachment of other documents. For attachment of contract specification use pc:specification. For attachment of contract agreement use pc:agreement. Cardinality 0..*</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&rdf;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#awardCriteriaCombination -->
+
+    <owl:ObjectProperty rdf:about="&pc;awardCriteriaCombination">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Kombinace kritérií pro hodnocení nabídek dodavatelů zakázky.</rdfs:label>
+        <rdfs:label xml:lang="en">Criteria combination for tender evaluation.</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro nastavení kombinace kritérií pro hodnocení nabídek dodavatelů. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for criteria combination for tender evaluation. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:range rdf:resource="&pc;AwardCriteriaCombination"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#awardCriterion -->
+
+    <owl:ObjectProperty rdf:about="&pc;awardCriterion">
+        <rdfs:label xml:lang="cs">Kritérium pro zadání zakázky.</rdfs:label>
+        <rdfs:label xml:lang="de">Vergabekriterien</rdfs:label>
+        <rdfs:label xml:lang="en">Critera for contract award.</rdfs:label>
+        <rdfs:label xml:lang="fr">Critères d&apos;attribution</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro nastavení jednoho kritéria pro hodnocení nabídek dodavatelů. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for setting a criterion for tender evaluation. Cardinality 0..*</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;AwardCriteriaCombination"/>
+        <rdfs:range rdf:resource="&pc;AwardCriterion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#awardedTender -->
+
+    <owl:ObjectProperty rdf:about="&pc;awardedTender">
+        <rdfs:label xml:lang="cs">Vybraná nabídka</rdfs:label>
+        <rdfs:label xml:lang="en">Awarded tender</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro vítěznou nabídku dodavatele. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for awarded tender submitted by a supplier. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#buyerProfile -->
+
+    <owl:ObjectProperty rdf:about="&pc;buyerProfile">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Profilová stránka kupujícího</rdfs:label>
+        <rdfs:label xml:lang="en">Buyers&apos;s profile website</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro profilovou stránku kupujícího. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for buyer&apos;s profile. Cardinality 0..1</rdfs:comment>
+        <rdfs:domain rdf:resource="&gr;BusinessEntity"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:range rdf:resource="&rdf;Resource"/>
+        <rdfs:subPropertyOf rdf:resource="&foaf;homepage"/>
+        <rdfs:subPropertyOf rdf:resource="&foaf;page"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#contact -->
+
+    <owl:ObjectProperty rdf:about="&pc;contact">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Hlavní kontakt pro zakázku</rdfs:label>
+        <rdfs:label xml:lang="en">Main contact for a contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Hlavní kontakt pro zakázku. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Main contact for a contract. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&vcard;VCard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#contractPrice -->
+
+    <owl:ObjectProperty rdf:about="&pc;contractPrice">
+        <rdfs:label xml:lang="cs">Cena</rdfs:label>
+        <rdfs:label xml:lang="en">Price</rdfs:label>
+        <rdfs:comment xml:lang="cs">Abstraktní vlastnost pro cenu veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Abstract property for price of public contract</rdfs:comment>
+        <rdfs:range rdf:resource="&gr;PriceSpecification"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#contractingAuthority -->
+
+    <owl:ObjectProperty rdf:about="&pc;contractingAuthority">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Zadavatel</rdfs:label>
+        <rdfs:label xml:lang="en">Contracting authority</rdfs:label>
+        <rdfs:comment xml:lang="cs">Zadavatel zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Contracting authority. Cardinality 0..1</rdfs:comment>
+        <rdfs:range rdf:resource="&gr;BusinessEntity"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&c4n;issues"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#estimatedPrice -->
+
+    <owl:ObjectProperty rdf:about="&pc;estimatedPrice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Přesná odhadovaná cena cena</rdfs:label>
+        <rdfs:label xml:lang="en">Exact estimated price</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro přesnou odhadovanou cenu veřejné zakázky. Pokud je odhadovanou cenou interval, použijte vlastnosti pc:estimatedPriceLower a pc:estimatedPriceUpper. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for exact estimated price of public contract. If only estimated interval is known, use pc:estimatedPriceLower and pc:estimatedPriceUpper properties instead. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;contractPrice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#estimatedPriceLower -->
+
+    <owl:ObjectProperty rdf:about="&pc;estimatedPriceLower">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Dolní mez odhadované ceny</rdfs:label>
+        <rdfs:label xml:lang="en">Lower range of estimated price</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro dolní mez odhadované ceny veřejné zakázky. Pokud je známa přesná odhadovaná cena, použijte vlastnost pc:estimatedPrice. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for lower bound of estimated price of public contract. If exact estimated price is known, use pc:estimatedPrice instead. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;contractPrice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#estimatedPriceUpper -->
+
+    <owl:ObjectProperty rdf:about="&pc;estimatedPriceUpper">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Horní mez odhadované ceny</rdfs:label>
+        <rdfs:label xml:lang="en">Upper range of estimated price</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro horní mez odhadované ceny veřejné zakázky. Pokud je známa přesná odhadovaná cena, použijte vlastnost pc:estimatedPrice. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for upper bound of estimated price of public contract. If exact estimated price is known, use pc:estimatedPrice instead. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;contractPrice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#item -->
+
+    <owl:ObjectProperty rdf:about="&pc;item">
+        <rdfs:comment xml:lang="cs">Vlastnost pro přiřazení položky veřejné zakázce. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for attachment of an Item to a public contract. Cardinality 0..*</rdfs:comment>
+        <rdfs:range rdf:resource="&gr;Offering"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&loted;Tender"/>
+                    <rdf:Description rdf:about="&pc;Contract"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#kind -->
+
+    <owl:ObjectProperty rdf:about="&pc;kind">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Druh zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Type of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Druh zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type or kind of contract. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&pc;KindScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#location -->
+
+    <owl:ObjectProperty rdf:about="&pc;location">
+        <rdfs:label xml:lang="cs">Místo uskutečnění zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Place of contract&apos;s realization</rdfs:label>
+        <rdfs:comment xml:lang="cs">Místo, kde dojde k dodání produktu nebo služby nasmlouvané ve veřejné zakázce. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Place of delivery of contracted product or service. Cardinality 0..*</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&schema;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#lot -->
+
+    <owl:ObjectProperty rdf:about="&pc;lot">
+        <rdfs:label xml:lang="cs">Část zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Contract lot</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro specifikaci části zakázky. Zakázku rozděluje na části zadavatel, pokud je zakázka přiliš velká. Dodavatelé podávají nabídky na každou část odděleně a pro každou část zakázky je vybrán samostatný dodavatel. Pro samotnou zakázku nabídky nejsou podávány. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for specifying contract lot. When contract is too big, it is split to lots by contracting authority. Suppliers then tender each lot separately. For each lot the authority awards a separate tender. The contract itself has no tenders. Cardinality 0..*</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:range rdf:resource="&pc;Contract"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#mainObject -->
+
+    <owl:ObjectProperty rdf:about="&pc;mainObject">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Hlavní předmět zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Main object of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro hlavní předmět veřejné zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for main object of public contract. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#offeredPrice -->
+
+    <owl:ObjectProperty rdf:about="&pc;offeredPrice">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Nabídnutá cena v nabídce</rdfs:label>
+        <rdfs:label xml:lang="en">Offered price in tender</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro cenu nabídnutou dodavatelem. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for price offered by a supplier. Cardinality 0..1</rdfs:comment>
+        <rdfs:range rdf:resource="&gr;PriceSpecification"/>
+        <rdfs:subPropertyOf rdf:resource="&gr;hasPriceSpecification"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#onBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="&pc;onBehalfOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&gr;BusinessEntity"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#procedureType -->
+
+    <owl:ObjectProperty rdf:about="&pc;procedureType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Druh řízení zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Type of procedure of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Druh řízení zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of procedure of contract. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&skos;inScheme"/>
+                <owl:hasValue rdf:resource="&pc;ProcedureTypeScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#specification -->
+
+    <owl:ObjectProperty rdf:about="&pc;specification">
+        <rdfs:label xml:lang="cs">Specifikace zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Contract specification</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro připojení dokumentů obsahujících specifikaci veřejné zakázky. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for attachment of documents containing the contract specification. Cardinality 0..*</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:subPropertyOf rdf:resource="&pc;attachment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#subsidy -->
+
+    <owl:ObjectProperty rdf:about="&pc;subsidy">
+        <rdfs:label xml:lang="cs">Dotace použitá pro zakázku</rdfs:label>
+        <rdfs:label xml:lang="en">Subsidy supplemented for contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro dotaci použitou pro zakázku. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for used tender subsidy. Cardinality 0..*</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&payment;Payment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#supplier -->
+
+    <owl:ObjectProperty rdf:about="&pc;supplier">
+        <rdfs:label xml:lang="cs">Dodavatel, který podal nabídku</rdfs:label>
+        <rdfs:label xml:lang="en">Tender supplier</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro dodavatele podávajícího nabídku. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for supplier submitting the tender. Cardinality 0..1</rdfs:comment>
+        <rdfs:range rdf:resource="&gr;BusinessEntity"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#tender -->
+
+    <owl:ObjectProperty rdf:about="&pc;tender">
+        <rdfs:label xml:lang="cs">Nabídka</rdfs:label>
+        <rdfs:label xml:lang="en">Tender</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro nabídku dodavatele. Kardinalita 0..*</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for a tender submitted by a supplier. Cardinality 0..*</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&pc;Tender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vocab.deri.ie/c4n#issues -->
+
+    <owl:ObjectProperty rdf:about="&c4n;issues"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="&skos;broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#hasTopConcept -->
+
+    <owl:ObjectProperty rdf:about="&skos;hasTopConcept"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+    <owl:ObjectProperty rdf:about="&skos;inScheme"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="&skos;narrower"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#topConceptOf -->
+
+    <owl:ObjectProperty rdf:about="&skos;topConceptOf"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:ObjectProperty rdf:about="&foaf;homepage"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/mbox -->
+
+    <owl:ObjectProperty rdf:about="&foaf;mbox"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+    <owl:ObjectProperty rdf:about="&foaf;page"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;issued"/>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#actualEndDate -->
+
+    <owl:DatatypeProperty rdf:about="&pc;actualEndDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Skutečné datum konce realizace zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Actual end date of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro skutečné datum konce realizace zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for actual end date of public contract&apos;s realization. Cardinality 0..1</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#awardDate -->
+
+    <owl:DatatypeProperty rdf:about="&pc;awardDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Datum přidělení zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Date of contract award</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro datum přidělení zakázky dodavateli. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for date of contract award to a supplier. Cardinality 0..1</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#cancellationDate -->
+
+    <owl:DatatypeProperty rdf:about="&pc;cancellationDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Datum zrušení zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Date when the contract was cancelled</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost určující datum, kdy byla zakázka zrušena. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property specifying the date when the contract was cancelled. Cardinality 0..1</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#criterionName -->
+
+    <owl:DatatypeProperty rdf:about="&pc;criterionName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Specifikace kritéria pro výběr dodavatele zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Contract award criterion specification</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro specifikaci typu kritéria pro hodnocení nabídky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for criterion type for tender evaluation. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;AwardCriterion"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#criterionWeight -->
+
+    <owl:DatatypeProperty rdf:about="&pc;criterionWeight">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Váha kritéria pro výběr dodavatele zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Contract award criterion weight</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro specifikaci váhy kritéria pro hodnocení nabídky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for criterion weight for tender evaluation. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;AwardCriterion"/>
+        <rdfs:range rdf:resource="&pcdt;percentage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#durationDays -->
+
+    <owl:DatatypeProperty rdf:about="&pc;durationDays">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Doba trvání zakázky ve dnech</rdfs:label>
+        <rdfs:label xml:lang="en">Exact duration of contract in days</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro dobu trvání zakázky ve dnech. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for exact duration of contract in days. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#estimatedEndDate -->
+
+    <owl:DatatypeProperty rdf:about="&pc;estimatedEndDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Očekávané datum konce realizace zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Estimated end date of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro očekávané datum konce realizace zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for estimated end date of public contract realization. Cardinality 0..1</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#numberOfTenders -->
+
+    <owl:DatatypeProperty rdf:about="&pc;numberOfTenders">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Počet obdržených nabídek</rdfs:label>
+        <rdfs:label xml:lang="en">Number of tenders received</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro počet obdržených nabídek. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for number of tenders received. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#publicationDate -->
+
+    <owl:DatatypeProperty rdf:about="&pc;publicationDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Datum zveřejnění zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Contract publication date</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro lhůtu pro doručení nabídek nebo přijetí žádostí o účast. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for time limit for receipt of tenders or requests to participate. Cardinality 0..1</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;issued"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#referenceNumber -->
+
+    <owl:DatatypeProperty rdf:about="&pc;referenceNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Spisové číslo zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">File reference number</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro spisové číslo zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for a public contract file reference number. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#startDate -->
+
+    <owl:DatatypeProperty rdf:about="&pc;startDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Datum začátku realizace zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Start date of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro datum začátku realizace zakázky, které je uvedené ve smlouvě. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for start date of public contract realization coming from the contract&apos;s text. Cardinality 0..1</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#tenderDeadline -->
+
+    <owl:DatatypeProperty rdf:about="&pc;tenderDeadline">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label xml:lang="cs">Lhůta pro doručení nabídek nebo přijetí žádostí o účast</rdfs:label>
+        <rdfs:label xml:lang="en">Time-limit for receipt of tenders or requests to participate</rdfs:label>
+        <rdfs:comment xml:lang="cs">Vlastnost pro lhůtu pro doručení nabídek nebo přijetí žádostí o účast. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property for time limit for receipt of tenders or requests to participate. Cardinality 0..1</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;date"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <rdfs:domain rdf:resource="&pc;Contract"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://loted.eu/ontology#AwardCriteria -->
+
+    <owl:Class rdf:about="&loted;AwardCriteria">
+        <owl:equivalentClass rdf:resource="&pc;AwardCriteriaCombination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://loted.eu/ontology#Tender -->
+
+    <owl:Class rdf:about="&loted;Tender">
+        <owl:equivalentClass rdf:resource="&pc;Contract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#BusinessEntity -->
+
+    <owl:Class rdf:about="&gr;BusinessEntity"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#Offering -->
+
+    <owl:Class rdf:about="&gr;Offering"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#PriceSpecification -->
+
+    <owl:Class rdf:about="&gr;PriceSpecification"/>
+    
+
+
+    <!-- http://purl.org/linked-data/cube#CodedProperty -->
+
+    <owl:Class rdf:about="&qb;CodedProperty"/>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#AwardCriteriaCombination -->
+
+    <owl:Class rdf:about="&pc;AwardCriteriaCombination">
+        <rdfs:label xml:lang="cs">Kombinace kritérií pro hodnocení dodaných nabídek</rdfs:label>
+        <rdfs:label xml:lang="en">Combination of contract award criteria</rdfs:label>
+        <rdfs:comment xml:lang="cs">Třída pro popis kombinace kritérií pro posuzování nabídek dodavatelů</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class for description of criteria combination used for tender evaluation</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#AwardCriteriaLowestPrice -->
+
+    <owl:Class rdf:about="&pc;AwardCriteriaLowestPrice">
+        <rdfs:label xml:lang="cs">Nejnižší cena je jediným rozhodujícím kritériem při hodnocení dodaných nabídek</rdfs:label>
+        <rdfs:label xml:lang="en">Lowest price is the only contract award criterion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pc;AwardCriteriaCombination"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&pc;awardCriterion"/>
+                <owl:onClass rdf:resource="&pc;AwardCriterion"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="cs">Třída specifikující že jediným kritériem pro posuzování nabídek dodavatelů je nejnižší cena</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class specifying that the only evaluation criterion is the lowest price</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#AwardCriterion -->
+
+    <owl:Class rdf:about="&pc;AwardCriterion">
+        <rdfs:label xml:lang="cs">Kritérium pro udělení zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Contract award criterion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&c4n;Condition"/>
+        <rdfs:comment xml:lang="cs">Třída pro popis jednoho kritéria a jeho váhy.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Class for description of one criterion and its weight</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Contract -->
+
+    <owl:Class rdf:about="&pc;Contract">
+        <rdfs:label xml:lang="cs">Veřejná zakázka</rdfs:label>
+        <rdfs:label xml:lang="en">Public contract</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&c4n;Call"/>
+        <rdfs:comment xml:lang="cs">Základní třída pro popis veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Basic class for decribing a public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Tender -->
+
+    <owl:Class rdf:about="&pc;Tender">
+        <rdfs:label xml:lang="cs">Nabídka</rdfs:label>
+        <rdfs:label xml:lang="en">Tender</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gr;Offering"/>
+        <rdfs:comment xml:lang="cs">Základní třída pro popis nabídky dodavatele</rdfs:comment>
+        <rdfs:comment xml:lang="en">Basic class for decribing a tender submitted by a supplier</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://reference.data.gov.uk/def/payment#Payment -->
+
+    <owl:Class rdf:about="&payment;Payment"/>
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="&schema;Place"/>
+    
+
+
+    <!-- http://vocab.deri.ie/c4n#Call -->
+
+    <owl:Class rdf:about="&c4n;Call"/>
+    
+
+
+    <!-- http://vocab.deri.ie/c4n#Condition -->
+
+    <owl:Class rdf:about="&c4n;Condition"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource -->
+
+    <owl:Class rdf:about="&rdf;Resource"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&skos;Concept"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+    <owl:Class rdf:about="&skos;ConceptScheme"/>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#VCard -->
+
+    <owl:Class rdf:about="&vcard;VCard"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://keg.vse.cz/person/jindrich-mynarz -->
+
+    <owl:NamedIndividual rdf:about="http://keg.vse.cz/person/jindrich-mynarz">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:name>Jindřich Mynarz</foaf:name>
+        <foaf:mbox rdf:resource="mailto:mynarzjindrich@gmail.com"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://keg.vse.cz/person/josef-petrak -->
+
+    <owl:NamedIndividual rdf:about="http://keg.vse.cz/person/josef-petrak">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:name>Josef Petrák</foaf:name>
+        <foaf:mbox rdf:resource="mailto:me@jspetrak.name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://keg.vse.cz/person/vojtech-svatek -->
+
+    <owl:NamedIndividual rdf:about="http://keg.vse.cz/person/vojtech-svatek">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:name>Vojtěch Svátek</foaf:name>
+        <foaf:mbox rdf:resource="mailto:svatek@vse.cz"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/klimek#me -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/klimek#me">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:name>Jakub Klímek</foaf:name>
+        <foaf:mbox rdf:resource="mailto:klimek.mff@gmail.com"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/knap#me -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/knap#me">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:name>Tomáš Knap</foaf:name>
+        <foaf:mbox rdf:resource="mailto:toknap@gmail.com"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#AcceleratedNegotiated -->
+
+    <owl:NamedIndividual rdf:about="&pc;AcceleratedNegotiated">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Urychlené jednací</rdfs:label>
+        <rdfs:label xml:lang="en">Accelerated negotiated</rdfs:label>
+        <rdfs:comment xml:lang="cs">Urychlené jednací řízení veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Accelerated negotiated procedure type of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:broader rdf:resource="&pc;Negotiated"/>
+        <skos:inScheme rdf:resource="&pc;ProcedureTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#AcceleratedRestricted -->
+
+    <owl:NamedIndividual rdf:about="&pc;AcceleratedRestricted">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Urychlené užší</rdfs:label>
+        <rdfs:label xml:lang="en">Accelerated restricted</rdfs:label>
+        <rdfs:comment xml:lang="cs">Urychlené užší řízení veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Accelerated restricted procedure type of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:inScheme rdf:resource="&pc;ProcedureTypeScheme"/>
+        <skos:broader rdf:resource="&pc;Restricted"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#CompetitiveDialogue -->
+
+    <owl:NamedIndividual rdf:about="&pc;CompetitiveDialogue">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Soutěžní dialog</rdfs:label>
+        <rdfs:label xml:lang="en">Competition dialogue</rdfs:label>
+        <rdfs:comment xml:lang="cs">Soutěžní dialog jako typ řízení veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Competitive dialogue is the procedure type of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:inScheme rdf:resource="&pc;ProcedureTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&pc;ProcedureTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#KindScheme -->
+
+    <owl:NamedIndividual rdf:about="&pc;KindScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+        <rdfs:comment xml:lang="cs">Schéma konceptů pro druh veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Concept scheme for kinds of public contracts</rdfs:comment>
+        <skos:hasTopConcept rdf:resource="&pc;Services"/>
+        <skos:hasTopConcept rdf:resource="&pc;Supplies"/>
+        <skos:hasTopConcept rdf:resource="&pc;Works"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Negotiated -->
+
+    <owl:NamedIndividual rdf:about="&pc;Negotiated">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Jednací</rdfs:label>
+        <rdfs:label xml:lang="en">Negotiated</rdfs:label>
+        <rdfs:comment xml:lang="cs">Jednací řízení veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Negotiated procedure type of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:narrower rdf:resource="&pc;AcceleratedNegotiated"/>
+        <skos:inScheme rdf:resource="&pc;ProcedureTypeScheme"/>
+        <skos:topConceptOf rdf:resource="&pc;ProcedureTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Open -->
+
+    <owl:NamedIndividual rdf:about="&pc;Open">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Otevřené</rdfs:label>
+        <rdfs:label xml:lang="en">Open</rdfs:label>
+        <rdfs:comment xml:lang="cs">Otevřené řízení veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Open procedure type of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:topConceptOf rdf:resource="&pc;ProcedureTypeScheme"/>
+        <skos:inScheme rdf:resource="&pc;ProcedureTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#ProcedureTypeScheme -->
+
+    <owl:NamedIndividual rdf:about="&pc;ProcedureTypeScheme">
+        <rdf:type rdf:resource="&skos;ConceptScheme"/>
+        <rdfs:comment xml:lang="cs">Schéma konceptů pro druh řízení veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Concept scheme for description of procedure types for public contracts</rdfs:comment>
+        <skos:hasTopConcept rdf:resource="&pc;CompetitiveDialogue"/>
+        <skos:hasTopConcept rdf:resource="&pc;Negotiated"/>
+        <skos:hasTopConcept rdf:resource="&pc;Open"/>
+        <skos:hasTopConcept rdf:resource="&pc;Restricted"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Restricted -->
+
+    <owl:NamedIndividual rdf:about="&pc;Restricted">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Užší</rdfs:label>
+        <rdfs:label xml:lang="en">Restricted</rdfs:label>
+        <rdfs:comment xml:lang="cs">Užší řízení veřejné zakázky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Restricted procedure type of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:narrower rdf:resource="&pc;AcceleratedRestricted"/>
+        <skos:topConceptOf rdf:resource="&pc;ProcedureTypeScheme"/>
+        <skos:inScheme rdf:resource="&pc;ProcedureTypeScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Services -->
+
+    <owl:NamedIndividual rdf:about="&pc;Services">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Služby</rdfs:label>
+        <rdfs:label xml:lang="en">Services</rdfs:label>
+        <rdfs:comment xml:lang="cs">Druhem veřejné zakázky jsou služby</rdfs:comment>
+        <rdfs:comment xml:lang="en">Services is the kind of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:inScheme rdf:resource="&pc;KindScheme"/>
+        <skos:topConceptOf rdf:resource="&pc;KindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Supplies -->
+
+    <owl:NamedIndividual rdf:about="&pc;Supplies">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Dodávky</rdfs:label>
+        <rdfs:label xml:lang="en">Supplies</rdfs:label>
+        <rdfs:comment xml:lang="cs">Druhem veřejné zakázky jsou dodávky</rdfs:comment>
+        <rdfs:comment xml:lang="en">Supplies is the kind of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:topConceptOf rdf:resource="&pc;KindScheme"/>
+        <skos:inScheme rdf:resource="&pc;KindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#Works -->
+
+    <owl:NamedIndividual rdf:about="&pc;Works">
+        <rdf:type rdf:resource="&skos;Concept"/>
+        <rdfs:label xml:lang="cs">Stavební práce</rdfs:label>
+        <rdfs:label xml:lang="en">Works</rdfs:label>
+        <rdfs:comment xml:lang="cs">Druhem veřejné zakázky jsou stavební práce</rdfs:comment>
+        <rdfs:comment xml:lang="en">Works is the kind of public contract</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+        <skos:topConceptOf rdf:resource="&pc;KindScheme"/>
+        <skos:inScheme rdf:resource="&pc;KindScheme"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#kind -->
+
+    <owl:NamedIndividual rdf:about="&pc;kind">
+        <rdf:type rdf:resource="&qb;CodedProperty"/>
+        <rdfs:label xml:lang="cs">Druh zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Type of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Druh zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type or kind of contract. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/procurement/public-contracts#procedureType -->
+
+    <owl:NamedIndividual rdf:about="&pc;procedureType">
+        <rdf:type rdf:resource="&qb;CodedProperty"/>
+        <rdfs:label xml:lang="cs">Druh řízení zakázky</rdfs:label>
+        <rdfs:label xml:lang="en">Type of procedure of contract</rdfs:label>
+        <rdfs:comment xml:lang="cs">Druh řízení zakázky. Kardinalita 0..1</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of procedure of contract. Cardinality 0..1</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/procurement/public-contracts#"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.facebook.com/nohis -->
+
+    <owl:NamedIndividual rdf:about="http://www.facebook.com/nohis">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:name>Pavel Nohejl</foaf:name>
+        <foaf:mbox rdf:resource="mailto:nohejl.pavel@gmail.com"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ksi.mff.cuni.cz/~necasky -->
+
+    <owl:NamedIndividual rdf:about="http://www.ksi.mff.cuni.cz/~necasky">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:name>Martin Nečaský</foaf:name>
+        <foaf:mbox rdf:resource="mailto:martinnec@gmail.com"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- mailto:klimek.mff@gmail.com -->
+
+    <owl:NamedIndividual rdf:about="mailto:klimek.mff@gmail.com"/>
+    
+
+
+    <!-- mailto:martinnec@gmail.com -->
+
+    <owl:NamedIndividual rdf:about="mailto:martinnec@gmail.com"/>
+    
+
+
+    <!-- mailto:me@jspetrak.name -->
+
+    <owl:NamedIndividual rdf:about="mailto:me@jspetrak.name"/>
+    
+
+
+    <!-- mailto:mynarzjindrich@gmail.com -->
+
+    <owl:NamedIndividual rdf:about="mailto:mynarzjindrich@gmail.com"/>
+    
+
+
+    <!-- mailto:nohejl.pavel@gmail.com -->
+
+    <owl:NamedIndividual rdf:about="mailto:nohejl.pavel@gmail.com"/>
+    
+
+
+    <!-- mailto:svatek@vse.cz -->
+
+    <owl:NamedIndividual rdf:about="mailto:svatek@vse.cz"/>
+    
+
+
+    <!-- mailto:toknap@gmail.com -->
+
+    <owl:NamedIndividual rdf:about="mailto:toknap@gmail.com"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,102 @@
+{
+  "@context": {
+    "contzar": "http://www.zaragoza.es/api/recurso/sector-publico/contrato/",
+    "orgzar" : "http://www.zaragoza.es/api/recurso/sector-publico/organismo/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "pc": "http://purl.org/procurement/public-contracts#",
+    "cpv": "http://purl.org/cpv/2008/",
+    "pproc": "http://contsem.unizar.es/def/sector-publico/pproc#",
+    "org": "http://www.w3.org/ns/org#",
+    "s": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "gr": "http://purl.org/goodrelations/v1#",
+    "pproc:duration": {
+      "@type": "xsd:duration"
+    },
+    "pproc:urgencyType": {
+      "@type": "@id"
+    },
+    "pproc:procedureType": {
+      "@type": "@id"
+    },
+    "pproc:mainObject": {
+      "@type": "@id"
+    },
+    "gr:hasCurrencyValue": {
+      "@type": "xsd:float"
+    },
+    "gr:valueAddedTaxIncluded": {
+      "@type": "xsd:boolean"
+    },
+    "pproc:priceReviewAllowable": {
+      "@type": "xsd:boolean"
+    },
+    "pproc:prorogrationsExpected": {
+      "@type": "xsd:boolean"
+    },
+    "pproc:provisionalFinancialGuarantee": {
+      "@type": "xsd:float"
+    },
+    "pproc:finalFinancialGuarantee": {
+      "@type": "xsd:float"
+    },
+    "pproc:finalFinancialGuaranteeDuration": {
+      "@type": "xsd:duration"
+    },
+    "pproc:tenderDossierStartDate": {
+      "@type": "xsd:date"
+    },
+    "pproc:tenderDeadline": {
+      "@type": "xsd:dateTime"
+    },
+    "pproc:noticeDate": {
+      "@type": "xsd:date"
+    },
+    "s:startDate": {
+      "@type": "xsd:dateTime"
+    },
+    "pproc:estimatedEndDate": {
+      "@type": "xsd:date"
+    },
+    "pproc:frameworkAgreementDerivativeContract": {
+      "@type": "@id"
+    },
+    "gr:hasValueInteger": {
+      "@type": "xsd:int"
+    },
+    "pproc:awardDate": {
+        "@type": "xsd:date"
+    },
+    "pproc:maxSubcontracting": {
+            "@type": "xsd:float"
+    },
+    "pproc:formalizedDate": {
+          "@type": "xsd:date"
+    },
+    "pproc:offeredDuration": {
+            "@type": "xsd:duration"
+    },
+    "pproc:pricePercentageChange": {
+            "@type": "xsd:float"
+    },
+    "gr:hasValueInteger": {
+            "@type": "xsd:int"
+    },
+    "pproc:awardDate": {
+            "@type": "xsd:date"
+    },
+    "pproc:maxSubcontracting": {
+            "@type": "xsd:float"
+    },
+    "pproc:formalizedDate": {
+            "@type": "xsd:date"
+    },
+    "pproc:offeredDuration": {
+            "@type": "xsd:duration"
+    },
+    "pproc:pricePercentageChange": {
+            "@type": "xsd:float"
+    }
+  }
+}
