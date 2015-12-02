@@ -1,0 +1,20 @@
+# Turn off MultiViews
+Options -MultiViews
+
+# Directive to ensure *.rdf files served as appropriate content type, 
+# if not present in main apache config
+AddType application/rdf+xml .rdf
+
+# Rewrite engine setup
+RewriteEngine On
+RewriteBase /def/sector-publico/
+
+RewriteRule ^contratacion$ pproc [R=301]
+RewriteRule ^contratacion.html$ pproc [R=301]
+
+# Rewrite rule to make sure we serve HTML content from the namespace URI if requested
+RewriteCond %{HTTP_ACCEPT} text/html
+RewriteRule ^pproc$ pproc.html [R=303]
+
+# Rewrite rule to make sure we serve the RDF/XML content from the namespace URI by default 
+RewriteRule ^pproc$ pproc.rdf [R=303]

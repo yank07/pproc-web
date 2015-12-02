@@ -12,7 +12,7 @@ function get_facetQuery(){
 		input_object[e] = getFacet(e);
 	});
   var input = JSON.stringify(input_object); 
-  var uri ="http://155.210.104.14:8080/pproc-ws/facetQuery";
+  var uri ="http://155.210.104.11:8080/pproc-ws/facetQuery";
   $.ajax({
     type: "POST",
     url: uri,
@@ -69,7 +69,7 @@ function setupTable() {
 function get_contractQuery(event){
   var input = JSON.stringify(event.data);
   console.log(input);
-  var uri ="http://155.210.104.14:8080/pproc-ws/contractQuery";
+  var uri ="http://155.210.104.11:8080/pproc-ws/contractQuery";
   $.ajax({
     type: "POST",
     url: uri,

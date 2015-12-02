@@ -4,7 +4,11 @@
     "sparqlEndpoint" : "http://datos.zaragoza.es/sparql"
   },
   {
+    "name" : "Diputación Provincial de Huesca",
+    "sparqlEndpoint" : "http://www.dphuesca.es/sparql"
+  },
+  {
     "name" : "Plataforma de contratación del estado",
-    "sparqlEndpoint" : "http://155.210.104.11:8891/sparql"
+    "sparqlEndpoint" : "http://155.210.104.14:8890/sparql"
   }
 ]
