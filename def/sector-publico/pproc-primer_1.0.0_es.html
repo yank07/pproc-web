@@ -11,8 +11,8 @@
     currentValue = myRadio.value;
   }
   </script>
-  <link type="text/css" rel="stylesheet" href="http://contsem.unizar.es/docs/styles/w3c-general.css"/>
-  <link type="text/css" rel="stylesheet" href="http://contsem.unizar.es/docs/styles/w3c-wd.css"/>
+  <link type="text/css" rel="stylesheet" href="/docs/styles/w3c-general.css"/>
+  <link type="text/css" rel="stylesheet" href="/docs/styles/w3c-wd.css"/>
   <style type="text/css">
   .prop-table th { padding:5px 15px; text-align:left; }
   .prop-table tr:nth-child(odd) { background-color: #FFFFFF; }
@@ -22,11 +22,11 @@
   .uso { color:green; vertical-align:super; font-size:small; }
   </style>
 </head>
-<body resource="http://contsem.unizar.es/def/sector-publico/pproc#" typeOf="owl:Ontology schema:TechArticle">
+<body resource="/def/sector-publico/pproc#" typeOf="owl:Ontology schema:TechArticle">
 
   <span resource="" typeOf="foaf:Document schema:WebPage">
     <span property="dc:created schema:dateCreated" content="24 Oct 2014"></span>
-    <span property="dc:isVersionOf" resource="http://contsem.unizar.es/def/sector-publico/pproc"></span>
+    <span property="dc:isVersionOf" resource="/def/sector-publico/pproc"></span>
   </span>
 
   <div class="head">
@@ -54,11 +54,11 @@
     <p>Este documento proporciona la información necesaria para empezar a describir contratos utilizando la ontología PPROC. Por medio de diversos ejemplos se expone como se utiliza la ontología para etiquetar semánticamente contratos públicos.</p>
     <div class=note>
       <div class=note-title><span>Especificación de la ontología</span></div>
-      <p>La especificación de la ontología PPROC utilizada para etiquetar los contratos públicos en este documento se encuentra en  <a href="http://contsem.unizar.es/def/sector-publico/pproc_1.0.0.html"><code>http://contsem.unizar.es/def/sector-publico/pproc_1.0.0.html</code></a>.</p>
+      <p>La especificación de la ontología PPROC utilizada para etiquetar los contratos públicos en este documento se encuentra en  <a href="/def/sector-publico/pproc_1.0.0.html"><code>/def/sector-publico/pproc_1.0.0.html</code></a>.</p>
     </div>
     <div class=note>
       <div class=note-title><span>Localización de la ontología</span></div>
-      <p>La ontología descrita en este documento puede ser obtenida en formato RDF/XML en <a href="http://contsem.unizar.es/docs/pproc_1.0.0.rdf"><code>http://contsem.unizar.es/docs/pproc_1.0.0.rdf</code></a>.</p>
+      <p>La ontología descrita en este documento puede ser obtenida en formato RDF/XML en <a href="/docs/pproc_1.0.0.rdf"><code>/docs/pproc_1.0.0.rdf</code></a>.</p>
     </div>
   </div>
 
@@ -133,7 +133,7 @@
         <table>
           <caption> <a href="#table_01">Tabla 1</a>: Espacio de nombres utilizado en este documento </caption>
           <tbody>
-            <tr><td><b>pproc</b></td><td>&lt;http://contsem.unizar.es/def/sector-publico/pproc#&gt;</td></tr>
+            <tr><td><b>pproc</b></td><td>&lt;/def/sector-publico/pproc#&gt;</td></tr>
             <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
             <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
             <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
@@ -177,55 +177,55 @@
 
       <div id="contractTypes">
         <h4>3.1.1. Tipos de contrato <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h4>
-        <p>La clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code> dispone de numerosas subclases que ayudan a definer más específicamente la naturaleza del contrato, la clasificación completa de la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code> es la siguiente.</p>
+        <p>La clase <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code> dispone de numerosas subclases que ayudan a definer más específicamente la naturaleza del contrato, la clasificación completa de la clase <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code> es la siguiente.</p>
         <br/><img src="./images/0.1.4_classification_e.png" alt="contract classification" width="1150" style="border:0px"/><br/><br/>
         <p>Esta clasificación de <code><a href="#Contract">pproc:Contract</a></code> nos permite definir el tipo de contrato dependiendo de diversos criterios:</p>
         <ul>
           <li><b>Tipo administrativo de contrato</b>
             <ul>
-              <li>Contrato de obras (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#WorksContract">pproc:WorksContract</a></code>)</li>
-              <li>Contrato de servicios (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ServicesContract">pproc:ServicesContract</a></code>)</li>
-              <li>Contrato de suministros (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#SuppliesContract">pproc:SuppliesContract</a></code>)
+              <li>Contrato de obras (<code><a href="/def/sector-publico/pproc#WorksContract">pproc:WorksContract</a></code>)</li>
+              <li>Contrato de servicios (<code><a href="/def/sector-publico/pproc#ServicesContract">pproc:ServicesContract</a></code>)</li>
+              <li>Contrato de suministros (<code><a href="/def/sector-publico/pproc#SuppliesContract">pproc:SuppliesContract</a></code>)
                 <ul>
-                  <li>Contrato de compra (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#BuyContract">pproc:BuyContract</a></code>)</li>
-                  <li>Contrato de alquiler (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#RentContract">pproc:RentContract</a></code>)</li>
-                  <li>Contrato de arrendamiento financiero (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#LeaseContract">pproc:LeaseContract</a></code>)</li>
+                  <li>Contrato de compra (<code><a href="/def/sector-publico/pproc#BuyContract">pproc:BuyContract</a></code>)</li>
+                  <li>Contrato de alquiler (<code><a href="/def/sector-publico/pproc#RentContract">pproc:RentContract</a></code>)</li>
+                  <li>Contrato de arrendamiento financiero (<code><a href="/def/sector-publico/pproc#LeaseContract">pproc:LeaseContract</a></code>)</li>
                 </ul>
               </li>
-              <li>Contrato mixto (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#MixedContract">pproc:MixedContract</a></code>)</li>
-              <li>Contrato privado (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#PrivateContract">pproc:PrivateContract</a></code>)</li>
-              <li>Contrato de colaboración público-privada (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#PublicPrivatePartnershipContract">pproc:PublicPrivatePartnershipContract</a></code>)</li>
-              <li>Contrato administrativo especial (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#SpecialAdministrativeContract">pproc:SpecialAdministrativeContract</a></code>)</li>
-              <li>Compra pública pre-comercial (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#PrecomercialProcurement">pproc:PrecomercialProcurement</a></code>)</li>
-              <li>Contrato de gestión de servicios públicos (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#PublicServicesManagementContract">pproc:PublicServicesManagementContract</a></code>)
+              <li>Contrato mixto (<code><a href="/def/sector-publico/pproc#MixedContract">pproc:MixedContract</a></code>)</li>
+              <li>Contrato privado (<code><a href="/def/sector-publico/pproc#PrivateContract">pproc:PrivateContract</a></code>)</li>
+              <li>Contrato de colaboración público-privada (<code><a href="/def/sector-publico/pproc#PublicPrivatePartnershipContract">pproc:PublicPrivatePartnershipContract</a></code>)</li>
+              <li>Contrato administrativo especial (<code><a href="/def/sector-publico/pproc#SpecialAdministrativeContract">pproc:SpecialAdministrativeContract</a></code>)</li>
+              <li>Compra pública pre-comercial (<code><a href="/def/sector-publico/pproc#PrecomercialProcurement">pproc:PrecomercialProcurement</a></code>)</li>
+              <li>Contrato de gestión de servicios públicos (<code><a href="/def/sector-publico/pproc#PublicServicesManagementContract">pproc:PublicServicesManagementContract</a></code>)
                 <ul>
-                  <li>Contrato de concesión (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ConcessionContract">pproc:ConcessionContract</a></code>)</li>
-                  <li>Contrato de concierto (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#AgreementContract">pproc:AgreementContract</a></code>)</li>
-                  <li>Contrato de sociedad de economía mixta (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#MixedCapitalCompanyContract">pproc:MixedCapitalCompanyContract</a></code>)</li>
-                  <li>Contrato de gestión interesada (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#SharedResultAgreementContract">pproc:SharedResultAgreementContract</a></code>)</li>
+                  <li>Contrato de concesión (<code><a href="/def/sector-publico/pproc#ConcessionContract">pproc:ConcessionContract</a></code>)</li>
+                  <li>Contrato de concierto (<code><a href="/def/sector-publico/pproc#AgreementContract">pproc:AgreementContract</a></code>)</li>
+                  <li>Contrato de sociedad de economía mixta (<code><a href="/def/sector-publico/pproc#MixedCapitalCompanyContract">pproc:MixedCapitalCompanyContract</a></code>)</li>
+                  <li>Contrato de gestión interesada (<code><a href="/def/sector-publico/pproc#SharedResultAgreementContract">pproc:SharedResultAgreementContract</a></code>)</li>
                 </ul>
               </li>
             </ul>
           </li>
           <li><b>Tipo de contrato por lotes</b>
             <ul>
-              <li>Contrato con lotes (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithLots">pproc:ContractWithLots</a></code>)</li>
-              <li>Contrato sin lotes (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithoutLots">pproc:ContractWithoutLots</a></code>)</li>
-              <li>Lote (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot">pproc:Lot</a></code>)</li>
+              <li>Contrato con lotes (<code><a href="/def/sector-publico/pproc#ContractWithLots">pproc:ContractWithLots</a></code>)</li>
+              <li>Contrato sin lotes (<code><a href="/def/sector-publico/pproc#ContractWithoutLots">pproc:ContractWithoutLots</a></code>)</li>
+              <li>Lote (<code><a href="/def/sector-publico/pproc#Lot">pproc:Lot</a></code>)</li>
             </ul>
           </li>
           <li><b>Tipo de contrato por acuerdo</b>
             <ul>
-              <li>Contrato de implantación (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ConclusionContract">pproc:ConclusionContract</a></code>)
+              <li>Contrato de implantación (<code><a href="/def/sector-publico/pproc#ConclusionContract">pproc:ConclusionContract</a></code>)
                 <ul>
-                  <li>Contrato de implantación de acuerdo marco (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#FrameworkConclusionContract">pproc:FrameworkConclusionContract</a></code>)</li>
-                  <li>Contrato de implantación de sistema dinámico de contratación (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#DynamicPurchasingSystemConclusionContract">pproc:DynamicPurchasingSystemConclusionContract</a></code>)</li>
+                  <li>Contrato de implantación de acuerdo marco (<code><a href="/def/sector-publico/pproc#FrameworkConclusionContract">pproc:FrameworkConclusionContract</a></code>)</li>
+                  <li>Contrato de implantación de sistema dinámico de contratación (<code><a href="/def/sector-publico/pproc#DynamicPurchasingSystemConclusionContract">pproc:DynamicPurchasingSystemConclusionContract</a></code>)</li>
                 </ul>
               </li>
-              <li>Contrato derivado (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#DerivativeContract">pproc:DerivativeContract</a></code>)
+              <li>Contrato derivado (<code><a href="/def/sector-publico/pproc#DerivativeContract">pproc:DerivativeContract</a></code>)
                 <ul>
-                  <li>Contrato derivado de un acuerdo marco (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#FrameworkDerivativeContract">pproc:FrameworkDerivativeContract</a></code>)</li>
-                  <li>Contrato derivado de un sistema dinámico de contratación (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#DynamicPurchasingSystemDerivativeContract">pproc:DynamicPurchasingSystemDerivativeContract</a></code>)</li>
+                  <li>Contrato derivado de un acuerdo marco (<code><a href="/def/sector-publico/pproc#FrameworkDerivativeContract">pproc:FrameworkDerivativeContract</a></code>)</li>
+                  <li>Contrato derivado de un sistema dinámico de contratación (<code><a href="/def/sector-publico/pproc#DynamicPurchasingSystemDerivativeContract">pproc:DynamicPurchasingSystemDerivativeContract</a></code>)</li>
                 </ul>
               </li>
             </ul>
@@ -236,9 +236,9 @@
         <ul>
           <li><b>Otros tipos de contrato</b>
             <ul>
-              <li>Contrato armonizado (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#HarmonizedContract">pproc:HarmonizedContract</a></code>)</li>
-              <li>Contrato prorrogable (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ExtendableContract">pproc:ExtendableContract</a></code>)</li>
-              <li>Contrato plurianual (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#MultiannualContract">pproc:MultiannualContract</a></code>)</li>
+              <li>Contrato armonizado (<code><a href="/def/sector-publico/pproc#HarmonizedContract">pproc:HarmonizedContract</a></code>)</li>
+              <li>Contrato prorrogable (<code><a href="/def/sector-publico/pproc#ExtendableContract">pproc:ExtendableContract</a></code>)</li>
+              <li>Contrato plurianual (<code><a href="/def/sector-publico/pproc#MultiannualContract">pproc:MultiannualContract</a></code>)</li>
             </ul>
           </li>
         </ul>
@@ -254,12 +254,12 @@
 
       <div id="lots">
         <h4>3.1.2. Los lotes en el contrato <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h4>
-        <p>Tal y como se ha podido observar en el apartado anterior, se puede especificar el tipo de contrato por lotes utilizando las clases <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithLots">pproc:ContractWithLots</a></code>, <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithoutLots">pproc:ContractWithoutLots</a></code> y <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot">pproc:Lot</a></code>. Estas clases son disjuntas entre ellas, por lo que no se podrán utilizar para instanciar el mismo contrato.</p>
-        <p>En la ontología PPROC los lotes se tratan de manera similar al resto de contratos, tratando lote a su vez como un contrato (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot">pproc:Lot</a></code> es subclase de <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code>); por lo tanto se pueden utilizar las mismas propiedades en ambos.</p>
+        <p>Tal y como se ha podido observar en el apartado anterior, se puede especificar el tipo de contrato por lotes utilizando las clases <code><a href="/def/sector-publico/pproc#ContractWithLots">pproc:ContractWithLots</a></code>, <code><a href="/def/sector-publico/pproc#ContractWithoutLots">pproc:ContractWithoutLots</a></code> y <code><a href="/def/sector-publico/pproc#Lot">pproc:Lot</a></code>. Estas clases son disjuntas entre ellas, por lo que no se podrán utilizar para instanciar el mismo contrato.</p>
+        <p>En la ontología PPROC los lotes se tratan de manera similar al resto de contratos, tratando lote a su vez como un contrato (<code><a href="/def/sector-publico/pproc#Lot">pproc:Lot</a></code> es subclase de <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code>); por lo tanto se pueden utilizar las mismas propiedades en ambos.</p>
         <br/><img src="./images/0.1.4_lots_e.png" alt="lots in a contract" width="800" style="border:0px"><br/><br/>
-        <p>Existen dos supuestos básicos en contratación cuando hablamos de tipo de contrato por lotes, el primero es un contrato que no dispone de lote alguno. Para etiquetar este tipo de contratos solamente sería necesario instanciar el contrato a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithoutLots"></a></code>.</p>
-        <p>El segundo supuesto es en el que se dispone de contrato con separación por lotes. Para especificar este tipo de contratos en primer lugar necesitaremos el contrato "base", que es el que se divide en lotes, este contrato se instanciará con <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithLots">pproc:ContractWithLots</a></code>. Para relacionar este contrato "base" con sus lotes se utiliza la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#lot"><code>pproc:lot</code></a>, que irá siempre de un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithLots">pproc:ContractWithLots</a></code> a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot">pproc:Lot</a></code>.</p>
-        <p>Al estar definido el dominio y rango de la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#lot">pproc:lot</a></code> se permite preveer algunos fallos obvios tales como utilizar este propiedad con una instancia de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithoutLots"><code>pproc:ContractWithoutLots</code></a>. A continuación se incluye dos ejemplos del uso de lotes.</p>
+        <p>Existen dos supuestos básicos en contratación cuando hablamos de tipo de contrato por lotes, el primero es un contrato que no dispone de lote alguno. Para etiquetar este tipo de contratos solamente sería necesario instanciar el contrato a un <code><a href="/def/sector-publico/pproc#ContractWithoutLots"></a></code>.</p>
+        <p>El segundo supuesto es en el que se dispone de contrato con separación por lotes. Para especificar este tipo de contratos en primer lugar necesitaremos el contrato "base", que es el que se divide en lotes, este contrato se instanciará con <code><a href="/def/sector-publico/pproc#ContractWithLots">pproc:ContractWithLots</a></code>. Para relacionar este contrato "base" con sus lotes se utiliza la propiedad <a href="/def/sector-publico/pproc#lot"><code>pproc:lot</code></a>, que irá siempre de un <code><a href="/def/sector-publico/pproc#ContractWithLots">pproc:ContractWithLots</a></code> a un <code><a href="/def/sector-publico/pproc#Lot">pproc:Lot</a></code>.</p>
+        <p>Al estar definido el dominio y rango de la propiedad <code><a href="/def/sector-publico/pproc#lot">pproc:lot</a></code> se permite preveer algunos fallos obvios tales como utilizar este propiedad con una instancia de <a href="/def/sector-publico/pproc#ContractWithoutLots"><code>pproc:ContractWithoutLots</code></a>. A continuación se incluye dos ejemplos del uso de lotes.</p>
         <div class="example">
           <div class="example-title"><span>Ejemplo de contrato con lotes</span></div>
           <pre class="example highlight preprint">
@@ -270,9 +270,9 @@
   ex:aContract/Lot_001  rdf:type    pproc:Lot .
 
   ex:aContract/Lot_002  rdf:type    pproc:ExtendableContract .</pre>
-          <p>En este ejemplo se describe un contrato que tiene dos lotes haciendo uso de la propiedad <a href="#lot"><code>pproc:lot</code></a> desde un <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithoutLots"><code>pproc:ContractWithLots</code></a> hasta un <a href="#Lot"><code>pproc:Lot</code></a> y un <a href="http://contsem.unizar.es/def/sector-publico/pproc#ExtendableContract"><code>pproc:ExtendableContract</code></a>.</p>
-          <p>El caso del primer lote (Lot_001) es obviamente correcto, pues está instanciado a <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot">pproc:Lot</a></code>. El segundo lote (Lot_002) plantea más dudas, pues aunque no se instancia directamente a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot">pproc:Lot</a></code> la clase utilizada (<a href="http://contsem.unizar.es/def/sector-publico/pproc#ExtendableContract"><code>pproc:ExtendableContract</code></a>) no está en unión disjunta con <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot">pproc:Lot</a></code>, siendo entonces el etiquetado correcto.</p>
-          <p>Sin embargo, y aunque se pueda inferir que el segundo lote es un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot">pproc:Lot</a></code>, se recomienda que siempre que se disponga de la información, esta se haga explícita etiquetándola. De esta manera el segundo lote quedaría:</p>
+          <p>En este ejemplo se describe un contrato que tiene dos lotes haciendo uso de la propiedad <a href="#lot"><code>pproc:lot</code></a> desde un <a href="/def/sector-publico/pproc#ContractWithoutLots"><code>pproc:ContractWithLots</code></a> hasta un <a href="#Lot"><code>pproc:Lot</code></a> y un <a href="/def/sector-publico/pproc#ExtendableContract"><code>pproc:ExtendableContract</code></a>.</p>
+          <p>El caso del primer lote (Lot_001) es obviamente correcto, pues está instanciado a <code><a href="/def/sector-publico/pproc#Lot">pproc:Lot</a></code>. El segundo lote (Lot_002) plantea más dudas, pues aunque no se instancia directamente a un <code><a href="/def/sector-publico/pproc#Lot">pproc:Lot</a></code> la clase utilizada (<a href="/def/sector-publico/pproc#ExtendableContract"><code>pproc:ExtendableContract</code></a>) no está en unión disjunta con <code><a href="/def/sector-publico/pproc#Lot">pproc:Lot</a></code>, siendo entonces el etiquetado correcto.</p>
+          <p>Sin embargo, y aunque se pueda inferir que el segundo lote es un <code><a href="/def/sector-publico/pproc#Lot">pproc:Lot</a></code>, se recomienda que siempre que se disponga de la información, esta se haga explícita etiquetándola. De esta manera el segundo lote quedaría:</p>
           <pre class="example highligh preprint">
   ex:aContract/Lot_002  rdf:type    pproc:ExtendableContract ,
                                     pproc:Lot .</pre>
@@ -284,16 +284,16 @@
                         pc:lot      ex:aContract/Lot_001 .
 
   ex:aContract/Lot_001  rdf:type    pproc:ContractWithoutLots .</pre>
-          <p>Este ejemplo relaciona erróneamente un <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithoutLots"><code>pproc:ContractWithLots</code></a> con un <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractWithoutLots"><code>pproc:ContractWithoutLots</code></a>, ya que tal clase es disjunta con <a href="http://contsem.unizar.es/def/sector-publico/pproc#Lot"><code>pproc:Lot</code></a> (rango esperado de <a href="http://contsem.unizar.es/def/sector-publico/pproc#lot"><code>pproc:lot</code></a>).</p>
+          <p>Este ejemplo relaciona erróneamente un <a href="/def/sector-publico/pproc#ContractWithoutLots"><code>pproc:ContractWithLots</code></a> con un <a href="/def/sector-publico/pproc#ContractWithoutLots"><code>pproc:ContractWithoutLots</code></a>, ya que tal clase es disjunta con <a href="/def/sector-publico/pproc#Lot"><code>pproc:Lot</code></a> (rango esperado de <a href="/def/sector-publico/pproc#lot"><code>pproc:lot</code></a>).</p>
         </div>
       </div>
 
       <div id="contractProperties">
         <h4>3.1.3. Propiedades del contrato <span class="backlink"> volver <a href="#TdC">TdC</a></span></h4>
-        <p>La clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> es el <em>núcleo</em> de la ontología y sirve de dominio para las numerosas propiedades. En las dos próximas tablas se exponen las propiedades que utilizan <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> como Dominio. La primera tabla contiene las <code>DataProperties</code> y la segunda las <code>ObjectProperties</code>.</p>
+        <p>La clase <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> es el <em>núcleo</em> de la ontología y sirve de dominio para las numerosas propiedades. En las dos próximas tablas se exponen las propiedades que utilizan <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> como Dominio. La primera tabla contiene las <code>DataProperties</code> y la segunda las <code>ObjectProperties</code>.</p>
         <div id="table_02">
           <table class="prop-table">
-            <caption> <a href="#table_02">Tabla 2</a>: <code>DataProperties</code> que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a></caption>
+            <caption> <a href="#table_02">Tabla 2</a>: <code>DataProperties</code> que parten de <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -333,7 +333,7 @@
         </div>
         <div id="table_03">
           <table class="prop-table">
-            <caption> <a href="#table_03">Tabla 3</a>: <code>ObjectProperties</code> que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a></caption>
+            <caption> <a href="#table_03">Tabla 3</a>: <code>ObjectProperties</code> que parten de <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -461,7 +461,7 @@
             </tr>
           </table>
         </div>
-        <p>Como puede observarse, se han incluído todas las propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a>, independientemente de la fase de contratación en que estas deban incluirse (ver <a href="#phases">Fases de la contratación</a> para más información).</p>
+        <p>Como puede observarse, se han incluído todas las propiedades que parten de <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a>, independientemente de la fase de contratación en que estas deban incluirse (ver <a href="#phases">Fases de la contratación</a> para más información).</p>
         <p>A continuación se incluye un ejemplo de etiquetado de un contrato que incluye muchas de las propiedades listadas en las tablas 2 y 3.</p>
         <div class=example>
           <div class=example-title><span>Ejemplo de contrato</span></div>
@@ -519,7 +519,7 @@
   &lt;https://www.zaragoza.es/aytocasa/descargarFichero.jsp?id=7236&gt;   rdf:type    foaf:Document .
   &lt;https://www.zaragoza.es/aytocasa/descargarFichero.jsp?id=9999&gt;   rdf:type    foaf:Document .</pre>
           <p>
-            En este ejemplo no se han incluído el etiquetado completo de las clases que parte de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a>, solamente su tipo (segundo bloque de tripletas). La definición completa de estas clases se muestra más adelante este documento.
+            En este ejemplo no se han incluído el etiquetado completo de las clases que parte de <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a>, solamente su tipo (segundo bloque de tripletas). La definición completa de estas clases se muestra más adelante este documento.
           </p>
         </div>
       </div>
@@ -528,10 +528,10 @@
 
     <div id="objectContract">
       <h3>3.2. Objeto del contrato <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>La clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractObject">pproc:ContractObject</a></code> engloba las propiedades necesarias para definir el objeto del contrato. Estas propiedades permiten describir definir tanto objeto del contrato como las diferentes condiciones, obligaciones y modificaciones.</p>
+      <p>La clase <code><a href="/def/sector-publico/pproc#ContractObject">pproc:ContractObject</a></code> engloba las propiedades necesarias para definir el objeto del contrato. Estas propiedades permiten describir definir tanto objeto del contrato como las diferentes condiciones, obligaciones y modificaciones.</p>
       <div id="table_04">
         <table class="prop-table">
-          <caption> <a href="#table_04">Tabla 4</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractObject"><code>pproc:ContractObject</code></a></caption>
+          <caption> <a href="#table_04">Tabla 4</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractObject"><code>pproc:ContractObject</code></a></caption>
           <tr>
             <th>Propiedad</th>
             <th>Descripción</th>
@@ -589,8 +589,8 @@
           </tr>
         </table>
       </div>
-      <p>La propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#provision"><code>pproc:provision</code></a> está referida al objeto mismo (obra, bien o servicio) que la autoridad contratante está buscando. Esta propiedad tiene como rango un <a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a>, perteneciente a la ontología <a href="http://www.heppnetz.de/ontologies/goodrelations/v1.html">Good Relations</a>. Esta clase contiene las propiedades necesarias para describir de forma precisa el objeto del contrato (véase <a href="#offering">sección Offering</a>).</p>
-      <p>En la propiedades <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#mainObject">pproc:mainObject</a></code> y <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#additionalObject">pproc:additionalObject</a></code> el rango está especificado como <code><a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></code>, se espera que el concepto que tome esta propiedad como rango forme parte de un esquema de conceptos que represente el <a href="http://simap.europa.eu/codes-and-nomenclatures/codes-cpv/codes-cpv_en.htm">CPV 2008</a>.</p>
+      <p>La propiedad <a href="/def/sector-publico/pproc#provision"><code>pproc:provision</code></a> está referida al objeto mismo (obra, bien o servicio) que la autoridad contratante está buscando. Esta propiedad tiene como rango un <a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a>, perteneciente a la ontología <a href="http://www.heppnetz.de/ontologies/goodrelations/v1.html">Good Relations</a>. Esta clase contiene las propiedades necesarias para describir de forma precisa el objeto del contrato (véase <a href="#offering">sección Offering</a>).</p>
+      <p>En la propiedades <code><a href="/def/sector-publico/pproc#mainObject">pproc:mainObject</a></code> y <code><a href="/def/sector-publico/pproc#additionalObject">pproc:additionalObject</a></code> el rango está especificado como <code><a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></code>, se espera que el concepto que tome esta propiedad como rango forme parte de un esquema de conceptos que represente el <a href="http://simap.europa.eu/codes-and-nomenclatures/codes-cpv/codes-cpv_en.htm">CPV 2008</a>.</p>
       <p>PPROC recomienda la utilización de los conceptos publicados en <a href="http://cpv.data.ac.uk/">http://cpv.data.ac.uk/</a>. Las URIs de los conceptos para los códigos CPV 2008 tienen la forma <code>http://purl.org/cpv/2008/code-[código]</code>, donde se sustituye <code>[código]</code> por el código CPV correspondiente al objeto. Este código puede venir con el checksum incorado o no.</p>
       <span class="TO-DO repasar id/nombre tablas + indice tablas"></span>
       <div class=example>
@@ -623,7 +623,7 @@
   ex:aContract/CExC                     rdf:type    pproc:ContractExecutionConditions .
   ex:aContract/CMC                      rdf:type    pproc:ContractModificationConditions .</pre>
       </div>
-      <p class="TO-DO añadir indicador 'funcional' en las tablas">La definición de la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#mainObject">pproc:mainObject</a></code> especifica que la propiedad es <a href="http://www.w3.org/TR/owl-syntax/#Functional_Object_Properties">funcional</a>, lo que significa que solo puede utilizarse una vez por <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractObject">pproc:ContractObject</a></code>, enlazando al código CPV más general o importate del contrato. Para poder especificar el resto de códigos CPV, en caso de que el contrato los tuviese, se utilizará la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#additionalObject">pproc:additionalObject</a></code> las veces necesarias.</p>
+      <p class="TO-DO añadir indicador 'funcional' en las tablas">La definición de la propiedad <code><a href="/def/sector-publico/pproc#mainObject">pproc:mainObject</a></code> especifica que la propiedad es <a href="http://www.w3.org/TR/owl-syntax/#Functional_Object_Properties">funcional</a>, lo que significa que solo puede utilizarse una vez por <code><a href="/def/sector-publico/pproc#ContractObject">pproc:ContractObject</a></code>, enlazando al código CPV más general o importate del contrato. Para poder especificar el resto de códigos CPV, en caso de que el contrato los tuviese, se utilizará la propiedad <code><a href="/def/sector-publico/pproc#additionalObject">pproc:additionalObject</a></code> las veces necesarias.</p>
       <div class=example>
         <div class=example-title><span>Ejemplo de contrato con múltiples CPVs</span></div>
         <pre>
@@ -638,10 +638,10 @@
       
       <div id="contractTemporalConditions">
         <h4>3.2.1. Condiciones temporales del contrato <span class="backlink"> volver <a href="#TdC">TdC</a></span></h4>
-        <p>Las condiciones temporales para la ejecución del contrato se definen a partir de la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractTemporalConditions">pproc:ContractTemporalConditions</a></code>.</p>
+        <p>Las condiciones temporales para la ejecución del contrato se definen a partir de la clase <code><a href="/def/sector-publico/pproc#ContractTemporalConditions">pproc:ContractTemporalConditions</a></code>.</p>
         <div id="table_05">
           <table class="prop-table">
-            <caption> <a href="#table_05">Tabla 5</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractTemporalConditions"><code>pproc:ContractTemporalConditions</code></a></caption>
+            <caption> <a href="#table_05">Tabla 5</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractTemporalConditions"><code>pproc:ContractTemporalConditions</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -664,7 +664,7 @@
             </tr>
           </table>
         </div>
-        <p>Como se puede observar, la duración estimada del contrato podrá ofrecerse tanto especificando una fecha de finalización estimada como utilizando una medida de duración. A continuación se incluye un ejemplo con una instancia de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractTemporalConditions"><code>pproc:ContractTemporalConditions</code></a>.</p>
+        <p>Como se puede observar, la duración estimada del contrato podrá ofrecerse tanto especificando una fecha de finalización estimada como utilizando una medida de duración. A continuación se incluye un ejemplo con una instancia de <a href="/def/sector-publico/pproc#ContractTemporalConditions"><code>pproc:ContractTemporalConditions</code></a>.</p>
         <div class=example>
           <div class=example-title><span>Ejemplo de las condiciones temporales de un contrato</span></div>
           <pre>
@@ -676,16 +676,16 @@
   <b>ex:aContract/ContractTempCond   rdf:type                              pproc:ContractTemporalConditions ;
                                   pproc:estimatedEndDate                "2015-10-26"^^xsd:date ;
                                   pproc:prorogationsExcepted            "0"^^xsd:nonNegativeInteger .</b></pre>
-          <p>Nótese que el ejemplo no incluye la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#estimatedDuration"><code>pproc:estimatedDuration</code></a>, pues ya se ofrece una estimación de la duración por medio de fecha.</p> 
+          <p>Nótese que el ejemplo no incluye la propiedad <a href="/def/sector-publico/pproc#estimatedDuration"><code>pproc:estimatedDuration</code></a>, pues ya se ofrece una estimación de la duración por medio de fecha.</p> 
         </div>
       </div>
       
       <div id="contractEconomicConditions">
         <h4>3.2.2. Condiciones económicas del contrato <span class="backlink"> volver <a href="#TdC">TdC</a></span></h4>
-        <p>La clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractEconomicConditions">pproc:ContractEconomicConditions</a></code> recoge las propiedades que definen las condiciones económicas del contrato.</p>
+        <p>La clase <code><a href="/def/sector-publico/pproc#ContractEconomicConditions">pproc:ContractEconomicConditions</a></code> recoge las propiedades que definen las condiciones económicas del contrato.</p>
         <div id="table_06">
         <table class="prop-table">
-          <caption> <a href="#table_06">Tabla 6</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractEconomicConditions"><code>pproc:ContractEconomicConditions</code></a></caption>
+          <caption> <a href="#table_06">Tabla 6</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractEconomicConditions"><code>pproc:ContractEconomicConditions</code></a></caption>
           <tr>
             <th>Propiedad</th>
             <th>Descripción</th>
@@ -746,10 +746,10 @@
       
       <div id="contractExecutionConditions">
         <h4>3.2.3. Condiciones de ejecución del contrato <span class="backlink"> volver <a href="#TdC">TdC</a></span></h4>
-        <p>Para definir las condiciones de ejecución de un contrato se utiliza la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractExecutionConditions"><code>pproc:ContractExecutionConditions.</a></code></p>
+        <p>Para definir las condiciones de ejecución de un contrato se utiliza la clase <a href="/def/sector-publico/pproc#ContractExecutionConditions"><code>pproc:ContractExecutionConditions.</a></code></p>
         <div id="table_07">
           <table class="prop-table">
-            <caption> <a href="#table_07">Tabla 7</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractExecutionConditions"><code>pproc:ContractExecutionConditions</code></a></caption>
+            <caption> <a href="#table_07">Tabla 7</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractExecutionConditions"><code>pproc:ContractExecutionConditions</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -789,10 +789,10 @@
       
       <div id="contractModificationConditions">
         <h4>3.2.4. Condiciones de modificación del contrato <span class="backlink"> volver <a href="#TdC">TdC</a></span></h4>
-        <p>Como última clase partiendo de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractObject"><code>pproc:ContractObject</code></a>, la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractModificationConditions"><code>pproc:ContractModificationConditions</code></a> recoge las propiedades que describen los límites y  causas en la posible modificación de un contrato.</p>
+        <p>Como última clase partiendo de <a href="/def/sector-publico/pproc#ContractObject"><code>pproc:ContractObject</code></a>, la clase <a href="/def/sector-publico/pproc#ContractModificationConditions"><code>pproc:ContractModificationConditions</code></a> recoge las propiedades que describen los límites y  causas en la posible modificación de un contrato.</p>
         <div id="table_08">
           <table class="prop-table">
-            <caption> <a href="#table_08">Tabla 8</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractModificationConditions"><code>pproc:ContractModificationConditions</code></a></caption>
+            <caption> <a href="#table_08">Tabla 8</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractModificationConditions"><code>pproc:ContractModificationConditions</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -834,10 +834,10 @@
 
     <div id="tenderersRequirements">
       <h3>3.3. Requisitos de los licitadores <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>La clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderersRequirements">pproc:TenderersRequirements</a></code> recoge las propiedades que definen los requisitos exigidos a los licitadores para presentar una oferta. Esta clase se enlaza a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#tenderersRequirements">pproc:tenderersRequirements</a></code>.</p>
+      <p>La clase <code><a href="/def/sector-publico/pproc#TenderersRequirements">pproc:TenderersRequirements</a></code> recoge las propiedades que definen los requisitos exigidos a los licitadores para presentar una oferta. Esta clase se enlaza a un <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="/def/sector-publico/pproc#tenderersRequirements">pproc:tenderersRequirements</a></code>.</p>
       <div id="table_09">
         <table class="prop-table">
-          <caption> <a href="#table_09">Tabla 9</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderersRequirements"><code>pproc:TenderersRequirements</code></a></caption>
+          <caption> <a href="#table_09">Tabla 9</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#TenderersRequirements"><code>pproc:TenderersRequirements</code></a></caption>
           <tr>
             <th>Propiedad</th>
             <th>Descripción</th>
@@ -893,10 +893,10 @@
     
     <div id="tenderRequirements">
       <h3>3.4. Requisitos para las ofertas <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>La clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderRequirements">pproc:TenderRequirements</a></code> recoge las propiedades que definen los requisitos exigidos a las ofertas a presentar. Esta clase se enlaza a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#tenderRequirements">pproc:tenderRequirements</a></code>.</p>
+      <p>La clase <code><a href="/def/sector-publico/pproc#TenderRequirements">pproc:TenderRequirements</a></code> recoge las propiedades que definen los requisitos exigidos a las ofertas a presentar. Esta clase se enlaza a un <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="/def/sector-publico/pproc#tenderRequirements">pproc:tenderRequirements</a></code>.</p>
       <div id="table_10">
         <table class="prop-table">
-          <caption> <a href="#table_10">Tabla 10</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderRequirements"><code>pproc:TenderRequirements</code></a></caption>
+          <caption> <a href="#table_10">Tabla 10</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#TenderRequirements"><code>pproc:TenderRequirements</code></a></caption>
           <tr>
             <th>Propiedad</th>
             <th>Descripción</th>
@@ -930,16 +930,16 @@
                                         pproc:tenderDocumentNeeds                 "Documentación con presupuesto, planificación, planos, materiales y lista subcontratistas"^^xsd:string ;
                                         pproc:tenderSubmissionSupportedLanguage   "es"^^xsd:string ;
                                         pproc:tenderSubmissionSupportedLanguage   "en"^^xsd:string .</b></pre>
-        <p>Se recomienda que al especificar los idiomas permitidos en la presentación de ofertas se utilice la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#tenderSubmissionSupportedLanguage">pproc:tenderSubmissionSupportedLanguage</a></code> una vez por idioma, tal y como se muestra en el ejemplo.</p>
+        <p>Se recomienda que al especificar los idiomas permitidos en la presentación de ofertas se utilice la propiedad <code><a href="/def/sector-publico/pproc#tenderSubmissionSupportedLanguage">pproc:tenderSubmissionSupportedLanguage</a></code> una vez por idioma, tal y como se muestra en el ejemplo.</p>
       </div>
     </div>
     
     <div id="contractProcedureSpecifications">
       <h3>3.5. Especificaciones del procedimiento <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>Para definir las especificaciones del procedimiento que se lleva a cabo durante la vida del contrato se utiliza la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications">pproc:ContractProcedureSpecifications</a></code>. Esta clase se enlaza a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#contractProcedureSpecifications">pproc:contractProcedureSpecifications</a></code>.</p>
+      <p>Para definir las especificaciones del procedimiento que se lleva a cabo durante la vida del contrato se utiliza la clase <code><a href="/def/sector-publico/pproc#ContractProcedureSpecifications">pproc:ContractProcedureSpecifications</a></code>. Esta clase se enlaza a un <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="/def/sector-publico/pproc#contractProcedureSpecifications">pproc:contractProcedureSpecifications</a></code>.</p>
       <div id="table_11">
         <table class="prop-table">
-          <caption> <a href="#table_11">Tabla 11</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications"><code>pproc:ContractProcedureSpecifications</code></a></caption>
+          <caption> <a href="#table_11">Tabla 11</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractProcedureSpecifications"><code>pproc:ContractProcedureSpecifications</code></a></caption>
           <tr>
             <th>Propiedad</th>
             <th>Descripción</th>
@@ -1079,15 +1079,15 @@
   ex:aContract/ProcedureSpecs/Notice_02             rdf:type      pproc:Notice .
   ex:aContract/ProcedureSpecs/Notice_03             rdf:type      pproc:Notice .
   ex:aContract/ProcedureSpecs/Notice_04             rdf:type      pproc:Notice .</pre>
-        <p>Nótese que la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#assumptionProtectingProcedureType"><code>pproc:assumptionProtectingProcedureType</code></a> no se ha utilizado en el ejemplo, ya que no es aplicable por utilizarse un procedimiento abierto.</p>
+        <p>Nótese que la propiedad <a href="/def/sector-publico/pproc#assumptionProtectingProcedureType"><code>pproc:assumptionProtectingProcedureType</code></a> no se ha utilizado en el ejemplo, ya que no es aplicable por utilizarse un procedimiento abierto.</p>
       </div>
       
       <div id="contractAdditionalObligations">
         <h4>3.5.1. Obligaciones accesorias <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h4>
-        <p>El conjunto de obligaciones accesorias de un contrato se recogen utilizando la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractAdditionalObligations">pproc:ContractAdditionalObligations</a></code>. Esta clase se enlaza a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#contractAdditionalObligations">pproc:contractAdditionalObligations</a></code>.</p>
+        <p>El conjunto de obligaciones accesorias de un contrato se recogen utilizando la clase <code><a href="/def/sector-publico/pproc#ContractAdditionalObligations">pproc:ContractAdditionalObligations</a></code>. Esta clase se enlaza a un <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="/def/sector-publico/pproc#contractAdditionalObligations">pproc:contractAdditionalObligations</a></code>.</p>
         <div id="table_12">
           <table class="prop-table">
-            <caption> <a href="#table_12">Tabla 12</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractAdditionalObligations"><code>pproc:ContractAdditionalObligations</code></a></caption>
+            <caption> <a href="#table_12">Tabla 12</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractAdditionalObligations"><code>pproc:ContractAdditionalObligations</code></a></caption>
               <tr>
                 <th>Propiedad</th>
                 <th>Descripción</th>
@@ -1140,10 +1140,10 @@
       
       <div id="contractActivities">
         <h4>3.5.2. Trámites <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h4>
-        <p>La clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractActivities">pproc:ContractActivities</a></code> contiene los trámites que forman parte del procedimiento. Esta clase se enlaza a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#contractActivities">pproc:contractActivities</a></code>.</p>
+        <p>La clase <code><a href="/def/sector-publico/pproc#ContractActivities">pproc:ContractActivities</a></code> contiene los trámites que forman parte del procedimiento. Esta clase se enlaza a un <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="/def/sector-publico/pproc#contractActivities">pproc:contractActivities</a></code>.</p>
         <div id="table_13">
           <table class="prop-table">
-            <caption> <a href="#table_13">Tabla 13</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractActivities"><code>pproc:ContractActivities</code></a></caption>
+            <caption> <a href="#table_13">Tabla 13</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractActivities"><code>pproc:ContractActivities</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -1205,10 +1205,10 @@
       
       <div id="contractBodies">
         <h4>3.5.3. Órganos <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h4>
-        <p>La clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractBodies">pproc:ContractBodies</a></code> contiene las propiedades con los distintos órganos que toman parte en el procedimiento de este contrato. Esta clase se enlaza a un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#contractBodies">pproc:contractBodies</a></code>.</p>
+        <p>La clase <code><a href="/def/sector-publico/pproc#ContractBodies">pproc:ContractBodies</a></code> contiene las propiedades con los distintos órganos que toman parte en el procedimiento de este contrato. Esta clase se enlaza a un <code><a href="/def/sector-publico/pproc#Contract">pproc:Contract</a></code> mediante la propiedad <code><a href="/def/sector-publico/pproc#contractBodies">pproc:contractBodies</a></code>.</p>
         <div id="table_14">
           <table class="prop-table">
-            <caption> <a href="#table_14">Tabla 14</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractBodies"><code>pproc:ContractBodies</code></a></caption>
+            <caption> <a href="#table_14">Tabla 14</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractBodies"><code>pproc:ContractBodies</code></a></caption>
               <tr>
                 <th>Propiedad</th>
                 <th>Descripción</th>
@@ -1231,10 +1231,10 @@
               </tr>
           </table>
         </div>
-        <p>Se utilizan tres clases para definir los diferentes comités que forman parte del proceso de licitación. Para definir la existencia de una mesa de contratación (clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderCommittee">pproc:TenderCommittee</a></code>), un comité de expertos (clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ExpertCommittee">pproc:ExpertCommittee</a></code>) o un organismo técnico (clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TechnicalCommittee">pproc:TechnicalCommittee</a></code>). Las tres son subclases <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Committee">pproc:Committee</a></code>, la cual actúa como dominio de las siguientes propiedades.</p>
+        <p>Se utilizan tres clases para definir los diferentes comités que forman parte del proceso de licitación. Para definir la existencia de una mesa de contratación (clase <code><a href="/def/sector-publico/pproc#TenderCommittee">pproc:TenderCommittee</a></code>), un comité de expertos (clase <code><a href="/def/sector-publico/pproc#ExpertCommittee">pproc:ExpertCommittee</a></code>) o un organismo técnico (clase <code><a href="/def/sector-publico/pproc#TechnicalCommittee">pproc:TechnicalCommittee</a></code>). Las tres son subclases <code><a href="/def/sector-publico/pproc#Committee">pproc:Committee</a></code>, la cual actúa como dominio de las siguientes propiedades.</p>
         <div id="table_15">
           <table class="prop-table">
-            <caption> <a href="#table_15">Tabla 15</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Committee"><code>pproc:Committee</code></a></caption>
+            <caption> <a href="#table_15">Tabla 15</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#Committee"><code>pproc:Committee</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -1267,10 +1267,10 @@
             </tr>
           </table>
         </div>
-        <p>Los miembros de este comité, tanto los titulares como los suplentes, se describen mediante la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#CommitteMember">pproc:CommitteeMember</a></code>. Esta clase se define en la ontología como una subclase de <code><a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a></code> y las propiedades para describirla son las siguientes.</p>
+        <p>Los miembros de este comité, tanto los titulares como los suplentes, se describen mediante la clase <code><a href="/def/sector-publico/pproc#CommitteMember">pproc:CommitteeMember</a></code>. Esta clase se define en la ontología como una subclase de <code><a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a></code> y las propiedades para describirla son las siguientes.</p>
         <div id="table_16">
           <table class="prop-table">
-            <caption> <a href="#table_16">Tabla 16</a>: Propiedades que parten de <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#CommitteMember">pproc:CommitteeMember</a></code></caption>
+            <caption> <a href="#table_16">Tabla 16</a>: Propiedades que parten de <code><a href="/def/sector-publico/pproc#CommitteMember">pproc:CommitteeMember</a></code></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -1303,7 +1303,7 @@
             </tr>
           </table>
         </div>
-        <p>La propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#tenderCommitteeRole"><code>pproc:tenderCommitteeRole</code></a> define el rol que la persona desempeña dentro del comité o mesa. La propiedad <a href="http://www.w3.org/ns/org#memberOf"><code>org:memberOf</code></a> simboliza la pertenencia de la persona a una organización. Esta propiedad no indica la naturaleza de esta pertenencia o el rol que el agente desempeña en la organización.</p>
+        <p>La propiedad <a href="/def/sector-publico/pproc#tenderCommitteeRole"><code>pproc:tenderCommitteeRole</code></a> define el rol que la persona desempeña dentro del comité o mesa. La propiedad <a href="http://www.w3.org/ns/org#memberOf"><code>org:memberOf</code></a> simboliza la pertenencia de la persona a una organización. Esta propiedad no indica la naturaleza de esta pertenencia o el rol que el agente desempeña en la organización.</p>
         <div class="note">
           <p>El vocabulario FOAF proporciona las propiedades <a href="http://xmlns.com/foaf/0.1/firstName"><code>foaf:firstName</code></a> y <a href="http://xmlns.com/foaf/0.1/lastName"><code>foaf:lastName</code></a> como mecanismo para mantener datos que no pueden ser fácilmente interpretados en términos de sus respectivas (y de otra forma preferidas) propiedades <a href="http://xmlns.com/foaf/0.1/familyName"><code>foaf:familyName</code></a> y <a href="http://xmlns.com/foaf/0.1/givenName"><code>foaf:givenName</code></a>.</p>
         </div>
@@ -1343,17 +1343,17 @@
   ex:aContract/ProcedureSpecs/Committee_01/Member_04   rdf:type                   pproc:CommitteeMember .
   ex:aContract/ProcedureSpecs/Committee_01/Member_05   rdf:type                   pproc:CommitteeMember .
   ex:aContract/ProcedureSpecs/Committee_02             rdf:type                   pproc:ExpertCommittee .</pre>
-          <p>En este ejemplo solamente se incluye la descripción completa de un órgano (especificamente un <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderCommittee">pproc:TenderCommittee</a></code>) y de uno de sus miembros. Las propiedades a utilizar para el resto de instancias son las mismas (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ExpertCommittee">pproc:ExpertCommittee</a></code> y <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TechnicalCommittee">pproc:TechnicalCommittee</a></code> comparten propiedades con <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderCommittee">pproc:TenderCommittee</a></code>, y los miembros de estos comités siempre se instancian con la misma clase, <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#CommitteMember">pproc:CommitteeMember</a></code>).</p>
+          <p>En este ejemplo solamente se incluye la descripción completa de un órgano (especificamente un <code><a href="/def/sector-publico/pproc#TenderCommittee">pproc:TenderCommittee</a></code>) y de uno de sus miembros. Las propiedades a utilizar para el resto de instancias son las mismas (<code><a href="/def/sector-publico/pproc#ExpertCommittee">pproc:ExpertCommittee</a></code> y <code><a href="/def/sector-publico/pproc#TechnicalCommittee">pproc:TechnicalCommittee</a></code> comparten propiedades con <code><a href="/def/sector-publico/pproc#TenderCommittee">pproc:TenderCommittee</a></code>, y los miembros de estos comités siempre se instancian con la misma clase, <code><a href="/def/sector-publico/pproc#CommitteMember">pproc:CommitteeMember</a></code>).</p>
         </div>
       
       </div>
       
       <div id="electronicAuction">
         <h4>3.5.4. Subasta electrónica <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h4>
-        <p>Para especificar la realización de una subasta electrónica se hace uso de la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuction">pproc:ElectronicAuction</a></code>. Esta clase viene enlazada siempre mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#electronicAuction">pproc:electronicAuction</a></code> desde la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications">pproc:ContractProcedureSpecifications</a></code>. Se considera que solo existe una única subasta electrónica durante todo el procedimiento, la cual puede dividirse en diversas fases, de esta manera solo podrá definirse una única <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuction">pproc:ElectronicAuction</a></code> por contrato (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#electronicAuction">pproc:electronicAuction</a></code> es una <a href="http://www.w3.org/TR/owl-syntax/#Functional_Object_Properties">propiedad funcional</a>). Para describir esta subasta electrónica se utilizan las siguientes propiedades.</p>
+        <p>Para especificar la realización de una subasta electrónica se hace uso de la clase <code><a href="/def/sector-publico/pproc#ElectronicAuction">pproc:ElectronicAuction</a></code>. Esta clase viene enlazada siempre mediante la propiedad <code><a href="/def/sector-publico/pproc#electronicAuction">pproc:electronicAuction</a></code> desde la clase <code><a href="/def/sector-publico/pproc#ContractProcedureSpecifications">pproc:ContractProcedureSpecifications</a></code>. Se considera que solo existe una única subasta electrónica durante todo el procedimiento, la cual puede dividirse en diversas fases, de esta manera solo podrá definirse una única <code><a href="/def/sector-publico/pproc#ElectronicAuction">pproc:ElectronicAuction</a></code> por contrato (<code><a href="/def/sector-publico/pproc#electronicAuction">pproc:electronicAuction</a></code> es una <a href="http://www.w3.org/TR/owl-syntax/#Functional_Object_Properties">propiedad funcional</a>). Para describir esta subasta electrónica se utilizan las siguientes propiedades.</p>
         <div id="table_17">
           <table class="prop-table">
-            <caption> <a href="#table_17">Tabla 17</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuction"><code>pproc:ElectronicAuction</code></a></caption>
+            <caption> <a href="#table_17">Tabla 17</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ElectronicAuction"><code>pproc:ElectronicAuction</code></a></caption>
               <tr>
                 <th>Propiedad</th>
                 <th>Descripción</th>
@@ -1376,10 +1376,10 @@
               </tr>
           </table>
         </div>
-        <p>Para diferenciar las diferentes fases que pueden constituir una misma subasta se hace uso de la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuctionPhase">pproc:ElectronicAuctionPhase</a></code>. Esta otra clase se utiliza con las siguientes propiedades.</p>
+        <p>Para diferenciar las diferentes fases que pueden constituir una misma subasta se hace uso de la clase <code><a href="/def/sector-publico/pproc#ElectronicAuctionPhase">pproc:ElectronicAuctionPhase</a></code>. Esta otra clase se utiliza con las siguientes propiedades.</p>
         <div id="table_18">
           <table class="prop-table">
-            <caption> <a href="#table_18">Tabla 18</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuctionPhase"><code>pproc:ElectronicAuctionPhase</code></a></caption>
+            <caption> <a href="#table_18">Tabla 18</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ElectronicAuctionPhase"><code>pproc:ElectronicAuctionPhase</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -1429,10 +1429,10 @@
       
       <div id="informationProvider">
         <h4>3.5.5. Proveedores de información <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h4>
-        <p>Durante la licitación de un contrato es habitual que la administración proporcione una serie de lugares de referencia para recoger más información relativa a esta licitación. Para poder definir este tipo de información se utiliza la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#InformationProvider">pproc:InformationProvider</a></code>. Esta clase viene enlazada siempre mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#tenderInformationProvider">pproc:tenderInformationProvider</a></code> desde la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications">pproc:ContractProcedureSpecifications</a></code> y no tiene cardinalidad definida, por lo que puede utilizarse todas las veces que se quiera. Las propiedades que definen estos proveedores de información son las siguientes.</p>
+        <p>Durante la licitación de un contrato es habitual que la administración proporcione una serie de lugares de referencia para recoger más información relativa a esta licitación. Para poder definir este tipo de información se utiliza la clase <code><a href="/def/sector-publico/pproc#InformationProvider">pproc:InformationProvider</a></code>. Esta clase viene enlazada siempre mediante la propiedad <code><a href="/def/sector-publico/pproc#tenderInformationProvider">pproc:tenderInformationProvider</a></code> desde la clase <code><a href="/def/sector-publico/pproc#ContractProcedureSpecifications">pproc:ContractProcedureSpecifications</a></code> y no tiene cardinalidad definida, por lo que puede utilizarse todas las veces que se quiera. Las propiedades que definen estos proveedores de información son las siguientes.</p>
         <div id="table_19">
           <table class="prop-table">
-            <caption> <a href="#table_19">Tabla 19</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#InformationProvider"><code>pproc:InformationProvider</code></a></caption>
+            <caption> <a href="#table_19">Tabla 19</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#InformationProvider"><code>pproc:InformationProvider</code></a></caption>
               <tr>
                 <th>Propiedad</th>
                 <th>Descripción</th>
@@ -1486,10 +1486,10 @@
       
       <div id="briefing">
         <h4>3.5.6. Reuniones informativas <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h4>
-        <p>Es posible que la administración contratante convoque reuniones informativas para aclarar dudas relativas al contrato. Para poder definir estas reuniones se utiliza la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#Briefing">pproc:Briefing</a></code>. Esta clase viene enlazada siempre mediante la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#briefing">pproc:briefing</a></code> desde la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications">pproc:ContractProcedureSpecifications</a></code> y no tiene cardinalidad definida, por lo que puede utilizarse todas las veces que se quiera. Las propiedades que definen estas reuniones informativas son las siguientes.</p>
+        <p>Es posible que la administración contratante convoque reuniones informativas para aclarar dudas relativas al contrato. Para poder definir estas reuniones se utiliza la clase <code><a href="/def/sector-publico/pproc#Briefing">pproc:Briefing</a></code>. Esta clase viene enlazada siempre mediante la propiedad <code><a href="/def/sector-publico/pproc#briefing">pproc:briefing</a></code> desde la clase <code><a href="/def/sector-publico/pproc#ContractProcedureSpecifications">pproc:ContractProcedureSpecifications</a></code> y no tiene cardinalidad definida, por lo que puede utilizarse todas las veces que se quiera. Las propiedades que definen estas reuniones informativas son las siguientes.</p>
         <div id="table_20">
           <table class="prop-table">
-            <caption> <a href="#table_20">Tabla 20</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Briefing"><code>pproc:Briefing</code></a></caption>
+            <caption> <a href="#table_20">Tabla 20</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#Briefing"><code>pproc:Briefing</code></a></caption>
               <tr>
                 <th>Propiedad</th>
                 <th>Descripción</th>
@@ -1536,7 +1536,7 @@
     
     <div id="offering">
       <h3>3.6. Offering <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>La clase <a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a> (oferta) se utiliza para describir los objetos que una autoridad contratante busca o que un licitador ofrece. Se ha preferido mantener el nombre de la clase en inglés en esta documentación para evitar confusiones con la clase que define las ofertas a una determinada licitación, <code><a href="http://purl.org/procurement/public-contracts#Tender">pc:Tender</a></code> (cuya definición puede encontrarse en la <a href="#tender">sección 3.8</a>). Esta clase (<a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a>) pertenece al vocabulario <a href="http://www.heppnetz.de/projects/goodrelations/"><em>Good Relations</em></a>. Esta puede ser enlazada con un <a href="#ContractObject"><code>pproc:ContractObject</code></a> (utilizando la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#provision"><code>pproc:provision</code></a>) y con la clase <a href="http://purl.org/procurement/public-contracts#Tender"><code>pc:Tender</code></a> (utilizando la propiedad <a href="#item"><code>pproc:item</code></a>).</p>
+      <p>La clase <a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a> (oferta) se utiliza para describir los objetos que una autoridad contratante busca o que un licitador ofrece. Se ha preferido mantener el nombre de la clase en inglés en esta documentación para evitar confusiones con la clase que define las ofertas a una determinada licitación, <code><a href="http://purl.org/procurement/public-contracts#Tender">pc:Tender</a></code> (cuya definición puede encontrarse en la <a href="#tender">sección 3.8</a>). Esta clase (<a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a>) pertenece al vocabulario <a href="http://www.heppnetz.de/projects/goodrelations/"><em>Good Relations</em></a>. Esta puede ser enlazada con un <a href="#ContractObject"><code>pproc:ContractObject</code></a> (utilizando la propiedad <a href="/def/sector-publico/pproc#provision"><code>pproc:provision</code></a>) y con la clase <a href="http://purl.org/procurement/public-contracts#Tender"><code>pc:Tender</code></a> (utilizando la propiedad <a href="#item"><code>pproc:item</code></a>).</p>
       <p>La clase <a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a> permite describir el objeto utilizando las siguientes propiedades de ontologías externas:</p>
       <ul>
         <li><a href="http://purl.org/dc/terms/title"><code>dcterms:title</code></a>. Un texto que describa brevemente el recurso. Esta propiedad es semánticamente equivalente a <a href="http://purl.org/goodrelations/v1#name"><code>gr:name</code></a>, <a href="http://www.w3.org/2000/01/rdf-schema#label"><code>rdfs:label</code></a> y <a href="http://schema.org/name"><code>s:name</code></a>.</li>
@@ -1554,7 +1554,7 @@
         <li><a href="http://xmlns.com/foaf/0.1/page"><code>foaf:page</code></a>. Propiedad que enlaza con el documento web de dicho objeto.</li>
       </ul>
       <div class="issue"><p>La propiedad <a href="http://purl.org/goodrelations/v1#includesObject"><code>gr:includesObject</code></a> y su rango esperado, la clase <a href="http://purl.org/goodrelations/v1#TypeAndQuantityNode"><code>gr:TypeAndQuantityNode</code></a>, sirven para especificar detalladamente los bienes que la administración busca o la empresa ofrece. Es muy posible que las administraciones públicas puedan encontrar problemas para detallar tan formalmente el objeto del contrato, siendo fórmula habitual la utilizanción de una cadena de texto para describirlos. En tales casos se puede prescindir sin problema de las últimas tres propiedades listadas (<a href="http://purl.org/goodrelations/v1#includesObject"><code>gr:includesObject</code></a>, <a href="http://purl.org/goodrelations/v1#condition"><code>gr:condition</code></a> y <a href="http://xmlns.com/foaf/0.1/page"><code>foaf:page</code></a>), pues aunque ofrecen la posibilidad de describir en gran detalle el objeto del contrato, la granularidad de esta información no está habitualmente disponible de manera estructurada en la administración pública.</p></div>
-      <p>Aparte de estas y otras propiedades que la ontología <em>Good Relations</em> ofrece, la ontología PPROC añade dos nuevas propiedades relativas al plazo para describir el objeto: <a href="http://contsem.unizar.es/def/sector-publico/pproc#estimatedEndDate"><code>pproc:estimatedEndDate</code></a> y <a href="http://contsem.unizar.es/def/sector-publico/pproc#estimatedDuration"><code>pproc:estimatedDuration</code></a>. Estas propiedades pueden utilizarse para especificar la fecha de entrega de bienes la duración de una obra (utilizar estas dos propiedades en <a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a> es equivalente a su utilización en la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractTemporalConditions"><code>pproc:ContractTemporalConditions</code></a>). La relación completa de propiedades a utilizar y sus rangos en la siguientes tabla.</p>
+      <p>Aparte de estas y otras propiedades que la ontología <em>Good Relations</em> ofrece, la ontología PPROC añade dos nuevas propiedades relativas al plazo para describir el objeto: <a href="/def/sector-publico/pproc#estimatedEndDate"><code>pproc:estimatedEndDate</code></a> y <a href="/def/sector-publico/pproc#estimatedDuration"><code>pproc:estimatedDuration</code></a>. Estas propiedades pueden utilizarse para especificar la fecha de entrega de bienes la duración de una obra (utilizar estas dos propiedades en <a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a> es equivalente a su utilización en la clase <a href="/def/sector-publico/pproc#ContractTemporalConditions"><code>pproc:ContractTemporalConditions</code></a>). La relación completa de propiedades a utilizar y sus rangos en la siguientes tabla.</p>
       <div id="table_21">
         <table class="prop-table">
           <caption> <a href="#table_21">Tabla 21</a>: Propiedades que parten de <a href="http://purl.org/goodrelations/v1#Offering"><code>gr:Offering</code></a></caption>
@@ -1765,7 +1765,7 @@
     
     <div id="tender">
       <h3>3.8. Ofertas <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>Las ofertas a licitaciones públicas son representadas como instancias de <code><a href="http://purl.org/procurement/public-contracts#Tender">pc:Tender</a></code> o alguna de las especializaciones como subclase disponibles (<code><a href="http://contsem.unizar.es/def/sector-publico/pproc#AcceptedTender">pproc:AcceptedTender</a></code>, <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#AwardedTender">pproc:AwardedTender</a></code>, <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ExcludedTender">pproc:ExcludedTender</a></code>, <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#FormalizedTender">FormalizedTender</a></code>). El proveedor que envía la oferta se define mediante la clase <code><a href="http://www.w3.org/ns/org#Organization">org:Organization</a></code> y se relaciona con la oferta mediante la propiedad <code><a href="http://purl.org/procurement/public-contracts#supplier">pc:supplier</a></code>.</p>
+      <p>Las ofertas a licitaciones públicas son representadas como instancias de <code><a href="http://purl.org/procurement/public-contracts#Tender">pc:Tender</a></code> o alguna de las especializaciones como subclase disponibles (<code><a href="/def/sector-publico/pproc#AcceptedTender">pproc:AcceptedTender</a></code>, <code><a href="/def/sector-publico/pproc#AwardedTender">pproc:AwardedTender</a></code>, <code><a href="/def/sector-publico/pproc#ExcludedTender">pproc:ExcludedTender</a></code>, <code><a href="/def/sector-publico/pproc#FormalizedTender">FormalizedTender</a></code>). El proveedor que envía la oferta se define mediante la clase <code><a href="http://www.w3.org/ns/org#Organization">org:Organization</a></code> y se relaciona con la oferta mediante la propiedad <code><a href="http://purl.org/procurement/public-contracts#supplier">pc:supplier</a></code>.</p>
       <div id="table_24">
         <table class="prop-table">
           <caption> <a href="#table_24">Tabla 24</a>: Propiedades que parten de <a href="http://purl.org/procurement/public-contracts#Tender"><code>pc:Tender</code></a></caption>
@@ -1821,11 +1821,11 @@
           </tr>
         </table>
       </div>
-      <p>Como puede deducirse, existen ciertas propiedades que requieren que la oferta descrita haya sido adjudicada (al utilizar la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#awardAgreement"><code>pproc:awardAgreement</code></a>) o incluso formalizada (al utilizar la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#formalizedDate"><code>pproc:formalizedDate</code></a>).</p>
-      <p>La propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#criterionScore"><code>pproc:criterionScore</code></a> permite enlazar a la clase que define la valoración de un único criterio, por lo que esta propiedad se utilizará una vez por cada criterio de adjudicación presente en el contrato. Esta propiedad tiene como rango a la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#CriterionScore"><code>pproc:CriterionScore</code></a>, la cual se define con las siguientes propiedades.</p>
+      <p>Como puede deducirse, existen ciertas propiedades que requieren que la oferta descrita haya sido adjudicada (al utilizar la propiedad <a href="/def/sector-publico/pproc#awardAgreement"><code>pproc:awardAgreement</code></a>) o incluso formalizada (al utilizar la propiedad <a href="/def/sector-publico/pproc#formalizedDate"><code>pproc:formalizedDate</code></a>).</p>
+      <p>La propiedad <a href="/def/sector-publico/pproc#criterionScore"><code>pproc:criterionScore</code></a> permite enlazar a la clase que define la valoración de un único criterio, por lo que esta propiedad se utilizará una vez por cada criterio de adjudicación presente en el contrato. Esta propiedad tiene como rango a la clase <a href="/def/sector-publico/pproc#CriterionScore"><code>pproc:CriterionScore</code></a>, la cual se define con las siguientes propiedades.</p>
       <div id="table_25">
         <table class="prop-table">
-          <caption> <a href="#table_25">Tabla 25</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#CriterionScore"><code>pproc:CriterionScore</code></a></caption>
+          <caption> <a href="#table_25">Tabla 25</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#CriterionScore"><code>pproc:CriterionScore</code></a></caption>
           <tr>
             <th>Propiedad</th>
             <th>Descripción</th>
@@ -1891,7 +1891,7 @@
         <li><a href="http://purl.org/procurement/public-contracts#onBehalfOf"><code>pc:onBehalfOf</code></a></li>
         <li><a href="http://purl.org/procurement/public-contracts#supplier"><code>pc:supplier</code></a></li>
       </ul>
-      <p>Estas propiedades tienen <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> como dominio, a excepción de la ultima, que tiene <a href="http://purl.org/procurement/public-contracts#Tender"><code>pc:Tender</code></a> como dominio.</p>
+      <p>Estas propiedades tienen <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> como dominio, a excepción de la ultima, que tiene <a href="http://purl.org/procurement/public-contracts#Tender"><code>pc:Tender</code></a> como dominio.</p>
       <p>Para describir estas clases nos referimos a la documentación de la <a href="http://www.w3.org/TR/vocab-org/"><em>Organization Ontology</em></a> e incluímos un ejemplo a continuación.</p>
       <div class="example">
         <div class="example-title"><span>Ejemplo de organizaciones</span></div>
@@ -1982,10 +1982,10 @@
 
     <div id="tenderMeeting">
       <h3>3.11. Reuniones de contratación <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>Para describir las reuniones que realiza la mesa de contratación, el comité de expertos o los organismos técnicos se utiliza la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderMeeting">pproc:TenderMeeting</a></code>. Esta clase se enlaza a partir de la propiedad <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#tenderMeeting">pproc:tenderMeeting</a></code>, cuyo dominio puede ser, o bien <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderCommittee">pproc:TenderCommittee</a></code> <a href="#contractBodies" class="uso">uso</a> o <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractActivities">pproc:ContractActivities</a></code> <a href="#contractActivities" class="uso">uso</a> (se permiten las dos opciones para el caso en que no se disponga o quiera etiquetar la información sobre los comités pero sí la de las reuniones realizadas). Las propiedades que describen la clase <code><a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderMeeting">pproc:TenderMeeting</a></code> son las siguientes.</p>
+      <p>Para describir las reuniones que realiza la mesa de contratación, el comité de expertos o los organismos técnicos se utiliza la clase <code><a href="/def/sector-publico/pproc#TenderMeeting">pproc:TenderMeeting</a></code>. Esta clase se enlaza a partir de la propiedad <code><a href="/def/sector-publico/pproc#tenderMeeting">pproc:tenderMeeting</a></code>, cuyo dominio puede ser, o bien <code><a href="/def/sector-publico/pproc#TenderCommittee">pproc:TenderCommittee</a></code> <a href="#contractBodies" class="uso">uso</a> o <code><a href="/def/sector-publico/pproc#ContractActivities">pproc:ContractActivities</a></code> <a href="#contractActivities" class="uso">uso</a> (se permiten las dos opciones para el caso en que no se disponga o quiera etiquetar la información sobre los comités pero sí la de las reuniones realizadas). Las propiedades que describen la clase <code><a href="/def/sector-publico/pproc#TenderMeeting">pproc:TenderMeeting</a></code> son las siguientes.</p>
       <div id="table_XX">
         <table class="prop-table">
-          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#TenderMeeting"><code>pproc:TenderMeeting</code></a></caption>
+          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#TenderMeeting"><code>pproc:TenderMeeting</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -2017,17 +2017,17 @@
     
     <div id="contractOrProcedureExtinction">
       <h3>3.12. Extinción del contrato o del procedimiento <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>Existen una serie de circunstancias que derivan en la extinción del contrato o procedimiento. Para describir estas situaciones se hace uso de una de las subclases <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractOrProcedureExtinction"><code>pproc:ContractOrProcedureExtinction</code></a>. Esta es una clase abstracta que simboliza la extinción del procedimiento o del contrato. Para ser más específicos es conveniente utilizar una de sus subclases:</p>
+      <p>Existen una serie de circunstancias que derivan en la extinción del contrato o procedimiento. Para describir estas situaciones se hace uso de una de las subclases <a href="/def/sector-publico/pproc#ContractOrProcedureExtinction"><code>pproc:ContractOrProcedureExtinction</code></a>. Esta es una clase abstracta que simboliza la extinción del procedimiento o del contrato. Para ser más específicos es conveniente utilizar una de sus subclases:</p>
       <ul>
-        <li><b>Resolución del contrato</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractResolution"><code>pproc:ContractResolution</code></a></li>
-        <li><b>Renuncia del procedimiento</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#ProcedureWaive"><code>pproc:ProcedureWaive</code></a></li>
-        <li><b>Abandono del procedimiento</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#ProcedureWaive"><code>pproc:ProcedureResignation</code></a></li>
-        <li><b>Procedimiento desierto</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#ProcedureWaive"><code>pproc:ProcedureVoid</code></a></li>
+        <li><b>Resolución del contrato</b> &ndash; <a href="/def/sector-publico/pproc#ContractResolution"><code>pproc:ContractResolution</code></a></li>
+        <li><b>Renuncia del procedimiento</b> &ndash; <a href="/def/sector-publico/pproc#ProcedureWaive"><code>pproc:ProcedureWaive</code></a></li>
+        <li><b>Abandono del procedimiento</b> &ndash; <a href="/def/sector-publico/pproc#ProcedureWaive"><code>pproc:ProcedureResignation</code></a></li>
+        <li><b>Procedimiento desierto</b> &ndash; <a href="/def/sector-publico/pproc#ProcedureWaive"><code>pproc:ProcedureVoid</code></a></li>
       </ul>
-      <p>Para enlazar un contrato con estas posibles extinctiones se hace uso de la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#contractOrProcedureExtinction"><code>pproc:contractOrProcedureExtinction</code></a> o alguna de sus especializaciones: <a href="http://contsem.unizar.es/def/sector-publico/pproc#contractResolution"><code>pproc:contractResolution</code></a>, <a href="http://contsem.unizar.es/def/sector-publico/pproc#procedureWaive"><code>pproc:procedureWaive</code></a>, <a href="http://contsem.unizar.es/def/sector-publico/pproc#procedureWaive"><code>pproc:procedureResignation</code></a>, <a href="http://contsem.unizar.es/def/sector-publico/pproc#procedureWaive"><code>pproc:procedureVoid</code></a>. Las propiedades a utilizar con la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractOrProcedureExtinction"><code>pproc:ContractOrProcedureExtinction</code></a> son las siguientes.</p>
+      <p>Para enlazar un contrato con estas posibles extinctiones se hace uso de la propiedad <a href="/def/sector-publico/pproc#contractOrProcedureExtinction"><code>pproc:contractOrProcedureExtinction</code></a> o alguna de sus especializaciones: <a href="/def/sector-publico/pproc#contractResolution"><code>pproc:contractResolution</code></a>, <a href="/def/sector-publico/pproc#procedureWaive"><code>pproc:procedureWaive</code></a>, <a href="/def/sector-publico/pproc#procedureWaive"><code>pproc:procedureResignation</code></a>, <a href="/def/sector-publico/pproc#procedureWaive"><code>pproc:procedureVoid</code></a>. Las propiedades a utilizar con la clase <a href="/def/sector-publico/pproc#ContractOrProcedureExtinction"><code>pproc:ContractOrProcedureExtinction</code></a> son las siguientes.</p>
       <div id="table_XX">
         <table class="prop-table">
-          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractOrProcedureExtinction"><code>pproc:ContractOrProcedureExtinction</code></a></caption>
+          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractOrProcedureExtinction"><code>pproc:ContractOrProcedureExtinction</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -2049,10 +2049,10 @@
     
     <div id="contractModification">
       <h3>3.13. Modificación del contrato <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>Durante la vida de un contrato se puede dar la necesidad de realizar modificaciones durante la fase de ejecución de este, para plasmar este tipo de casos en la ontología PPROC se debe utilizar la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractModification"><code>pproc:ContractModification</code></a> (rango de la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#contractModification"><code>pproc:contractModification</code></a>), esta clase dispone de las siguientes propiedades.</p>
+      <p>Durante la vida de un contrato se puede dar la necesidad de realizar modificaciones durante la fase de ejecución de este, para plasmar este tipo de casos en la ontología PPROC se debe utilizar la clase <a href="/def/sector-publico/pproc#ContractModification"><code>pproc:ContractModification</code></a> (rango de la propiedad <a href="/def/sector-publico/pproc#contractModification"><code>pproc:contractModification</code></a>), esta clase dispone de las siguientes propiedades.</p>
       <div id="table_XX">
         <table class="prop-table">
-          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractModification"><code>pproc:ContractModification</code></a></caption>
+          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractModification"><code>pproc:ContractModification</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -2089,16 +2089,16 @@
     
     <div id="remedy">
       <h3>3.14. Recursos <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>Cuando se requiera del etiquetado de recursos interpuestos sobre alguna de las resoluciones del proceso de licitación se utilizará la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#remedy"><code>pproc:remedy</code></a>, con dominio <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> y con rango en la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#Remedy"><code>pproc:Remedy</code></a>. Esta clase dispone de las siguientes subclases de especialización:</p>
+      <p>Cuando se requiera del etiquetado de recursos interpuestos sobre alguna de las resoluciones del proceso de licitación se utilizará la propiedad <a href="/def/sector-publico/pproc#remedy"><code>pproc:remedy</code></a>, con dominio <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> y con rango en la clase <a href="/def/sector-publico/pproc#Remedy"><code>pproc:Remedy</code></a>. Esta clase dispone de las siguientes subclases de especialización:</p>
       <ul>
-        <li><b>Recurso legal</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#LegalRemedy"><code>pproc:LegalRemedy</code></a></li>
-        <li><b>Recurso administrativo ordinario</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#OrdinaryAdministrativeRemedy"><code>pproc:OrdinaryAdministrativeRemedy</code></a></li>
-        <li><b>Recurso administrativo especial</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#SpecialAdministrativeRemedy"><code>pproc:SpecialAdministrativeRemedy</code></a></li>
+        <li><b>Recurso legal</b> &ndash; <a href="/def/sector-publico/pproc#LegalRemedy"><code>pproc:LegalRemedy</code></a></li>
+        <li><b>Recurso administrativo ordinario</b> &ndash; <a href="/def/sector-publico/pproc#OrdinaryAdministrativeRemedy"><code>pproc:OrdinaryAdministrativeRemedy</code></a></li>
+        <li><b>Recurso administrativo especial</b> &ndash; <a href="/def/sector-publico/pproc#SpecialAdministrativeRemedy"><code>pproc:SpecialAdministrativeRemedy</code></a></li>
       </ul>
-      <p>Tanto <a href="http://contsem.unizar.es/def/sector-publico/pproc#Remedy"><code>pproc:Remedy</code></a> como sus subclases forman parte del dominio de las siguientes propiedades.</p>
+      <p>Tanto <a href="/def/sector-publico/pproc#Remedy"><code>pproc:Remedy</code></a> como sus subclases forman parte del dominio de las siguientes propiedades.</p>
       <div id="table_XX">
         <table class="prop-table">
-          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Remedy"><code>pproc:Remedy</code></a></caption>
+          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#Remedy"><code>pproc:Remedy</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -2145,19 +2145,19 @@
     
     <div id="notice">
       <h3>3.15. Anuncios <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>Un elemento importante en los procesos para la contratación pública son los anuncios. En la ontología PPROC estos se representan con la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#Notice"><code>pproc:Notice</code></a>, la cual dispone de las siguientes subclases especializadas:</p>
+      <p>Un elemento importante en los procesos para la contratación pública son los anuncios. En la ontología PPROC estos se representan con la clase <a href="/def/sector-publico/pproc#Notice"><code>pproc:Notice</code></a>, la cual dispone de las siguientes subclases especializadas:</p>
       <ul>
-        <li><b>Anuncio de informació previa</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#PriorInformationNotice"><code>pproc:PriorInformationNotice</code></a></li>
-        <li><b>Anuncio de licitación</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractNotice"><code>pproc:ContractNotice</code></a></li>
-        <li><b>Anuncio de información adicional</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#AdditionalInformationNotice"><code>pproc:AdditionalInformationNotice</code></a></li>
-        <li><b>Anuncio de adjudicación</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractAwardNotice"><code>pproc:ContractAwardNotice</code></a></li>
-        <li><b>Anuncio de formalización</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#FormalizationNotice"><code>pproc:FormalizationNotice</code></a></li>
-        <li><b>Anuncio de correccion</b> &ndash; <a href="http://contsem.unizar.es/def/sector-publico/pproc#CorrectionNotice"><code>pproc:CorrectionNotice</code></a></li>
+        <li><b>Anuncio de informació previa</b> &ndash; <a href="/def/sector-publico/pproc#PriorInformationNotice"><code>pproc:PriorInformationNotice</code></a></li>
+        <li><b>Anuncio de licitación</b> &ndash; <a href="/def/sector-publico/pproc#ContractNotice"><code>pproc:ContractNotice</code></a></li>
+        <li><b>Anuncio de información adicional</b> &ndash; <a href="/def/sector-publico/pproc#AdditionalInformationNotice"><code>pproc:AdditionalInformationNotice</code></a></li>
+        <li><b>Anuncio de adjudicación</b> &ndash; <a href="/def/sector-publico/pproc#ContractAwardNotice"><code>pproc:ContractAwardNotice</code></a></li>
+        <li><b>Anuncio de formalización</b> &ndash; <a href="/def/sector-publico/pproc#FormalizationNotice"><code>pproc:FormalizationNotice</code></a></li>
+        <li><b>Anuncio de correccion</b> &ndash; <a href="/def/sector-publico/pproc#CorrectionNotice"><code>pproc:CorrectionNotice</code></a></li>
       </ul>
-      <p>Estas clases se utilizan como rango de la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#notice"><code>pproc:notice</code></a>, cuyo dominio puede ser tanto <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications"><code>pproc:ContractProcedureSpecifications</code></a> como <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractActivities"><code>pproc:ContractActivities</code></a>. Los anuncios puede contener la siguiente información.</p>
+      <p>Estas clases se utilizan como rango de la propiedad <a href="/def/sector-publico/pproc#notice"><code>pproc:notice</code></a>, cuyo dominio puede ser tanto <a href="/def/sector-publico/pproc#ContractProcedureSpecifications"><code>pproc:ContractProcedureSpecifications</code></a> como <a href="/def/sector-publico/pproc#ContractActivities"><code>pproc:ContractActivities</code></a>. Los anuncios puede contener la siguiente información.</p>
       <div id="table_XX">
         <table class="prop-table">
-          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Notice"><code>pproc:Notice</code></a></caption>
+          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#Notice"><code>pproc:Notice</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -2189,17 +2189,17 @@
     
     <div id="contractingBodyAgreement">
       <h3>3.16. Acuerdos del órgano de contratación <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>La clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractingBodyAgreement"><code>pproc:ContractingBodyAgreement</code></a> representa cualquier acuerdo del órgano de contratación y se puede enlazar mediante dos propiedades.</p> 
+      <p>La clase <a href="/def/sector-publico/pproc#ContractingBodyAgreement"><code>pproc:ContractingBodyAgreement</code></a> representa cualquier acuerdo del órgano de contratación y se puede enlazar mediante dos propiedades.</p> 
       <ul>
-        <li>La primera, <a href="http://contsem.unizar.es/def/sector-publico/pproc#awardAgreement"><code>pproc:awardAgreement</code></a>, tiene como dominio siempre un <a href="http://purl.org/procurement/public-contracts#Tender"><code>pc:Tender</code></a>, y enlazará al acuerdo de adjudicación de la oferta en la cual se enlace.</li>
-        <li>La segunda, <a href="http://contsem.unizar.es/def/sector-publico/pproc#contractingBodyAgreement"><code>pproc:contractingBodyAgreement</code></a>, es de carácter más general, ya que enlazará a cualquier tipo de acuerdo del órgano de contratación. Además, presenta como dominio las clases <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractModification"><code>pproc:ContractModification</code></a>, <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractOrProcedureExtinction"><code>pproc:ContractOrProcedureExtinction</code></a>, <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications"><code>pproc:ContractProcedureSpecifications</code></a> y <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractActivities"><code>pproc:ContractActivities</code></a>, pues en cada una de estas clases podrá ser necesario un vínculo al acuerdo del órgano de contratación.</li>
+        <li>La primera, <a href="/def/sector-publico/pproc#awardAgreement"><code>pproc:awardAgreement</code></a>, tiene como dominio siempre un <a href="http://purl.org/procurement/public-contracts#Tender"><code>pc:Tender</code></a>, y enlazará al acuerdo de adjudicación de la oferta en la cual se enlace.</li>
+        <li>La segunda, <a href="/def/sector-publico/pproc#contractingBodyAgreement"><code>pproc:contractingBodyAgreement</code></a>, es de carácter más general, ya que enlazará a cualquier tipo de acuerdo del órgano de contratación. Además, presenta como dominio las clases <a href="/def/sector-publico/pproc#ContractModification"><code>pproc:ContractModification</code></a>, <a href="/def/sector-publico/pproc#ContractOrProcedureExtinction"><code>pproc:ContractOrProcedureExtinction</code></a>, <a href="/def/sector-publico/pproc#ContractProcedureSpecifications"><code>pproc:ContractProcedureSpecifications</code></a> y <a href="/def/sector-publico/pproc#ContractActivities"><code>pproc:ContractActivities</code></a>, pues en cada una de estas clases podrá ser necesario un vínculo al acuerdo del órgano de contratación.</li>
       </ul>
-      <p>Siempre que sea posible se utilizará la relación (propiedad y dominio) más específica posible. Para el caso de los acuerdos de los que no se conozca la ubicación ideal se podrán enlazar de forma estándar desde <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications"><code>pproc:ContractProcedureSpecifications</code></a> con la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#contractingBodyAgreement"><code>pproc:contractingBodyAgreement</code></a>.</p>
+      <p>Siempre que sea posible se utilizará la relación (propiedad y dominio) más específica posible. Para el caso de los acuerdos de los que no se conozca la ubicación ideal se podrán enlazar de forma estándar desde <a href="/def/sector-publico/pproc#ContractProcedureSpecifications"><code>pproc:ContractProcedureSpecifications</code></a> con la propiedad <a href="/def/sector-publico/pproc#contractingBodyAgreement"><code>pproc:contractingBodyAgreement</code></a>.</p>
       <span class="TO-DO ejemplo de etiquetado utilizando mal las relaciones (un acuerdo de adjudicación usando la otra propiedad)"></span>
-      <p>En cualquiera de estos casos se utilizará la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractingBodyAgreement"><code>pproc:ContractingBodyAgreement</code></a> con las siguientes propiedades.</p>
+      <p>En cualquiera de estos casos se utilizará la clase <a href="/def/sector-publico/pproc#ContractingBodyAgreement"><code>pproc:ContractingBodyAgreement</code></a> con las siguientes propiedades.</p>
       <div id="table_XX">
         <table class="prop-table">
-          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#ContractingBodyAgreement"><code>pproc:ContractingBodyAgreement</code></a></caption>
+          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#ContractingBodyAgreement"><code>pproc:ContractingBodyAgreement</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
@@ -2230,8 +2230,8 @@
       <p>La clase <a href="http://purl.org/procurement/public-contracts#AwardCriteriaCombination"><code>pc:AwardCriteriaCombination</code></a> solo dispone de una propiedad para definirla: <a href="http://purl.org/procurement/public-contracts#awardCriterion"><code>pc:awardCriterion</code></a>, la cual tiene como rango a <a href="http://purl.org/procurement/public-contracts#AwardCriterion"><code>pc:AwardCriterion</code></a>. Esta última propiedad se utilizará una vez por criterio de adjudicación, componiendo así el conjunto de criterios de adjudicación.</p>
       <p>Al describir un único criterio de adjudicación, se podrá instanciar de tres maneras:</p>
       <ul>
-        <li>Como criterio objetivo de adjudicación, utilizando la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#ObjectiveAwardCriterion"><code>pproc:ObjectiveAwardCriterion</code></a>.</li>
-        <li>Como criterio subjetivo de adjudicación, utilizando la clase <a href="http://contsem.unizar.es/def/sector-publico/pproc#SubjectiveAwardCriterion"><code>pproc:SubjectiveAwardCriterion</code></a>.</li>
+        <li>Como criterio objetivo de adjudicación, utilizando la clase <a href="/def/sector-publico/pproc#ObjectiveAwardCriterion"><code>pproc:ObjectiveAwardCriterion</code></a>.</li>
+        <li>Como criterio subjetivo de adjudicación, utilizando la clase <a href="/def/sector-publico/pproc#SubjectiveAwardCriterion"><code>pproc:SubjectiveAwardCriterion</code></a>.</li>
         <li>Sin especificar el tipo de criterio, utilizando la clase <a href="http://purl.org/procurement/public-contracts#AwardCriterion"><code>pc:AwardCriterion</code></a>.</li>
       </ul>
       <p>Las de criterio objetivo y subjetivo de adjudicación son subclases de <a href="http://purl.org/procurement/public-contracts#AwardCriterion"><code>pc:AwardCriterion</code></a>. Todas ellas se describen utilizando las siguientes propiedades.</p>
@@ -2274,11 +2274,11 @@
     
     <div id="frameworkAgreement">
       <h3>3.19. Acuerdos marco <span class="backlink"> volver a <a href="#TdC">TdC</a></span></h3>
-      <p>En ocasiones un contrato puede suponer la implantación de un acuerdo marco o de un sistema dinámico de contratación, o quizás ser un contrato derivado de un acuerdo marco o sistema dinámico ya creado. Para indicar estos casos se hace uso en primer lugar de la clasificación de <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> <a href="#contractTypes" class="uso">uso</a>, por la cual se permite indicar si el contrato consiste en la implantación de un acuerdo marco (<a href="http://contsem.unizar.es/def/sector-publico/pproc#FrameworkConclusionContract"><code>pproc:FrameworkConclusionContract</code></a>), consiste en la implantación de un sistema dinámico de contratación (<a href="http://contsem.unizar.es/def/sector-publico/pproc#DynamicPurchasingSystemConclusionContract"><code>pproc:DynamicPurchasingSystemConclusionContract</code></a>), o se trata de un contrato derivado de alguno de estos dos (<a href="http://contsem.unizar.es/def/sector-publico/pproc#FrameworkDerivativeContract"><code>pproc:FrameworkDerivativeContract</code></a> ó <a href="http://contsem.unizar.es/def/sector-publico/pproc#DynamicPurchasingSystemDerivativeContract"><code>pproc:DynamicPurchasingSystemDerivativeContract</code></a>).</p>
-      <p>Cuando estemos ante un contrato que consiste en la implantación, tanto de un acuerdo marco como de un sistema dinámico de contratación, se utiliza la propiedad <a href="http://contsem.unizar.es/def/sector-publico/pproc#frameworkAgreement"><code>pproc:frameworkAgreement</code></a>, con dominio <a href="http://contsem.unizar.es/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> y con rango <a href="http://contsem.unizar.es/def/sector-publico/pproc#FrameworkAgreement"><code>pproc:FrameworkAgreement</code></a>. Esta última clase, la cual permite describir mejor el acuerdo dinámico, dispone de las siguientes propiedades.</p>
+      <p>En ocasiones un contrato puede suponer la implantación de un acuerdo marco o de un sistema dinámico de contratación, o quizás ser un contrato derivado de un acuerdo marco o sistema dinámico ya creado. Para indicar estos casos se hace uso en primer lugar de la clasificación de <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> <a href="#contractTypes" class="uso">uso</a>, por la cual se permite indicar si el contrato consiste en la implantación de un acuerdo marco (<a href="/def/sector-publico/pproc#FrameworkConclusionContract"><code>pproc:FrameworkConclusionContract</code></a>), consiste en la implantación de un sistema dinámico de contratación (<a href="/def/sector-publico/pproc#DynamicPurchasingSystemConclusionContract"><code>pproc:DynamicPurchasingSystemConclusionContract</code></a>), o se trata de un contrato derivado de alguno de estos dos (<a href="/def/sector-publico/pproc#FrameworkDerivativeContract"><code>pproc:FrameworkDerivativeContract</code></a> ó <a href="/def/sector-publico/pproc#DynamicPurchasingSystemDerivativeContract"><code>pproc:DynamicPurchasingSystemDerivativeContract</code></a>).</p>
+      <p>Cuando estemos ante un contrato que consiste en la implantación, tanto de un acuerdo marco como de un sistema dinámico de contratación, se utiliza la propiedad <a href="/def/sector-publico/pproc#frameworkAgreement"><code>pproc:frameworkAgreement</code></a>, con dominio <a href="/def/sector-publico/pproc#Contract"><code>pproc:Contract</code></a> y con rango <a href="/def/sector-publico/pproc#FrameworkAgreement"><code>pproc:FrameworkAgreement</code></a>. Esta última clase, la cual permite describir mejor el acuerdo dinámico, dispone de las siguientes propiedades.</p>
       <div id="table_XX">
         <table class="prop-table">
-          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="http://contsem.unizar.es/def/sector-publico/pproc#FrameworkAgreement"><code>pproc:FrameworkAgreement</code></a></caption>
+          <caption> <a href="#table_XX">Tabla XX</a>: Propiedades que parten de <a href="/def/sector-publico/pproc#FrameworkAgreement"><code>pproc:FrameworkAgreement</code></a></caption>
             <tr>
               <th>Propiedad</th>
               <th>Descripción</th>
